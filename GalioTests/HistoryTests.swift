@@ -18,7 +18,10 @@ final class HistoryTests: XCTestCase {
         XCTAssertEqual(r.damageToChampions, 24850)
         XCTAssertEqual(r.csPerMinute, 190.0 / (1835.0 / 60.0), accuracy: 0.01)
         XCTAssertFalse(r.plannedCore.isEmpty)
-        XCTAssertGreaterThanOrEqual(r.coreFollowed, 2, "fixture items include Hollow Radiance, Riftmaker and Zhonya's")
+        // The plan is the data set's core for the position (Match-v5 popular core or curated); it changes with data.
+        XCTAssertEqual(r.plannedCore, store.detail(for: TestData.champion("Galio"))?.build(for: "MIDDLE")?.items.core)
+        XCTAssertEqual(r.coreFollowed, r.plannedCore.prefix(3).filter { r.items.contains($0) }.count)
+        XCTAssertGreaterThanOrEqual(r.coreFollowed, 1, "Zhonya's Hourglass is in the fixture inventory and in every Galio core")
     }
 
     @MainActor
