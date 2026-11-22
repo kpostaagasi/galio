@@ -66,6 +66,9 @@ final class OverlayController: ObservableObject {
         let host = NSHostingController(rootView: root)
         host.sizingOptions = []   // the panel is sized explicitly from the content size (contentSizeChanged)
         panel.contentViewController = host
+        // Without automatic sizing the hosting view would start at 0×0 (and SwiftUI would never lay
+        // out or report its size); start from a sensible size that contentSizeChanged then adjusts.
+        panel.setContentSize(NSSize(width: Self.compactWidth, height: 160))
         // Position is remembered (frame autosave); the size follows the collapsed/expanded state,
         // which is remembered too. Default: top-right corner, away from the main window's content.
         if !panel.setFrameUsingName(Self.frameName), let screen = NSScreen.main {

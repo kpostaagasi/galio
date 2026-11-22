@@ -55,7 +55,9 @@ jobs:
           BID=com.kpostaagasi.galio
           shoot() {  # $1 = output dir
             local out="$1"; mkdir -p "$out"
-            defaults delete "$BID" 2>/dev/null || true   # fresh window/overlay frames for this resolution
+            # Fresh window/overlay frames for this resolution (defaults + macOS window restoration).
+            defaults delete "$BID" 2>/dev/null || true
+            rm -rf "$HOME/Library/Saved Application State/$BID.savedState"
             for s in champselect champselect-locked ingame aram mayhem arena postgame; do
               open -n "$APP" --args --mock-game "$s"
               sleep 9

@@ -1,5 +1,11 @@
 Galio test build (ad-hoc signed, not notarized). Apple Silicon, macOS 15+.
 
+What's new in 1.0.1
+- Recommendations from real ranked games: rune page, summoner spells, 3-item core, first boots and skill order come from anonymous Riot Match-v5 samples (tr1, euw1, eun1, kr, na1; Master+ and Diamond/Emerald, plus ARAM) once a champion/role has at least 20 sampled games, labelled "most popular in N sampled games". Below that, the rule-based data stays. No win rates are shown anywhere; augment tiers stay tiers.
+- Post-game notes compare your own CS, damage, vision, gold and deaths with the sampled average for the same champion and role, and name the planned core items you skipped.
+- Compact in-game overlay (next skill, top 3 items with one-line reasons, augment tiers) with an expand button; it remembers its position and view, stays pinned to its top-left corner, starts in the top-right corner, and hides after the game and when the League client closes.
+- Champion browser and champion select no longer clip Import buttons or the skill-order grid in small windows; larger summoner spell icons; suggestions in a two-column grid; minimum window size 900×600.
+
 Install
 1. Download `Galio.zip` below and unzip it.
 2. Move `Galio.app` to Applications.
