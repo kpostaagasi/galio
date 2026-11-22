@@ -489,7 +489,7 @@ def main():
             positions = observed  # enough real games: list only positions it is actually played in
         elif observed:
             positions = observed + [x for x in positions if x not in observed]
-        skill = agg.get("skillMax") or cur["skill"]
+        skill = (agg.get("skillMax") if agg.get("skillGames") else None) or cur["skill"]  # ignore pre-v1.0.1 files
         start = next((agg_pos[k]["skillStart"] for k in observed if agg_pos[k].get("skillStart")), None)
         builds = {}
         for pos in positions + ["ARAM"]:
@@ -582,7 +582,7 @@ def main():
             "id": cid, "key": key, "patch": patch,
             "source": "riot-recommended+curated" + ("+match-v5" if agg_pos or agg.get("skillMax") else ""),
             "skillOrder": {"max": skill, "first": start or list(skill), "ultLevels": [1, 6, 11, 16] if cid in ULT_AT_ONE else [6, 11, 16],
-                           **({"games": agg["skillGames"]} if agg.get("skillMax") else {})},
+                           **({"games": agg["skillGames"]} if agg.get("skillGames") else {})},
             "builds": builds,
         }
 
