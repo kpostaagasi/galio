@@ -1,46 +1,44 @@
 import SwiftUI
 
-/// Champion select overlay: own pick, teams (visible picks only).
+/// Champion select overlay: suggestions before lock-in, then runes / spells / skill order.
 struct ChampSelectOverlay: View {
     @EnvironmentObject private var session: GameSession
     @EnvironmentObject private var store: DataStore
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            if let cs = session.champSelect {
+            if let cs = session.champSelect, let advice = AdviceBuilder.champSelect(session: session, store: store) {
                 HStack {
-                    ChampionChip(champion: store.champion(key: cs.myChampionId), size: 34)
+                    ChampionChip(champion: advice.champion, size: 34)
                     Spacer()
                     if let pos = cs.myPosition {
                         Text(pos.title).font(.caption).foregroundStyle(.secondary)
                     }
                 }
-                TeamStrip(title: Loc.tr("Takım"), champions: cs.allyChampionIds.map { store.champion(key: $0) })
-                TeamStrip(title: Loc.tr("Rakip"), champions: cs.visibleEnemyChampionIds.map { store.champion(key: $0) })
+                TeamStrip(title: Loc.tr("Takım"), champions: advice.allies)
+                TeamStrip(title: Loc.tr("Rakip"), champions: advice.enemies)
+                Divider().opacity(0.4)
+                if !advice.locked || cs.benchEnabled {
+                    Text(cs.benchEnabled ? Loc.tr("Takas önerileri") : Loc.tr("Öneriler")).font(.caption.weight(.semibold))
+                    ForEach(Array(advice.suggestions.prefix(3).enumerated()), id: \.element.id) { i, s in
+                        SuggestionRow(suggestion: s, rank: i + 1, compact: true)
+                    }
+                }
+                if advice.locked, let champion = advice.champion {
+                    if let page = advice.runes.first {
+                        RunePageCard(page: page, champion: champion, compact: true)
+                    }
+                    if let spell = advice.spells.first {
+                        SpellOptionRow(option: spell, current: advice.currentSpells)
+                    }
+                    if let plan = advice.skill {
+                        SkillOrderView(plan: plan, champion: champion, compact: true)
+                    }
+                    PendingReplaceInline()
+                    ActionToast()
+                }
             } else {
                 Text("Şampiyon seçimi okunuyor…").font(.caption).foregroundStyle(.secondary)
-            }
-        }
-    }
-}
-
-/// In-game overlay: own champion, level and both teams' champions.
-struct InGameOverlay: View {
-    @EnvironmentObject private var session: GameSession
-    @EnvironmentObject private var store: DataStore
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            if let live = session.live, let me = live.me {
-                HStack {
-                    ChampionChip(champion: store.champion(liveId: me.championDataId, name: me.championName), size: 34)
-                    Spacer()
-                    Text(Loc.tr("Seviye %@", String(me.level))).font(.caption.monospacedDigit())
-                }
-                TeamStrip(title: Loc.tr("Takım"), champions: live.allies.map { store.champion(liveId: $0.championDataId, name: $0.championName) })
-                TeamStrip(title: Loc.tr("Rakip"), champions: live.enemies.map { store.champion(liveId: $0.championDataId, name: $0.championName) })
-            } else {
-                Text("Canlı oyun verisi bekleniyor…").font(.caption).foregroundStyle(.secondary)
             }
         }
     }
@@ -59,6 +57,28 @@ struct PostGameOverlay: View {
                     .font(.callout.monospacedDigit())
             }
             Text("Ayrıntılı oyun sonu özeti ana pencerede.").font(.caption).foregroundStyle(.secondary)
+        }
+    }
+}
+
+/// Inline version of the "rune page limit full" confirmation for the overlay panel.
+struct PendingReplaceInline: View {
+    @EnvironmentObject private var actions: ActionCenter
+
+    var body: some View {
+        if let pending = actions.pendingReplace {
+            VStack(alignment: .leading, spacing: 6) {
+                Text(Loc.tr("Galio yeni sayfa için \"%@\" sayfanı silecek. Devam edilsin mi?", pending.pageName))
+                    .font(.caption)
+                    .fixedSize(horizontal: false, vertical: true)
+                HStack {
+                    Button(Loc.tr("\"%@\" sayfasının yerine yaz", pending.pageName), role: .destructive) { actions.confirmReplace() }
+                    Button("Vazgeç") { actions.pendingReplace = nil }
+                }
+                .controlSize(.small)
+            }
+            .padding(8)
+            .background(Color.orange.opacity(0.15), in: RoundedRectangle(cornerRadius: 8))
         }
     }
 }

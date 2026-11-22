@@ -192,6 +192,10 @@ COMMON = {
     "GET /lol-perks/v1/pages": perks_pages(),
     "GET /lol-perks/v1/inventory": {"ownedPageCount": 3, "customPageCount": 3},
     "GET /lol-item-sets/v1/item-sets/1200300/sets": {"accountId": 2400100, "itemSets": [], "timestamp": 1795000000000},
+    "GET /lol-champion-mastery/v1/local-player/champion-mastery": [
+        {"championId": 3, "championLevel": 12, "championPoints": 214000, "puuid": "mock-puuid-local"},
+        {"championId": 61, "championLevel": 7, "championPoints": 88000, "puuid": "mock-puuid-local"},
+        {"championId": 99, "championLevel": 5, "championPoints": 41000, "puuid": "mock-puuid-local"}],
     "GET /lol-champ-select/v1/pickable-champion-ids": [3, 61, 99, 103, 45, 55, 63, 37, 267, 21, 22, 86, 64, 222, 412, 54, 254, 238, 51, 16, 157, 122, 81, 89, 113, 145, 111, 24, 67, 82, 32, 360, 875, 1, 8, 13, 50, 69, 90, 101, 112, 115, 127, 134, 136, 142, 161, 163, 517, 518, 711, 800, 888, 893, 910, 950],
 }
 

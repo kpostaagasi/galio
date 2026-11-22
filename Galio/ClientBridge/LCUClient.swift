@@ -92,6 +92,11 @@ final class LCUClient {
         try await get("/lol-summoner/v1/current-summoner")
     }
 
+    /// The local player's own mastery list (never other players').
+    func ownMastery() async throws -> [ChampionMastery] {
+        try await get("/lol-champion-mastery/v1/local-player/champion-mastery")
+    }
+
     func endOfGameStats() async throws -> EndOfGameStats {
         try await get("/lol-end-of-game/v1/eog-stats-block")
     }
@@ -103,4 +108,9 @@ struct CurrentSummoner: Decodable, Equatable {
     let summonerId: Int64
     let accountId: Int64?
     let puuid: String?
+}
+
+struct ChampionMastery: Decodable, Equatable {
+    let championId: Int
+    let championPoints: Int
 }

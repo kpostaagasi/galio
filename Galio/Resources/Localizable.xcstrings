@@ -1,6 +1,105 @@
 {
   "sourceLanguage": "tr",
   "strings": {
+    "\"%@\" sayfasının yerine yaz": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Replace \"%@\""
+          }
+        }
+      }
+    },
+    "%@ altın": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ gold"
+          }
+        }
+      }
+    },
+    "%@ eksik": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ short"
+          }
+        }
+      }
+    },
+    "%@ hasarı taşır, sen korur ya da önde durursun": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ carries the damage; you protect or tank"
+          }
+        }
+      }
+    },
+    "%@ ile uyumlu: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fits %@: %@"
+          }
+        }
+      }
+    },
+    "%@ için ana rol seçeneklerinden": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A main pick for %@"
+          }
+        }
+      }
+    },
+    "%@ rolünde de oynanıyor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also played in %@"
+          }
+        }
+      }
+    },
+    "%@ · ön saf %@/3 · giriş %@/3 · koruma %@/3": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · frontline %@/3 · engage %@/3 · peel %@/3"
+          }
+        }
+      }
+    },
+    "%@ ön safta durur, sen hasar verirsin": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ holds the front line while you deal damage"
+          }
+        }
+      }
+    },
     "%@/%@/%@ · %@ CS": {
       "extractionState": "manual",
       "localizations": {
@@ -23,6 +122,28 @@
         }
       }
     },
+    "Agresif koridor ve öldürme gücü": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggressive lane and kill pressure"
+          }
+        }
+      }
+    },
+    "Aktar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import"
+          }
+        }
+      }
+    },
     "Alt koridor": {
       "extractionState": "manual",
       "localizations": {
@@ -30,6 +151,50 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bot lane"
+          }
+        }
+      }
+    },
+    "Alternatif": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alternative"
+          }
+        }
+      }
+    },
+    "Alınabilir": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Affordable"
+          }
+        }
+      }
+    },
+    "Ani hasar veren rakiplere karşı hayatta kalma": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Survive enemy burst"
+          }
+        }
+      }
+    },
+    "Ani hasara karşı Bariyer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barrier against burst"
           }
         }
       }
@@ -52,6 +217,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Arena"
+          }
+        }
+      }
+    },
+    "Ayarla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set"
           }
         }
       }
@@ -89,6 +265,17 @@
         }
       }
     },
+    "Başlangıç": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Starter"
+          }
+        }
+      }
+    },
     "Bilinmeyen durum": {
       "extractionState": "manual",
       "localizations": {
@@ -122,6 +309,17 @@
         }
       }
     },
+    "Bir şampiyon seç": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose a champion"
+          }
+        }
+      }
+    },
     "Bitirdiğin oyunların özetleri burada listelenecek.": {
       "extractionState": "manual",
       "localizations": {
@@ -129,6 +327,72 @@
           "stringUnit": {
             "state": "translated",
             "value": "Summaries of your finished games will be listed here."
+          }
+        }
+      }
+    },
+    "Bu büyüleri şampiyon seçiminde ayarla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set these spells in champion select"
+          }
+        }
+      }
+    },
+    "Bu sayfayı tek tıkla League istemcisine aktar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import this page into the League client with one click"
+          }
+        }
+      }
+    },
+    "Bu şampiyonda deneyimlisin": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You are experienced on this champion"
+          }
+        }
+      }
+    },
+    "Büyü %@%%": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Magic %@%%"
+          }
+        }
+      }
+    },
+    "Büyü hasarı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Magic damage"
+          }
+        }
+      }
+    },
+    "Büyüler ayarlanamadı: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Could not set spells: %@"
           }
         }
       }
@@ -151,6 +415,50 @@
           "stringUnit": {
             "state": "translated",
             "value": "Waiting for live game data…"
+          }
+        }
+      }
+    },
+    "Daha güvenli koridor ve yan koridorlara destek": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Safer lane and side-lane support"
+          }
+        }
+      }
+    },
+    "Dalga temizleme gücü takıma katkı sağlar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adds waveclear to the team"
+          }
+        }
+      }
+    },
+    "Dalış yapan rakipleri yavaşlatır, hasarını keser": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slows divers and cuts their damage"
+          }
+        }
+      }
+    },
+    "Dayanıklı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Defensive"
           }
         }
       }
@@ -221,6 +529,50 @@
         }
       }
     },
+    "Duruma göre": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Situational"
+          }
+        }
+      }
+    },
+    "Ekran Kaydı izni gerekli: Sistem Ayarları > Gizlilik ve Güvenlik > Ekran ve Sistem Sesi Kaydı'ndan Galio'yu aç, sonra tekrar dene. Bu arada aşağıdan elle arayabilirsin.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Screen Recording permission needed: enable Galio in System Settings > Privacy & Security > Screen & System Audio Recording, then try again. Meanwhile you can search manually below."
+          }
+        }
+      }
+    },
+    "Ekrandaki üç güçlendirme kartının adını cihaz üzerinde okur (Ekran Kaydı izni gerekir)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reads the three augment card titles on screen, on device (needs Screen Recording permission)"
+          }
+        }
+      }
+    },
+    "En uyumlu güçlendirmeler": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Best-fitting augments"
+          }
+        }
+      }
+    },
     "English": {
       "extractionState": "manual",
       "localizations": {
@@ -232,6 +584,28 @@
         }
       }
     },
+    "Erken öldürme ve iyileşme azaltma": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Early kills and healing reduction"
+          }
+        }
+      }
+    },
+    "Etkisi sınıflandırılamadı; açıklamayı oku": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Effect could not be classified; read the description"
+          }
+        }
+      }
+    },
     "Eğitim": {
       "extractionState": "manual",
       "localizations": {
@@ -239,6 +613,72 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tutorial"
+          }
+        }
+      }
+    },
+    "Eşya seti istemciye yazıldı: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item set written to the client: %@"
+          }
+        }
+      }
+    },
+    "Eşya seti yazılamadı: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Could not write the item set: %@"
+          }
+        }
+      }
+    },
+    "Eşya setini istemciye yaz": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Write item set to client"
+          }
+        }
+      }
+    },
+    "Eşyalar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Items"
+          }
+        }
+      }
+    },
+    "Fiziksel %@%%": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Physical %@%%"
+          }
+        }
+      }
+    },
+    "Fiziksel hasar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Physical damage"
           }
         }
       }
@@ -276,6 +716,17 @@
         }
       }
     },
+    "Galio yeni sayfa için \"%@\" sayfanı silecek. Devam edilsin mi?": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galio will delete your page \"%@\" to make room. Continue?"
+          }
+        }
+      }
+    },
     "Galio'yu aç": {
       "extractionState": "manual",
       "localizations": {
@@ -298,6 +749,39 @@
         }
       }
     },
+    "Genel amaçlı saldırgan seçim": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "General-purpose aggressive choice"
+          }
+        }
+      }
+    },
+    "Geç oyun": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Late game"
+          }
+        }
+      }
+    },
+    "Geç oyun için plandaki eşya": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planned late-game item"
+          }
+        }
+      }
+    },
     "Geçmiş": {
       "extractionState": "manual",
       "localizations": {
@@ -305,6 +789,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "History"
+          }
+        }
+      }
+    },
+    "Görev güçlendirmesi: koşulu tamamlayınca güçlenir": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quest augment: gets stronger once its condition is met"
           }
         }
       }
@@ -320,6 +815,28 @@
         }
       }
     },
+    "Güçlendirme ara": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search augments"
+          }
+        }
+      }
+    },
+    "Güçlendirmeler": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Augments"
+          }
+        }
+      }
+    },
     "Hakkında": {
       "extractionState": "manual",
       "localizations": {
@@ -327,6 +844,72 @@
           "stringUnit": {
             "state": "translated",
             "value": "About"
+          }
+        }
+      }
+    },
+    "Hareketi kısıtlı şampiyona kaçış/kovalama": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escape/chase for a low-mobility champion"
+          }
+        }
+      }
+    },
+    "Harita hareketliliği": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Map mobility"
+          }
+        }
+      }
+    },
+    "Hatırlatma: yeteneği sen yükseltirsin, Galio oyuna hiçbir tuş göndermez.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reminder only: you level the ability; Galio never sends keys to the game."
+          }
+        }
+      }
+    },
+    "Hayalet ile uzun mesafeli girişler": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Long-range engages with Ghost"
+          }
+        }
+      }
+    },
+    "Hayalet, menzilli rakiplere yetişmeyi sağlar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ghost helps you catch ranged enemies"
+          }
+        }
+      }
+    },
+    "Henüz botun yok": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You have no boots yet"
           }
         }
       }
@@ -353,6 +936,17 @@
         }
       }
     },
+    "Her şampiyona genel değer katar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "General value for any champion"
+          }
+        }
+      }
+    },
     "Hızlı Oyun": {
       "extractionState": "manual",
       "localizations": {
@@ -364,6 +958,17 @@
         }
       }
     },
+    "Işınlan ile harita baskısı ve güvenli koridor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teleport for map pressure and a safer lane"
+          }
+        }
+      }
+    },
     "Kapalı Seçim": {
       "extractionState": "manual",
       "localizations": {
@@ -371,6 +976,61 @@
           "stringUnit": {
             "state": "translated",
             "value": "Blind Pick"
+          }
+        }
+      }
+    },
+    "Kararlılık ikincil ağacı: koridor evresinde daha dayanıklı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resolve secondary: sturdier in the laning phase"
+          }
+        }
+      }
+    },
+    "Karma hasar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mixed damage"
+          }
+        }
+      }
+    },
+    "Kart bulunamadı. Kartlar ekrandayken tekrar dene ya da elle ara.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No cards found. Try again while the cards are on screen, or search manually."
+          }
+        }
+      }
+    },
+    "Kartları tara": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan cards"
+          }
+        }
+      }
+    },
+    "Kartopu ile savaşa hızlı giriş": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snowball for fast engages"
           }
         }
       }
@@ -463,6 +1123,50 @@
         }
       }
     },
+    "Kaynak: %@ · yama %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Source: %@ · patch %@"
+          }
+        }
+      }
+    },
+    "Kitle kontrolü": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crowd control"
+          }
+        }
+      }
+    },
+    "Koridorda öldürme baskısı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kill pressure in lane"
+          }
+        }
+      }
+    },
+    "Kritik": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crit"
+          }
+        }
+      }
+    },
     "Kısayol ⌥⇧G ile göster/gizle": {
       "extractionState": "manual",
       "localizations": {
@@ -518,6 +1222,17 @@
         }
       }
     },
+    "League istemcisine bağlı değil": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not connected to the League client"
+          }
+        }
+      }
+    },
     "League of Legends'ı açtığında Galio otomatik bağlanır. Oyun içi katman için oyunu Kenarlıksız ya da Pencere modunda çalıştır.": {
       "extractionState": "manual",
       "localizations": {
@@ -551,6 +1266,28 @@
         }
       }
     },
+    "Mağazada görünen bir eşya seti oluşturur (yalnızca tıklayınca, oyun dışında)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creates an item set shown in the shop (only on click, outside the game)"
+          }
+        }
+      }
+    },
+    "Nişancı için standart": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard for marksmen"
+          }
+        }
+      }
+    },
     "Orman": {
       "extractionState": "manual",
       "localizations": {
@@ -558,6 +1295,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Jungle"
+          }
+        }
+      }
+    },
+    "Orman için Çarp zorunlu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Smite is required in the jungle"
           }
         }
       }
@@ -639,6 +1387,17 @@
         }
       }
     },
+    "Oyun sırasında istemci işlemi yapılmaz": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No client actions during the live game"
+          }
+        }
+      }
+    },
     "Oyun yükleniyor": {
       "extractionState": "manual",
       "localizations": {
@@ -661,6 +1420,28 @@
         }
       }
     },
+    "Pek uymuyor: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Poor fit: %@"
+          }
+        }
+      }
+    },
+    "Plana uygun": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fits the plan"
+          }
+        }
+      }
+    },
     "Rakip": {
       "extractionState": "manual",
       "localizations": {
@@ -668,6 +1449,325 @@
           "stringUnit": {
             "state": "translated",
             "value": "Enemy"
+          }
+        }
+      }
+    },
+    "Rakip büyü direnci topluyor: büyü delme": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enemies stack magic resist: magic penetration"
+          }
+        }
+      }
+    },
+    "Rakip hasarı çoğunlukla büyü: büyü direnci": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enemy damage is mostly magic: magic resist"
+          }
+        }
+      }
+    },
+    "Rakip hasarı çoğunlukla fiziksel: zırh": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enemy damage is mostly physical: armor"
+          }
+        }
+      }
+    },
+    "Rakip kalkanlarını zayıflatır": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weakens enemy shields"
+          }
+        }
+      }
+    },
+    "Rakip kırılgan; ani hasar cezalandırır": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The enemy team is squishy; burst punishes it"
+          }
+        }
+      }
+    },
+    "Rakip oyuncuların adları ve istatistikleri gösterilmez; yalnızca görünen şampiyonlar kullanılır.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enemy player names and stats are never shown; only visible champions are used."
+          }
+        }
+      }
+    },
+    "Rakip suikastçıların hasarını keser": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuts enemy assassins' damage"
+          }
+        }
+      }
+    },
+    "Rakip uzaktan taciz ediyor; hızlı giriş veya yenilenme işe yarar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The enemy pokes from range; fast engage or sustain helps"
+          }
+        }
+      }
+    },
+    "Rakip zırh topluyor: zırh delme": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enemies stack armor: armor penetration"
+          }
+        }
+      }
+    },
+    "Rakip çoğunlukla fiziksel hasar; zırh odaklı ön saf iyi karşılar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enemy damage is mostly physical; an armor-heavy frontline handles it"
+          }
+        }
+      }
+    },
+    "Rakipte birden çok tank var; sürekli hasar etkili": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Several enemy tanks; sustained damage works well"
+          }
+        }
+      }
+    },
+    "Rakipte güçlü iyileşme var: Ağır Yara uygular": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strong enemy healing: applies Grievous Wounds"
+          }
+        }
+      }
+    },
+    "Rakipte iyileştirme var; Tutuştur iyileşmeyi azaltır": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enemy healing; Ignite reduces it"
+          }
+        }
+      }
+    },
+    "Rakipte kritik vuruş eşyaları var": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enemies are building critical strike"
+          }
+        }
+      }
+    },
+    "Rakipte saldırı hızına dayalı hasar var": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enemies rely on attack speed"
+          }
+        }
+      }
+    },
+    "Rakipte yoğun kitle kontrolü var": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enemies have heavy crowd control"
+          }
+        }
+      }
+    },
+    "Rakipte yoğun kitle kontrolü: Arındır": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heavy enemy crowd control: Cleanse"
+          }
+        }
+      }
+    },
+    "Rakipte yoğun kitle kontrolü: savunma parçası Direnç olarak değiştirildi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heavy enemy crowd control: defense shard switched to Tenacity"
+          }
+        }
+      }
+    },
+    "Rakipte yüksek ani hasar var; hayatta kalma öncelikli": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "High enemy burst; survival first"
+          }
+        }
+      }
+    },
+    "Rakipteki hareketli suikastçılara karşı kitle kontrolü ve dayanıklılık": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crowd control and durability against mobile enemy assassins"
+          }
+        }
+      }
+    },
+    "Riot'un alternatif sayfası; farklı bir oyun planı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Riot's alternative page; a different game plan"
+          }
+        }
+      }
+    },
+    "Riot'un bu rol için istemcide önerdiği sayfa": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The page Riot recommends in the client for this role"
+          }
+        }
+      }
+    },
+    "Riot'un bu şampiyon için önerdiği büyüler": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spells Riot recommends for this champion"
+          }
+        }
+      }
+    },
+    "Rol": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Role"
+          }
+        }
+      }
+    },
+    "Rün sayfaları": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rune pages"
+          }
+        }
+      }
+    },
+    "Rün sayfası aktarılamadı: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rune page import failed: %@"
+          }
+        }
+      }
+    },
+    "Rün sayfası aktarıldı: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rune page imported: %@"
+          }
+        }
+      }
+    },
+    "Rün sayfası sınırı dolu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rune page limit reached"
+          }
+        }
+      }
+    },
+    "Rünler, yetenek sırası ve eşyalar burada görünür.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Runes, skill order and items appear here."
           }
         }
       }
@@ -694,6 +1794,17 @@
         }
       }
     },
+    "Seçili": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selected"
+          }
+        }
+      }
+    },
     "Seçilmedi": {
       "extractionState": "manual",
       "localizations": {
@@ -701,6 +1812,28 @@
           "stringUnit": {
             "state": "translated",
             "value": "Not picked"
+          }
+        }
+      }
+    },
+    "Seçim kilitlendi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Locked in"
+          }
+        }
+      }
+    },
+    "Seçim sürüyor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Picking"
           }
         }
       }
@@ -727,6 +1860,28 @@
         }
       }
     },
+    "Sihirdar büyüleri": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Summoner spells"
+          }
+        }
+      }
+    },
+    "Sihirdar büyüleri ayarlandı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Summoner spells set"
+          }
+        }
+      }
+    },
     "Sistem": {
       "extractionState": "manual",
       "localizations": {
@@ -745,6 +1900,39 @@
           "stringUnit": {
             "state": "translated",
             "value": "Last check"
+          }
+        }
+      }
+    },
+    "Sonra": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Later"
+          }
+        }
+      }
+    },
+    "Standart": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
+          }
+        }
+      }
+    },
+    "Suikastçının ani hasarına karşı Bariyer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barrier against assassin burst"
           }
         }
       }
@@ -771,6 +1959,39 @@
         }
       }
     },
+    "Sıradaki eşya seçenekleri": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next item options"
+          }
+        }
+      }
+    },
+    "Sıradaki yetenek:": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next skill:"
+          }
+        }
+      }
+    },
+    "Takas önerileri": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Swap suggestions"
+          }
+        }
+      }
+    },
     "Takım": {
       "extractionState": "manual",
       "localizations": {
@@ -778,6 +1999,182 @@
           "stringUnit": {
             "state": "translated",
             "value": "Team"
+          }
+        }
+      }
+    },
+    "Takım arkadaşını kurtaran iyileştirme": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heal that saves a teammate"
+          }
+        }
+      }
+    },
+    "Takım dengesini bozmayan güvenli seçim": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A safe pick that keeps the team balanced"
+          }
+        }
+      }
+    },
+    "Takım dövüşlerinde güvenli seçim": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Safe choice for teamfights"
+          }
+        }
+      }
+    },
+    "Takım çoğunlukla büyü hasarı veriyor; fiziksel hasar dengeyi sağlar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your team deals mostly magic damage; physical damage balances it"
+          }
+        }
+      }
+    },
+    "Takım çoğunlukla fiziksel hasar veriyor; büyü hasarı dengeyi sağlar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your team deals mostly physical damage; magic damage balances it"
+          }
+        }
+      }
+    },
+    "Takım çoğunlukla yakın dövüşçü; menzil ekler": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your team is mostly melee; adds range"
+          }
+        }
+      }
+    },
+    "Takımda zaten çok büyü hasarı var": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your team already has a lot of magic damage"
+          }
+        }
+      }
+    },
+    "Takımda zaten çok fiziksel hasar var": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your team already has a lot of physical damage"
+          }
+        }
+      }
+    },
+    "Takımda ön saf eksik; bu şampiyon hasar emebilir": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your team lacks a frontline; this champion can soak damage"
+          }
+        }
+      }
+    },
+    "Takımdaki nişancıyı koruyabilir": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Can protect your team's marksman"
+          }
+        }
+      }
+    },
+    "Takımın savaş başlatma gücü düşük; güvenilir giriş sağlar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your team lacks engage; provides reliable engage"
+          }
+        }
+      }
+    },
+    "Tarama başarısız: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan failed: %@"
+          }
+        }
+      }
+    },
+    "Taranıyor…": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanning…"
+          }
+        }
+      }
+    },
+    "Temel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Core"
+          }
+        }
+      }
+    },
+    "Temel eşya dizisinin parçası": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Part of the core build"
+          }
+        }
+      }
+    },
+    "Temel eşyalar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Core items"
           }
         }
       }
@@ -837,6 +2234,28 @@
         }
       }
     },
+    "Uzaktan taciz eden rakiplere karşı sabit can parçası": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flat health shard against poke"
+          }
+        }
+      }
+    },
+    "Vazgeç": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        }
+      }
+    },
     "Veri": {
       "extractionState": "manual",
       "localizations": {
@@ -844,6 +2263,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Data"
+          }
+        }
+      }
+    },
+    "Yalnızca seviye gösterilir; kazanma oranı gösterilmez.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiers only — win rates are never shown."
           }
         }
       }
@@ -881,6 +2311,28 @@
         }
       }
     },
+    "Yetenek sırası": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skill order"
+          }
+        }
+      }
+    },
+    "Yetenek sırası: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skill order: %@"
+          }
+        }
+      }
+    },
     "Yükleme ekranı — oyun başlayınca yetenek sırası ve eşya önerileri gelecek.": {
       "extractionState": "manual",
       "localizations": {
@@ -892,6 +2344,28 @@
         }
       }
     },
+    "Yükseltme sırası:": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Max order:"
+          }
+        }
+      }
+    },
+    "dayanıklılık": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "durability"
+          }
+        }
+      }
+    },
     "github.com/kpostaagasi/galio": {
       "extractionState": "manual",
       "localizations": {
@@ -899,6 +2373,61 @@
           "stringUnit": {
             "state": "translated",
             "value": "github.com/kpostaagasi/galio"
+          }
+        }
+      }
+    },
+    "hareket hızı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "move speed"
+          }
+        }
+      }
+    },
+    "isabet etkisi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "on-hit"
+          }
+        }
+      }
+    },
+    "iyileşme": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "healing"
+          }
+        }
+      }
+    },
+    "kalkan": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "shields"
+          }
+        }
+      }
+    },
+    "kritik": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "crit"
           }
         }
       }
@@ -925,6 +2454,105 @@
         }
       }
     },
+    "menzilli": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ranged"
+          }
+        }
+      }
+    },
+    "saldırı gücü": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "attack damage"
+          }
+        }
+      }
+    },
+    "saldırı hızı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "attack speed"
+          }
+        }
+      }
+    },
+    "sihirdar büyüsü": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "summoner spell"
+          }
+        }
+      }
+    },
+    "takım desteği": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "team support"
+          }
+        }
+      }
+    },
+    "ultimate": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ultimate"
+          }
+        }
+      }
+    },
+    "yakın dövüş": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "melee"
+          }
+        }
+      }
+    },
+    "yetenek gücü": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ability power"
+          }
+        }
+      }
+    },
+    "yetenek hızı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ability haste"
+          }
+        }
+      }
+    },
     "Çık": {
       "extractionState": "manual",
       "localizations": {
@@ -936,6 +2564,17 @@
         }
       }
     },
+    "Önce yükselt:": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Max first:"
+          }
+        }
+      }
+    },
     "Öneri verisi": {
       "extractionState": "manual",
       "localizations": {
@@ -943,6 +2582,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recommendation data"
+          }
+        }
+      }
+    },
+    "Öneriler": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suggestions"
           }
         }
       }
@@ -965,6 +2615,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Top lane"
+          }
+        }
+      }
+    },
+    "İlk seviyeler:": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First levels:"
           }
         }
       }
@@ -1024,6 +2685,28 @@
         }
       }
     },
+    "İyileşme": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Healing"
+          }
+        }
+      }
+    },
+    "İyileştiren rakiplere karşı hızlı öldürme": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fast kills against enemy healing"
+          }
+        }
+      }
+    },
     "Şampiyon ara": {
       "extractionState": "manual",
       "localizations": {
@@ -1057,6 +2740,17 @@
         }
       }
     },
+    "Şampiyon önerileri": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Champion suggestions"
+          }
+        }
+      }
+    },
     "Şampiyonlar": {
       "extractionState": "manual",
       "localizations": {
@@ -1064,6 +2758,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Champions"
+          }
+        }
+      }
+    },
+    "Şimdi alınabilecek parça: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Component you can buy now: %@"
           }
         }
       }

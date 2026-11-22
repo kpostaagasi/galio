@@ -91,6 +91,26 @@
    "itemSets": [],
    "timestamp": 1795000000000
   },
+  "GET /lol-champion-mastery/v1/local-player/champion-mastery": [
+   {
+    "championId": 3,
+    "championLevel": 12,
+    "championPoints": 214000,
+    "puuid": "mock-puuid-local"
+   },
+   {
+    "championId": 61,
+    "championLevel": 7,
+    "championPoints": 88000,
+    "puuid": "mock-puuid-local"
+   },
+   {
+    "championId": 99,
+    "championLevel": 5,
+    "championPoints": 41000,
+    "puuid": "mock-puuid-local"
+   }
+  ],
   "GET /lol-champ-select/v1/pickable-champion-ids": [
    3,
    61,

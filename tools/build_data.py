@@ -45,6 +45,8 @@ UA = "galio-data-builder/1.0 (+https://github.com/kpostaagasi/galio)"
 SCHEMA = 1
 
 POSITIONS = ["TOP", "JUNGLE", "MIDDLE", "BOTTOM", "UTILITY"]
+# Champions whose ultimate (form swap) is available at level 1 and has four ranks.
+ULT_AT_ONE = {"Jayce", "Elise", "Nidalee", "Karma"}
 SHARDS = {
     5008: ("Adaptive Force", "Uyarlanabilir Güç"),
     5005: ("Attack Speed", "Saldırı Hızı"),
@@ -547,7 +549,7 @@ def main():
         details[cid] = {
             "id": cid, "key": key, "patch": patch,
             "source": "riot-recommended+curated" + ("+match-v5" if agg else ""),
-            "skillOrder": {"max": skill, "first": list(skill), "ultLevels": [6, 11, 16]},
+            "skillOrder": {"max": skill, "first": list(skill), "ultLevels": [1, 6, 11, 16] if cid in ULT_AT_ONE else [6, 11, 16]},
             "builds": builds,
         }
 

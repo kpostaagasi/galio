@@ -20,6 +20,8 @@ final class GameSession: ObservableObject {
     @Published private(set) var mode: ModeInfo?
     @Published private(set) var champSelect: ChampSelectSession?
     @Published private(set) var pickableChampionIds: Set<Int> = []
+    /// The local player's own champion mastery (champion key → points).
+    @Published private(set) var mastery: [Int: Int] = [:]
     @Published private(set) var live: LiveGameData?
     /// Last live snapshot of the finished game (for the post-game summary).
     @Published private(set) var lastLive: LiveGameData?
@@ -177,6 +179,9 @@ final class GameSession: ObservableObject {
             if let lcu { mode = try? await lcu.gameflowSession().mode }
             await refreshChampSelect()
             if let lcu, let ids = try? await lcu.pickableChampionIds() { pickableChampionIds = Set(ids) }
+            if mastery.isEmpty, let lcu, let list = try? await lcu.ownMastery() {
+                mastery = Dictionary(list.map { ($0.championId, $0.championPoints) }, uniquingKeysWith: max)
+            }
         case .inProgress, .gameStart, .reconnect:
             if mode == nil, let lcu { mode = try? await lcu.gameflowSession().mode }
         case .waitingForStats, .preEndOfGame, .endOfGame:

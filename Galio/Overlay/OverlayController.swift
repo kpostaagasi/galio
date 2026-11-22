@@ -51,6 +51,7 @@ final class OverlayController: ObservableObject {
             .environmentObject(GameSession.shared)
             .environmentObject(DataStore.shared)
             .environmentObject(self)
+            .environmentObject(ActionCenter.shared)
         let host = NSHostingController(rootView: root)
         host.sizingOptions = [.preferredContentSize]
         panel.contentViewController = host
