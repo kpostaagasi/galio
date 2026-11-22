@@ -50,7 +50,7 @@ enum PatchVersion {
 @MainActor
 final class DataStore: ObservableObject {
     static let shared = DataStore()
-    static let supportedSchema = 1
+    nonisolated static let supportedSchema = 1
     static let remoteBase = URL(string: "https://raw.githubusercontent.com/kpostaagasi/galio/main/data/")!
 
     enum Source: String { case none, bundled, cache, remote }

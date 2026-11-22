@@ -73,9 +73,9 @@ final class MockServer {
 
     func start() async throws -> UInt16 {
         let params = NWParameters.tcp
-        params.requiredLocalEndpoint = NWEndpoint.hostPort(host: "127.0.0.1", port: .any)
+        params.requiredInterfaceType = .loopback   // never reachable from the network
         params.allowLocalEndpointReuse = true
-        let listener = try NWListener(using: params)
+        let listener = try NWListener(using: params, on: .any)
         self.listener = listener
         listener.newConnectionHandler = { [weak self] conn in self?.accept(conn) }
         let port: UInt16 = try await withCheckedThrowingContinuation { cont in
@@ -84,7 +84,7 @@ final class MockServer {
                 switch state {
                 case .ready:
                     if once.fire() { cont.resume(returning: listener.port?.rawValue ?? 0) }
-                case .failed(let error):
+                case .failed(let error), .waiting(let error):
                     if once.fire() { cont.resume(throwing: error) }
                 case .cancelled:
                     if once.fire() { cont.resume(throwing: CancellationError()) }

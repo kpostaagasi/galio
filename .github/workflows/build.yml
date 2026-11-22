@@ -31,8 +31,9 @@ jobs:
       - name: Test
         run: |
           set -o pipefail
-          xcodebuild test -project Galio.xcodeproj -scheme Galio -destination 'platform=macOS' -derivedDataPath build \
-            | tee test.log | grep -E "Test Suite|Test Case.*(passed|failed)|error:|TEST (SUCCEEDED|FAILED)|Executed" || true
+          xcodebuild test -project Galio.xcodeproj -scheme Galio -destination 'platform=macOS,arch=arm64' -derivedDataPath build \
+            -test-timeouts-enabled YES -default-test-execution-time-allowance 60 -maximum-test-execution-time-allowance 120 \
+            | tee test.log | grep --line-buffered -E "Test Suite|Test Case.*(passed|failed)|error:|TEST (SUCCEEDED|FAILED)|Executed" || true
           grep -q "TEST SUCCEEDED" test.log
 
       - name: Build release app
