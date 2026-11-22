@@ -251,5 +251,6 @@
   "Büyü hasarı": "Magic damage",
   "Karma hasar": "Mixed damage",
   "Fiziksel hasar": "Physical damage",
-  "%@ · ön saf %@/3 · giriş %@/3 · koruma %@/3": "%@ · frontline %@/3 · engage %@/3 · peel %@/3"
+  "%@ · ön saf %@/3 · giriş %@/3 · koruma %@/3": "%@ · frontline %@/3 · engage %@/3 · peel %@/3",
+  "Deneme modu: kartlar simüle edildi": "Demo mode: cards simulated"
 }

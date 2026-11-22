@@ -54,11 +54,11 @@ struct RuneIcon: View {
                 .accessibilityElement()
                 .accessibilityLabel(style.displayName)
         } else if let shard = store.shardsById[runeId] {
-            Text(String(shard.displayName.prefix(2)))
-                .font(.caption2.bold())
-                .frame(width: size, height: size)
+            CachedImage(url: shard.icon.flatMap { DDragon.shardIcon($0) }, size: size, cornerRadius: size / 2)
+                .padding(2)
                 .background(Circle().fill(Color.secondary.opacity(0.2)))
                 .help(shard.displayName)
+                .accessibilityElement()
                 .accessibilityLabel(shard.displayName)
         }
     }

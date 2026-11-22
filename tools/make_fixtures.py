@@ -151,7 +151,7 @@ SR_INGAME = live_game(
      live_player("Zed", "Zed", "CHAOS", 9, [item(3142, "Youmuu's Ghostblade", 0, 2800), item(6698, "Profane Hydra", 1, 2850)], 4, 2, 1, 101, "MIDDLE"),
      live_player("Caitlyn", "Caitlyn", "CHAOS", 8, [item(3031, "Infinity Edge", 0, 3500), item(3006, "Berserker's Greaves", 1, 1100)], 1, 1, 2, 118, "BOTTOM"),
      live_player("Soraka", "Soraka", "CHAOS", 7, [item(6617, "Moonstone Renewer", 0, 2200)], 0, 1, 5, 15, "UTILITY")],
-    active_player("Galio Fan", 9, 1640.0, 5, 1, 3, 1, "Galio"),
+    active_player("Galio Fan", 9, 1640.0, 4, 1, 2, 1, "Galio"),
 )
 
 MAYHEM_INGAME = live_game(
@@ -164,7 +164,7 @@ MAYHEM_INGAME = live_game(
      live_player("Brand", "Brand", "CHAOS", 11, [item(6653, "Liandry's Torment", 0, 3000)], 3, 4, 8, 39),
      live_player("Amumu", "Amumu", "CHAOS", 10, [item(3068, "Sunfire Aegis", 0, 2800)], 1, 4, 11, 28),
      live_player("Veigar", "Veigar", "CHAOS", 11, [item(3089, "Rabadon's Deathcap", 0, 3500)], 4, 3, 5, 42)],
-    active_player("Galio Fan", 11, 860.0, 5, 2, 3, 1, "Lux"),
+    active_player("Galio Fan", 11, 860.0, 3, 1, 5, 1, "Lux"),
 )
 
 ARENA_INGAME = live_game(
@@ -173,7 +173,7 @@ ARENA_INGAME = live_game(
     [live_player("Nami", "Nami", "ORDER", 9, [], 0, 1, 3, 0)],
     [live_player("Vayne", "Vayne", "CHAOS", 9, [item(3153, "Blade of The Ruined King", 0, 3200)], 2, 2, 0, 0),
      live_player("Leona", "Leona", "CHAOS", 9, [], 0, 2, 2, 0)],
-    active_player("Galio Fan", 9, 400.0, 5, 1, 3, 1, "Darius"),
+    active_player("Galio Fan", 9, 400.0, 5, 1, 2, 1, "Darius"),
 )
 
 EOG = {
@@ -200,12 +200,15 @@ COMMON = {
 }
 
 
-def scenario(name, desc, phase, session, extra):
+def scenario(name, desc, phase, session, extra, augment_offer=None):
     routes = dict(COMMON)
     routes["GET /lol-gameflow/v1/gameflow-phase"] = phase
     routes["GET /lol-gameflow/v1/session"] = session
     routes.update(extra)
-    return {"name": name, "description": desc, "routes": routes}
+    out = {"name": name, "description": desc, "routes": routes}
+    if augment_offer:
+        out["augmentOffer"] = augment_offer
+    return out
 
 
 def aram_select():
@@ -237,10 +240,12 @@ def main():
                  {"GET /lol-champ-select/v1/session": aram_select()}),
         scenario("mayhem", "ARAM: Mayhem in progress, Lux vs an AP-heavy team", "InProgress",
                  gameflow_session(2400, "KIWI", 12, "InProgress", False, desc="ARAM: Mayhem"),
-                 {"GET /liveclientdata/allgamedata": MAYHEM_INGAME}),
+                 {"GET /liveclientdata/allgamedata": MAYHEM_INGAME},
+                 augment_offer=["Archmage", "Blunt Forse", "Celestial B0dy"]),
         scenario("arena", "Arena (CHERRY) in progress, Darius + Nami duo", "InProgress",
                  gameflow_session(1700, "CHERRY", 30, "InProgress", False, desc="Arena"),
-                 {"GET /liveclientdata/allgamedata": ARENA_INGAME}),
+                 {"GET /liveclientdata/allgamedata": ARENA_INGAME},
+                 augment_offer=["Adamant", "Critical Rhythm", "Big Dragon Energy"]),
         scenario("postgame", "Ranked game finished, end-of-game stats available", "EndOfGame",
                  dict(ranked, phase="EndOfGame"), {"GET /lol-end-of-game/v1/eog-stats-block": EOG}),
     ]

@@ -57,6 +57,9 @@ SHARDS = {
     5013: ("Tenacity and Slow Resist", "Direnç ve Yavaşlatma Direnci"),
 }
 SHARD_ROWS = [[5008, 5005, 5007], [5008, 5010, 5001], [5011, 5013, 5001]]
+SHARD_ICONS = {5008: "statmodsadaptiveforceicon.png", 5005: "statmodsattackspeedicon.png", 5007: "statmodscdrscalingicon.png",
+               5010: "statmodsmovementspeedicon.png", 5001: "statmodshealthplusicon.png", 5011: "statmodshealthscalingicon.png",
+               5013: "statmodstenacityicon.png"}
 
 
 def log(*a):
@@ -271,7 +274,7 @@ def build_runes(runes_en, runes_tr):
             "slots": [[{"id": r["id"], "key": r["key"], "name": r["name"], "nameTR": tr_by_id.get(r["id"], r["name"]),
                         "icon": r["icon"]} for r in slot["runes"]] for slot in st["slots"]],
         })
-    shards = [{"id": i, "name": n, "nameTR": t} for i, (n, t) in SHARDS.items()]
+    shards = [{"id": i, "name": n, "nameTR": t, "icon": SHARD_ICONS[i]} for i, (n, t) in SHARDS.items()]
     return {"styles": styles, "shards": shards, "shardRows": SHARD_ROWS}
 
 
@@ -572,6 +575,17 @@ def main():
     dump(out_dir / "augments.json", augments)
     allj = {"schema": SCHEMA, "patch": patch, "generatedAt": now, "champions": index, "details": details,
             "items": items_list, "runes": runes, "summoners": summoners, "augments": augments}
+    # Keep the timestamp stable when nothing changed, so scheduled rebuilds don't create empty commits.
+    previous = out_dir / "all.json"
+    if previous.exists():
+        try:
+            old = json.loads(previous.read_text(encoding="utf-8"))
+            old_ts = old.pop("generatedAt", None)
+            if old_ts and old == {k: v for k, v in json.loads(json.dumps(allj, ensure_ascii=False)).items() if k != "generatedAt"}:
+                now = old_ts
+                allj["generatedAt"] = old_ts
+        except (ValueError, OSError):
+            pass
     dump(out_dir / "all.json", allj)
     manifest = {"schema": SCHEMA, "latest": patch, "generatedAt": now, "champions": len(index),
                 "files": {"all": f"{patch}/all.json"}}

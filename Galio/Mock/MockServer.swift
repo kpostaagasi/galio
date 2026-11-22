@@ -7,6 +7,8 @@ struct MockScenario {
     let name: String
     let description: String
     var routes: [String: Any]
+    /// Simulated OCR text of an augment offer (lets the smoke test show the tier flow without a screen).
+    var augmentOffer: [String] = []
 
     static let available = ["champselect", "champselect-locked", "ingame", "aram", "mayhem", "arena", "postgame"]
 
@@ -23,6 +25,7 @@ struct MockScenario {
         name = obj["name"] as? String ?? "custom"
         description = obj["description"] as? String ?? ""
         self.routes = routes
+        augmentOffer = obj["augmentOffer"] as? [String] ?? []
     }
 
     static func load(named name: String, bundle: Bundle = .main) -> MockScenario? {

@@ -2,14 +2,14 @@
  "activePlayer": {
   "abilities": {
    "E": {
-    "abilityLevel": 3,
+    "abilityLevel": 5,
     "displayName": "E"
    },
    "Passive": {
     "displayName": "Passive"
    },
    "Q": {
-    "abilityLevel": 5,
+    "abilityLevel": 3,
     "displayName": "Q"
    },
    "R": {
@@ -17,7 +17,7 @@
     "displayName": "R"
    },
    "W": {
-    "abilityLevel": 2,
+    "abilityLevel": 1,
     "displayName": "W"
    }
   },

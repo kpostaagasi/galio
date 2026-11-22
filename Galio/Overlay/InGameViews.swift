@@ -98,6 +98,7 @@ struct ItemSuggestionRow: View {
 
 /// Augment helper: OCR scan of the three offered cards + manual search, with S–D tiers only.
 struct AugmentPanel: View {
+    @EnvironmentObject private var session: GameSession
     let ratings: [AugmentRating]
     let champion: ChampionInfo?
     var compact = false
@@ -140,12 +141,21 @@ struct AugmentPanel: View {
                 .textFieldStyle(.roundedBorder)
                 .controlSize(.small)
             ForEach(searchResults) { r in AugmentRow(rating: r, compact: compact) }
-            if !compact && query.isEmpty && scanned.isEmpty {
+            if query.isEmpty && scanned.isEmpty {
                 Text("En uyumlu güçlendirmeler").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
-                ForEach(ratings.prefix(8)) { r in AugmentRow(rating: r, compact: false) }
+                ForEach(ratings.prefix(compact ? 3 : 8)) { r in AugmentRow(rating: r, compact: compact) }
             }
             Text("Yalnızca seviye gösterilir; kazanma oranı gösterilmez.").font(.caption2).foregroundStyle(.tertiary)
         }
+        .onAppear(perform: applyMockOffer)
+    }
+
+    /// In mock scenarios, feed simulated OCR lines through the same fuzzy matcher as a real scan.
+    private func applyMockOffer() {
+        guard scanned.isEmpty, !session.mockAugmentOffer.isEmpty else { return }
+        let matches = FuzzyMatcher.match(lines: session.mockAugmentOffer, augments: ratings.map(\.augment))
+        scanned = matches.compactMap { byId[$0.augment.id] }
+        if !scanned.isEmpty { status = Loc.tr("Deneme modu: kartlar simüle edildi") }
     }
 
     private func scan() {

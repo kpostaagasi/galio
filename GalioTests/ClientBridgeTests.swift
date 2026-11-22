@@ -120,7 +120,7 @@ final class ClientBridgeTests: XCTestCase {
         XCTAssertEqual(live.allies.count, 4)
         XCTAssertEqual(live.enemies.count, 5)
         XCTAssertEqual(live.activePlayer?.level, 9)
-        XCTAssertEqual(live.activePlayer?.abilityLevel("Q"), 5)
+        XCTAssertEqual(live.activePlayer?.abilityLevel("Q"), 4)
         XCTAssertEqual(live.mode.family, .summonersRift)
         XCTAssertEqual(me.itemIds.first, 1056)
         XCTAssertEqual(me.scores.creepScore, 98)

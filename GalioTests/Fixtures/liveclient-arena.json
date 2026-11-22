@@ -2,7 +2,7 @@
  "activePlayer": {
   "abilities": {
    "E": {
-    "abilityLevel": 3,
+    "abilityLevel": 2,
     "displayName": "E"
    },
    "Passive": {

@@ -155,6 +155,7 @@ struct RuneShard: Decodable, Identifiable {
     let id: Int
     let name: String
     let nameTR: String
+    let icon: String?
 
     var displayName: String { Loc.pick(tr: nameTR, en: name) }
 }

@@ -216,6 +216,9 @@ enum DDragon {
     static func spellIcon(_ file: String, patch: String) -> URL { base.appendingPathComponent("cdn/\(patch)/img/spell/\(file)") }
     static func passiveIcon(_ file: String, patch: String) -> URL { base.appendingPathComponent("cdn/\(patch)/img/passive/\(file)") }
     static func runeIcon(_ path: String) -> URL { base.appendingPathComponent("cdn/img/\(path)") }
+    static func shardIcon(_ file: String) -> URL? {
+        URL(string: "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/statmods/\(file)")
+    }
     static func augmentIcon(_ path: String) -> URL? {
         guard !path.isEmpty else { return nil }
         return URL(string: "https://raw.communitydragon.org/latest/game/\(path)")

@@ -474,6 +474,17 @@
         }
       }
     },
+    "Deneme modu: kartlar simüle edildi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo mode: cards simulated"
+          }
+        }
+      }
+    },
     "Dereceli Esnek": {
       "extractionState": "manual",
       "localizations": {

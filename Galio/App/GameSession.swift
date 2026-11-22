@@ -35,6 +35,8 @@ final class GameSession: ObservableObject {
     private var loopTask: Task<Void, Never>?
     private var mockServer: MockServer?
     private(set) var mockScenarioName: String?
+    /// Simulated OCR lines for the augment panel in mock scenarios.
+    private(set) var mockAugmentOffer: [String] = []
     private var lastChampSelectFetch = Date.distantPast
 
     /// Called on every phase change (overlay auto-show, history capture).
@@ -96,6 +98,7 @@ final class GameSession: ObservableObject {
         }
         mockServer = server
         mockScenarioName = scenario.name
+        mockAugmentOffer = scenario.augmentOffer
         lcu = LCUClient(endpoint: LCUEndpoint(baseURL: server.baseURL, authorization: nil))
         liveClient = LiveClient(baseURL: server.baseURL)
         connection = .mock(scenario.name)
