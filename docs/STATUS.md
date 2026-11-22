@@ -9,9 +9,9 @@ Updated by the build agent after every milestone. CI = GitHub Actions `build` wo
 | M0 Scaffold | done (v0.1.0) | run 45044437278 |
 | M1 Phase detection | done (v0.2.0) | run 45049828794 green (48 tests), tag run 45050324977; screenshots `champselect.png`, `ingame.png`, `aram.png`, `mayhem.png`, `arena.png`, `postgame.png` in artifact `Galio-0cb47f0…` |
 | M2 Champion select | done (v0.3.0) | run 45050587662 green, 58 tests; screenshots `champselect.png` (suggestions with reasons), `champselect-locked.png` (rune pages + Import, spells + Set, skill order), `aram.png` (bench swap suggestions) |
-| M3 In game | done (v0.4.0) | same code as run 45050587662 (ItemAdvisor/AugmentAdvisor/FuzzyMatcher tests); screenshots `ingame.png` (next skill + items vs AD/healing team), `mayhem.png` / `arena.png` (simulated OCR offer with S–D tiers) |
-| M4 Data pipeline | in progress | `tools/build_data.py`, `tools/aggregate_matches.py`, `data/16.23.1/` |
-| M5 Post game + polish | in progress | |
+| M3 In game | done (v0.4.0) | run 45051005334 green; same code as run 45050587662 (ItemAdvisor/AugmentAdvisor/FuzzyMatcher tests); screenshots `ingame.png` (next skill + items vs AD/healing team), `mayhem.png` / `arena.png` (simulated OCR offer with S–D tiers) |
+| M4 Data pipeline | done (v0.5.0) | `tools/build_data.py` (173 champions, 586 items, 344 augments, 0 warnings for 16.23.1), `tools/aggregate_matches.py` (Match-v5, needs key), `tools/update_data.sh`, weekly `data.yml` workflow, `tools/test_pipeline.py` (8 tests, run in CI), app fetches raw GitHub data with cache + bundled fallback; see docs/DATA.md |
+| M5 Post game + polish | in progress | post-game summary + history, onboarding, abilities from DDragon, app icon, user guide |
 
 ## What exists
 

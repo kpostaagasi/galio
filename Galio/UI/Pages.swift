@@ -1,11 +1,5 @@
 import SwiftUI
 
-struct PostGamePage: View {
-    var body: some View {
-        Card { PostGameOverlay() }
-    }
-}
-
 /// Champion browser: search, then a static page (runes, spells, skill order, items) per role.
 struct ChampionsView: View {
     @EnvironmentObject private var store: DataStore
@@ -84,6 +78,7 @@ struct ChampionDetailView: View {
                 .onAppear { if buildKey.isEmpty { buildKey = keys.first ?? "" } }
                 let key = buildKey.isEmpty ? (keys.first ?? "ARAM") : buildKey
                 ChampionBuildSections(advice: AdviceBuilder.championPage(champion, key: key, store: store), champion: champion, showActions: false)
+                AbilitiesCard(champion: champion)
                 if let detail = store.detail(for: champion) {
                     Text(Loc.tr("Kaynak: %@ · yama %@", detail.source, detail.patch)).font(.caption2).foregroundStyle(.tertiary)
                 }
@@ -104,9 +99,60 @@ struct ChampionDetailView: View {
     }
 }
 
-struct HistoryView: View {
+
+/// Ability names and descriptions from the champion's Data Dragon file (localized, cached per patch).
+struct AbilitiesCard: View {
+    @EnvironmentObject private var store: DataStore
+    let champion: ChampionInfo
+    @State private var dd: DDChampion?
+    @State private var failed = false
+
     var body: some View {
-        ContentUnavailableView("Henüz oyun yok", systemImage: "clock",
-                               description: Text("Bitirdiğin oyunların özetleri burada listelenecek."))
+        Card {
+            Text("Yetenekler").font(.title3.bold())
+            if let dd {
+                AbilityRow(key: Loc.tr("Pasif"), name: dd.passive.name, text: dd.passive.description,
+                           icon: DDragon.passiveIcon(dd.passive.image.full, patch: store.imagePatch))
+                ForEach(Array(zip(["Q", "W", "E", "R"], dd.spells)), id: \.0) { key, spell in
+                    AbilityRow(key: key, name: spell.name, text: spell.description,
+                               icon: DDragon.spellIcon(spell.image.full, patch: store.imagePatch))
+                }
+            } else if failed {
+                Text("Yetenek bilgisi yüklenemedi (çevrimdışı olabilirsin).").font(.caption).foregroundStyle(.secondary)
+            } else {
+                ProgressView().controlSize(.small)
+            }
+        }
+        .task(id: champion.id) {
+            do {
+                dd = try await DDragon.champion(id: champion.id, patch: store.imagePatch)
+                failed = dd == nil
+            } catch {
+                failed = true
+            }
+        }
+    }
+}
+
+struct AbilityRow: View {
+    let key: String
+    let name: String
+    let text: String
+    let icon: URL
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 10) {
+            CachedImage(url: icon, size: 32, cornerRadius: 6)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(verbatim: "\(key) · \(name)").font(.headline)
+                Text(Self.plain(text)).font(.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .accessibilityElement(children: .combine)
+    }
+
+    static func plain(_ html: String) -> String {
+        html.replacingOccurrences(of: "<br>", with: " ")
+            .replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression)
     }
 }

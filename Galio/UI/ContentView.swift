@@ -27,6 +27,8 @@ struct ContentView: View {
     @EnvironmentObject private var session: GameSession
     @EnvironmentObject private var store: DataStore
     @State private var selection: SidebarItem? = .live
+    @AppStorage("onboardingDone") private var onboardingDone = false
+    @State private var showOnboarding = false
 
     var body: some View {
         NavigationSplitView {
@@ -46,6 +48,10 @@ struct ContentView: View {
             case .history: HistoryView()
             case .about: AboutView()
             }
+        }
+        .sheet(isPresented: $showOnboarding) { OnboardingView() }
+        .onAppear {
+            if !onboardingDone && MockLaunch.scenarioName == nil { showOnboarding = true }
         }
     }
 }

@@ -28,6 +28,10 @@ final class GameSession: ObservableObject {
     @Published private(set) var endOfGame: EndOfGameStats?
     @Published private(set) var websocketActive = false
     @Published private(set) var lastError: String?
+    /// Position from champ select / live data, kept for the post-game summary.
+    @Published private(set) var lastPosition: Position?
+    /// History record created for the game that just ended.
+    @Published private(set) var lastRecord: GameRecord?
 
     private(set) var lcu: LCUClient?
     private var liveClient = LiveClient()
@@ -179,6 +183,9 @@ final class GameSession: ObservableObject {
             if newPhase == .lobby, let lcu { mode = try? await lcu.gameflowSession().mode }
         case .champSelect:
             endOfGame = nil
+            lastRecord = nil
+            lastLive = nil
+            lastPosition = nil
             if let lcu { mode = try? await lcu.gameflowSession().mode }
             await refreshChampSelect()
             if let lcu, let ids = try? await lcu.pickableChampionIds() { pickableChampionIds = Set(ids) }
@@ -192,6 +199,7 @@ final class GameSession: ObservableObject {
             live = nil
             champSelect = nil
             if let lcu, let eog = try? await lcu.endOfGameStats(), eog.localPlayer != nil { endOfGame = eog }
+            recordHistory()
         default:
             break
         }
@@ -203,6 +211,7 @@ final class GameSession: ObservableObject {
         lastChampSelectFetch = Date()
         if let session = try? await lcu.champSelectSession() {
             champSelect = session
+            if let pos = session.myPosition { lastPosition = pos }
         }
     }
 
@@ -211,6 +220,7 @@ final class GameSession: ObservableObject {
             let data = try await liveClient.allGameData()
             live = data
             lastLive = data
+            if lastPosition == nil, let pos = Position(lcu: data.me?.position) { lastPosition = pos }
             if mode == nil || mode?.family == .other { mode = data.mode }
         } catch {
             // Loading screen: the API answers 404 until the game has started.
@@ -220,7 +230,22 @@ final class GameSession: ObservableObject {
     /// Refetches the end-of-game block (used by the post-game view's retry button).
     func refreshEndOfGame() async {
         guard let lcu else { return }
-        if let eog = try? await lcu.endOfGameStats(), eog.localPlayer != nil { endOfGame = eog }
+        if let eog = try? await lcu.endOfGameStats(), eog.localPlayer != nil {
+            endOfGame = eog
+            recordHistory()
+        }
+    }
+
+    /// Saves (or updates) the finished game in the local history.
+    func recordHistory() {
+        guard let record = HistoryStore.makeRecord(eog: endOfGame, live: lastLive, mode: mode, position: lastPosition,
+                                                   store: DataStore.shared) else { return }
+        let history = HistoryStore.shared
+        if let previous = lastRecord, previous.id != record.id, previous.date.timeIntervalSinceNow > -3600 {
+            history.delete([previous.id])
+        }
+        history.upsert(record)
+        lastRecord = record
     }
 
     // MARK: - WebSocket events
@@ -237,6 +262,7 @@ final class GameSession: ObservableObject {
                 champSelect = nil
             } else if let data = event.data, let session = try? JSONDecoder().decode(ChampSelectSession.self, from: data) {
                 champSelect = session
+                if let pos = session.myPosition { lastPosition = pos }
                 lastChampSelectFetch = Date()
             }
         case "/lol-gameflow/v1/session":

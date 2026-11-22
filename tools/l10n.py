@@ -21,7 +21,7 @@ PATTERNS = [
     re.compile(r'\b(?:Text|Button|Label|Toggle|Section|Picker|TextField|LabeledContent|Menu|GroupBox|Link|ContentUnavailableView|SecureField|Tab)\(\s*' + LIT),
     re.compile(r'\.(?:help|navigationTitle|accessibilityLabel|accessibilityHint|accessibilityValue|searchable\(text:[^,]+,\s*prompt)\(\s*' + LIT),
     re.compile(r'\bLoc\.tr\(\s*' + LIT),
-    re.compile(r'\b(?:titleKey|labelKey|prompt):\s*(?:Text\()?' + LIT),
+    re.compile(r'\b(?:titleKey|labelKey|prompt|title|text):\s*(?:Text\()?' + LIT),
     re.compile(r'\bdescription:\s*Text\(\s*' + LIT),
     re.compile(r'confirmationDialog\(\s*' + LIT),
     re.compile(r'\.alert\(\s*' + LIT),

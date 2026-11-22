@@ -52,9 +52,12 @@ struct PostGameOverlay: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             ChampionChip(champion: session.myChampion(in: store), size: 32)
-            if let me = session.lastLive?.me {
-                Text(Loc.tr("%@/%@/%@ · %@ CS", String(me.scores.kills), String(me.scores.deaths), String(me.scores.assists), String(me.scores.creepScore)))
+            if let r = session.lastRecord {
+                Text(Loc.tr("%@/%@/%@ · %@ CS", String(r.kills), String(r.deaths), String(r.assists), String(r.creepScore)))
                     .font(.callout.monospacedDigit())
+                if let note = PostGameReview.notes(for: r).first {
+                    ReasonList(reasons: [note], limit: 1)
+                }
             }
             Text("Ayrıntılı oyun sonu özeti ana pencerede.").font(.caption).foregroundStyle(.secondary)
         }

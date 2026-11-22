@@ -7,6 +7,7 @@ struct GalioApp: App {
     @StateObject private var store = DataStore.shared
     @StateObject private var overlay = OverlayController.shared
     @StateObject private var actions = ActionCenter.shared
+    @StateObject private var history = HistoryStore.shared
 
     var body: some Scene {
         WindowGroup("Galio", id: "main") {
@@ -15,6 +16,7 @@ struct GalioApp: App {
                 .environmentObject(store)
                 .environmentObject(overlay)
                 .environmentObject(actions)
+                .environmentObject(history)
                 .frame(minWidth: 860, minHeight: 580)
         }
         .commands {
