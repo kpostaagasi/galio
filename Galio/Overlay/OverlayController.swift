@@ -37,6 +37,8 @@ final class OverlayController: ObservableObject {
     private var anchor: NSPoint?
     private var anchorSize: NSSize = .zero
     private var fitTimer: Timer?
+    /// Ideal size of the SwiftUI content (fixed width, natural height).
+    private var measure: (() -> CGSize)?
     private var reanchoring = false
 
     static let frameName = "GalioOverlayPanel.v2"
@@ -66,6 +68,7 @@ final class OverlayController: ObservableObject {
         let host = NSHostingController(rootView: root)
         host.sizingOptions = []   // the panel is sized explicitly from the content's fitting size (fitToContent)
         panel.contentViewController = host
+        measure = { [weak host] in host?.sizeThatFits(in: CGSize(width: 2000, height: 4000)) ?? .zero }
         // Without automatic sizing the hosting view would start at 0×0 (and SwiftUI would never lay
         // out or report its size); start from a sensible size that contentSizeChanged then adjusts.
         panel.setContentSize(NSSize(width: Self.compactWidth, height: 160))
@@ -92,8 +95,8 @@ final class OverlayController: ObservableObject {
     }
 
     private func fitToContent() {
-        guard let panel, panel.isVisible, let view = panel.contentView else { return }
-        contentSizeChanged(view.fittingSize)
+        guard let panel, panel.isVisible, let size = measure?() else { return }
+        contentSizeChanged(size)
     }
 
     private func panelMoved() {
@@ -104,7 +107,7 @@ final class OverlayController: ObservableObject {
 
     /// Resizes the panel to the content size, keeping the top-left corner (and the panel on screen).
     private func contentSizeChanged(_ size: CGSize) {
-        guard let panel, size.width > 1, size.height > 1 else { return }
+        guard let panel, size.width > 1, size.height > 1, size.width < 2000, size.height < 4000 else { return }
         let w = ceil(size.width), h = ceil(size.height)
         var top = anchor ?? NSPoint(x: panel.frame.minX, y: panel.frame.maxY)
         if let visible = (panel.screen ?? NSScreen.main)?.visibleFrame {
@@ -140,7 +143,7 @@ final class OverlayController: ObservableObject {
 
     func show() {
         setup()
-        if let view = panel?.contentView { contentSizeChanged(view.fittingSize) }
+        if let size = measure?() { contentSizeChanged(size) }
         panel?.orderFrontRegardless()
         isVisible = true
     }

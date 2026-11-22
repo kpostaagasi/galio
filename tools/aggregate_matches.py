@@ -30,6 +30,7 @@ import collections
 import json
 import os
 import pathlib
+import random
 import re
 import sys
 import threading
@@ -462,7 +463,9 @@ def player_puuids(riot: Riot, platform: str, per_tier: int):
             entries = sorted(league.get("entries", []), key=lambda e: -e.get("leaguePoints", 0))
         else:
             entries = riot.get(f"{plat}/lol/league-exp/v4/entries/RANKED_SOLO_5x5/{tier}/{div}?page=1") or []
-        got = [e["puuid"] for e in entries if e.get("puuid")][:per_tier]
+        got = [e["puuid"] for e in entries if e.get("puuid")]
+        random.shuffle(got)  # a different slice of each tier on every run (repeat runs find new matches)
+        got = got[:per_tier]
         log(f"{platform} {tier} {div or ''}: {len(got)} players")
         yield from got
 
