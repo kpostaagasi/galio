@@ -1,5 +1,11 @@
 import SwiftUI
 
+/// Size of the overlay content, reported to the panel controller (which resizes the panel).
+struct OverlaySizeKey: PreferenceKey {
+    static let defaultValue: CGSize = .zero
+    static func reduce(value: inout CGSize, nextValue: () -> CGSize) { value = nextValue() }
+}
+
 /// Root view of the floating overlay. Content follows the game flow.
 struct OverlayView: View {
     @EnvironmentObject private var session: GameSession
@@ -19,6 +25,12 @@ struct OverlayView: View {
         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 14))
         .overlay(RoundedRectangle(cornerRadius: 14).strokeBorder(Color.primary.opacity(0.08)))
         .environment(\.colorScheme, .dark)
+        .fixedSize(horizontal: false, vertical: true)
+        .background(GeometryReader { g in Color.clear.preference(key: OverlaySizeKey.self, value: g.size) })
+        .onPreferenceChange(OverlaySizeKey.self) { size in
+            Task { @MainActor in OverlayController.shared.contentSizeChanged(size) }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
 
     private var header: some View {

@@ -36,6 +36,7 @@ final class OverlayController: ObservableObject {
     /// Top-left corner the panel sticks to while its SwiftUI content changes height.
     private var anchor: NSPoint?
     private var anchorSize: NSSize = .zero
+    private var contentSize: CGSize = .zero
     private var reanchoring = false
 
     static let frameName = "GalioOverlayPanel.v2"
@@ -63,7 +64,7 @@ final class OverlayController: ObservableObject {
             .environmentObject(self)
             .environmentObject(ActionCenter.shared)
         let host = NSHostingController(rootView: root)
-        host.sizingOptions = [.preferredContentSize]
+        host.sizingOptions = []   // the panel is sized explicitly from the content size (contentSizeChanged)
         panel.contentViewController = host
         // Position is remembered (frame autosave); the size follows the collapsed/expanded state,
         // which is remembered too. Default: top-right corner, away from the main window's content.
@@ -74,13 +75,10 @@ final class OverlayController: ObservableObject {
         panel.setFrameAutosaveName(Self.frameName)
         anchor = NSPoint(x: panel.frame.minX, y: panel.frame.maxY)
         anchorSize = panel.frame.size
-        // AppKit keeps the bottom-left corner when the content resizes the panel; re-pin the top-left
-        // corner instead (and follow it when the user drags the panel).
+        // The content reports its size (OverlayView -> contentSizeChanged) and the panel is resized
+        // around a fixed top-left corner; a drag by the user moves that corner.
         NotificationCenter.default.addObserver(forName: NSWindow.didMoveNotification, object: panel, queue: .main) { [weak self] _ in
             MainActor.assumeIsolated { self?.panelMoved() }
-        }
-        NotificationCenter.default.addObserver(forName: NSWindow.didResizeNotification, object: panel, queue: .main) { [weak self] _ in
-            MainActor.assumeIsolated { self?.panelResized() }
         }
         self.panel = panel
         applySettings()
@@ -88,24 +86,28 @@ final class OverlayController: ObservableObject {
     }
 
     private func panelMoved() {
-        // Only a pure move (same size) is the user dragging; size changes are handled in panelResized.
+        // Only a pure move (same size) is the user dragging; size changes come from contentSizeChanged.
         guard let panel, !reanchoring, panel.frame.size == anchorSize else { return }
         anchor = NSPoint(x: panel.frame.minX, y: panel.frame.maxY)
     }
 
-    private func panelResized() {
-        guard let panel, let anchor, !reanchoring else { return }
-        anchorSize = panel.frame.size
-        var top = anchor
+    /// Called by OverlayView whenever its SwiftUI content changes size.
+    func contentSizeChanged(_ size: CGSize) {
+        if size.width > 1, size.height > 1 { contentSize = size }
+        guard let panel, size.width > 1, size.height > 1 else { return }
+        let w = ceil(size.width), h = ceil(size.height)
+        var top = anchor ?? NSPoint(x: panel.frame.minX, y: panel.frame.maxY)
         if let visible = (panel.screen ?? NSScreen.main)?.visibleFrame {
-            top.x = min(max(top.x, visible.minX), max(visible.minX, visible.maxX - panel.frame.width))
+            top.x = min(max(top.x, visible.minX), max(visible.minX, visible.maxX - w))
             top.y = min(top.y, visible.maxY)
-            if top.y - panel.frame.height < visible.minY { top.y = min(visible.maxY, visible.minY + panel.frame.height) }
+            if top.y - h < visible.minY { top.y = min(visible.maxY, visible.minY + h) }
         }
-        guard abs(panel.frame.maxY - top.y) > 0.5 || abs(panel.frame.minX - top.x) > 0.5 else { return }
+        let target = NSRect(x: top.x, y: top.y - h, width: w, height: h)
+        guard target != panel.frame else { return }
         reanchoring = true
-        panel.setFrameTopLeftPoint(top)
+        panel.setFrame(target, display: true)
         reanchoring = false
+        anchorSize = panel.frame.size
     }
 
     func applySettings() {
@@ -128,6 +130,7 @@ final class OverlayController: ObservableObject {
 
     func show() {
         setup()
+        if contentSize != .zero { contentSizeChanged(contentSize) }
         panel?.orderFrontRegardless()
         isVisible = true
     }

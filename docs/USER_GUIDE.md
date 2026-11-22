@@ -9,12 +9,15 @@ Galio, macOS için League of Legends yardımcısıdır. Oyunun her aşamasında 
 
 ## Oyun içi katman
 - League'i **Kenarlıksız** veya **Pencere** modunda çalıştır (tam ekran modunda macOS diğer pencereleri gizler).
-- Katmanı **⌥⇧G** ile göster/gizle. Sürükleyerek taşı.
+- Katmanı **⌥⇧G** ile göster/gizle. Sürükleyerek taşı; konumu ve sade/ayrıntılı görünüm tercihi hatırlanır.
+- Varsayılan **sade görünüm** yalnızca özü gösterir (sıradaki yetenek, nedenleriyle ilk 3 eşya, gerektiğinde güçlendirme seviyeleri). Başlıktaki düğmeyle **ayrıntılı görünüme** geç (rakip takım, alınabilecek parçalar, güçlendirme arama).
+- Katman oyun sonunda ve League istemcisi kapandığında kendiliğinden gizlenir; oyun sonu özeti ana penceredir.
 - Ayarlar → Katman: saydamlık, tıklama geçirgenliği (fare oyuna gider), oyun akışına göre otomatik gösterme.
 
 ## Şampiyon seçimi
 - Seçim yapmadan önce rolüne göre **3–5 öneri** ve nedenleri (takımın hasar dengesi, ön saf, savaş başlatma, koruma, görünen rakip şampiyonlar, kendi ustalığın).
 - ARAM'da yedek kulübesindeki şampiyonlar için **takas önerileri**.
+- Yeterli örnek varsa (en az 20 oyun) rün sayfası, büyüler, temel eşyalar ve yetenek sırası gerçek dereceli oyunlardan gelir ve "örneklenen N oyunda en popüler" diye etiketlenir; yoksa kural tabanlı veriler kullanılır.
 - Kilitledikten sonra: **rün sayfaları** (2–3 seçenek) → **Aktar** ile tek tıkla istemciye; sayfa sınırın doluysa hangi sayfanın yerine yazılacağı sorulur.
 - **Sihirdar büyüleri** → **Ayarla** (Sıçra tuşun değişmez), **yetenek sırası** ve **eşyalar** → "Eşya setini istemciye yaz".
 
@@ -24,7 +27,8 @@ Galio, macOS için League of Legends yardımcısıdır. Oyunun her aşamasında 
 - **ARAM: Mayhem / Arena**: güçlendirmeler için S–D seviyeleri. "Kartları tara" ekrandaki üç kartı cihaz üzerinde okur; ya da adını yazarak ara. Kazanma oranı hiçbir zaman gösterilmez.
 
 ## Oyun sonu ve geçmiş
-- KDA, dakika başı minyon, hasar, altın, görüş, süre; planlanan temel eşyalarla karşılaştırma ve kısa notlar.
+- KDA, dakika başı minyon, hasar, altın, görüş, süre; planlanan temel eşyalarla karşılaştırma.
+- Notlar sayılara dayanır: kendi değerlerin, aynı şampiyon ve rolde örneklenen dereceli oyunların ortalamasıyla (ör. "Dakikada 6,2 minyon; örneklenen 240 oyunun ortalaması 7,4") ve eksik kalan planlı eşyalarla karşılaştırılır.
 - Tüm oyunlar **Geçmiş** bölümünde saklanır (yalnızca bu Mac'te).
 
 ## Ayarlar
