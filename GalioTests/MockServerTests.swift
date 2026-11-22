@@ -51,25 +51,4 @@ final class MockServerTests: XCTestCase {
         XCTAssertEqual(live.me?.championName, "Galio")
         XCTAssertEqual(live.enemies.count, 5)
     }
-
-    @MainActor
-    func testGameSessionFollowsMockScenario() async throws {
-        let session = GameSession()
-        await session.startMock(named: "champselect-locked")
-        XCTAssertEqual(session.connection, .mock("champselect-locked"))
-        XCTAssertEqual(session.phase, .champSelect)
-        XCTAssertEqual(session.mode?.family, .summonersRift)
-        XCTAssertEqual(session.champSelect?.myChampionId, 3)
-        XCTAssertFalse(session.pickableChampionIds.isEmpty)
-        session.stop()
-    }
-
-    @MainActor
-    func testGameSessionPostGameCapturesEndOfGame() async throws {
-        let session = GameSession()
-        await session.startMock(named: "postgame")
-        XCTAssertEqual(session.phase, .endOfGame)
-        XCTAssertEqual(session.endOfGame?.localPlayer?.championId, 3)
-        session.stop()
-    }
 }

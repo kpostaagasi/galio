@@ -6,6 +6,7 @@ struct GalioApp: App {
     @StateObject private var session = GameSession.shared
     @StateObject private var store = DataStore.shared
     @StateObject private var overlay = OverlayController.shared
+    @StateObject private var actions = ActionCenter.shared
 
     var body: some Scene {
         WindowGroup("Galio", id: "main") {
@@ -13,7 +14,8 @@ struct GalioApp: App {
                 .environmentObject(session)
                 .environmentObject(store)
                 .environmentObject(overlay)
-                .frame(minWidth: 780, minHeight: 540)
+                .environmentObject(actions)
+                .frame(minWidth: 860, minHeight: 580)
         }
         .commands {
             CommandGroup(after: .windowArrangement) {
@@ -44,6 +46,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         MainActor.assumeIsolated {
             let store = DataStore.shared
             store.loadInitial()
+            // Unit tests use the app as host: keep it passive (no polling, no panels).
+            if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil { return }
             let session = GameSession.shared
             let overlay = OverlayController.shared
             overlay.setup()
