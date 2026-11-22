@@ -36,7 +36,7 @@ final class OverlayController: ObservableObject {
     /// Top-left corner the panel sticks to while its SwiftUI content changes height.
     private var anchor: NSPoint?
     private var anchorSize: NSSize = .zero
-    private var contentSize: CGSize = .zero
+    private var fitTimer: Timer?
     private var reanchoring = false
 
     static let frameName = "GalioOverlayPanel.v2"
@@ -64,7 +64,7 @@ final class OverlayController: ObservableObject {
             .environmentObject(self)
             .environmentObject(ActionCenter.shared)
         let host = NSHostingController(rootView: root)
-        host.sizingOptions = []   // the panel is sized explicitly from the content size (contentSizeChanged)
+        host.sizingOptions = []   // the panel is sized explicitly from the content's fitting size (fitToContent)
         panel.contentViewController = host
         // Without automatic sizing the hosting view would start at 0×0 (and SwiftUI would never lay
         // out or report its size); start from a sensible size that contentSizeChanged then adjusts.
@@ -78,14 +78,22 @@ final class OverlayController: ObservableObject {
         panel.setFrameAutosaveName(Self.frameName)
         anchor = NSPoint(x: panel.frame.minX, y: panel.frame.maxY)
         anchorSize = panel.frame.size
-        // The content reports its size (OverlayView -> contentSizeChanged) and the panel is resized
-        // around a fixed top-left corner; a drag by the user moves that corner.
+        // The panel follows the content's fitting size around a fixed top-left corner (checked a few
+        // times per second while visible); a drag by the user moves that corner.
         NotificationCenter.default.addObserver(forName: NSWindow.didMoveNotification, object: panel, queue: .main) { [weak self] _ in
             MainActor.assumeIsolated { self?.panelMoved() }
         }
         self.panel = panel
+        fitTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { [weak self] _ in
+            MainActor.assumeIsolated { self?.fitToContent() }
+        }
         applySettings()
         updateHotKey()
+    }
+
+    private func fitToContent() {
+        guard let panel, panel.isVisible, let view = panel.contentView else { return }
+        contentSizeChanged(view.fittingSize)
     }
 
     private func panelMoved() {
@@ -94,9 +102,8 @@ final class OverlayController: ObservableObject {
         anchor = NSPoint(x: panel.frame.minX, y: panel.frame.maxY)
     }
 
-    /// Called by OverlayView whenever its SwiftUI content changes size.
-    func contentSizeChanged(_ size: CGSize) {
-        if size.width > 1, size.height > 1 { contentSize = size }
+    /// Resizes the panel to the content size, keeping the top-left corner (and the panel on screen).
+    private func contentSizeChanged(_ size: CGSize) {
         guard let panel, size.width > 1, size.height > 1 else { return }
         let w = ceil(size.width), h = ceil(size.height)
         var top = anchor ?? NSPoint(x: panel.frame.minX, y: panel.frame.maxY)
@@ -133,7 +140,7 @@ final class OverlayController: ObservableObject {
 
     func show() {
         setup()
-        if contentSize != .zero { contentSizeChanged(contentSize) }
+        if let view = panel?.contentView { contentSizeChanged(view.fittingSize) }
         panel?.orderFrontRegardless()
         isVisible = true
     }
