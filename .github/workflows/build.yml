@@ -1,0 +1,65 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  macos:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Toolchain
+        run: |
+          xcodebuild -version
+          brew install xcodegen
+          xcodegen generate
+
+      - name: Test
+        run: |
+          set -o pipefail
+          xcodebuild test -project Galio.xcodeproj -scheme Galio -destination 'platform=macOS' -derivedDataPath build | tee test.log | grep -E "Test Suite|Test Case.*(passed|failed)|error:|TEST (SUCCEEDED|FAILED)" || true
+          grep -q "TEST SUCCEEDED" test.log
+
+      - name: Build release app
+        run: |
+          set -o pipefail
+          xcodebuild -project Galio.xcodeproj -scheme Galio -configuration Release -derivedDataPath build ARCHS=arm64 ONLY_ACTIVE_ARCH=NO build | tail -5
+          APP=build/Build/Products/Release/Galio.app
+          codesign --force --deep --sign - "$APP"
+          codesign --verify --verbose=2 "$APP"
+          ditto -c -k --keepParent "$APP" Galio.zip
+          ls -lh Galio.zip
+
+      - name: Launch smoke test + screenshot
+        run: |
+          APP=build/Build/Products/Release/Galio.app
+          open "$APP"
+          sleep 8
+          pgrep -x Galio || { echo "Galio did not stay running"; exit 1; }
+          screencapture -x screenshot.png || echo "screencapture unavailable"
+          pkill -x Galio || true
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Galio-${{ github.sha }}
+          path: |
+            Galio.zip
+            screenshot.png
+            test.log
+          if-no-files-found: warn
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" Galio.zip --title "Galio ${GITHUB_REF_NAME}" --notes-file docs/RELEASE_NOTES.md
