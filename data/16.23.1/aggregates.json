@@ -1,0 +1,1214 @@
+{
+ "Aatrox": {
+  "core": {
+   "JUNGLE": [
+    6699,
+    6610,
+    6333
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Ahri": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Akali": {
+  "core": {
+   "TOP": [
+    3146,
+    4645,
+    3157
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Akshan": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Alistar": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Ambessa": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Anivia": {
+  "skillMax": [
+   "E",
+   "W",
+   "Q"
+  ]
+ },
+ "Annie": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Aphelios": {
+  "core": {
+   "BOTTOM": [
+    6676,
+    3031,
+    3036
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Ashe": {
+  "skillMax": [
+   "W",
+   "Q",
+   "E"
+  ]
+ },
+ "AurelionSol": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Aurora": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Azir": {
+  "skillMax": [
+   "W",
+   "Q",
+   "E"
+  ]
+ },
+ "Bard": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Belveth": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Blitzcrank": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Braum": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Caitlyn": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Camille": {
+  "core": {
+   "TOP": [
+    3078,
+    3074,
+    6333
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Chogath": {
+  "core": {
+   "JUNGLE": [
+    3152,
+    4633,
+    3742
+   ]
+  },
+  "skillMax": [
+   "E",
+   "Q",
+   "W"
+  ]
+ },
+ "Corki": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Darius": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Diana": {
+  "core": {
+   "MIDDLE": [
+    4646,
+    4645,
+    3157
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "DrMundo": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Draven": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Ekko": {
+  "core": {
+   "JUNGLE": [
+    3115,
+    2510,
+    4645
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Evelynn": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Ezreal": {
+  "core": {
+   "BOTTOM": [
+    3078,
+    3004,
+    3161
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Fiora": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Galio": {
+  "core": {
+   "BOTTOM": [
+    4646,
+    4645,
+    3089
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Gangplank": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Garen": {
+  "skillMax": [
+   "E",
+   "Q",
+   "W"
+  ]
+ },
+ "Gnar": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Gragas": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Graves": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Gwen": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Hecarim": {
+  "core": {
+   "JUNGLE": [
+    3161,
+    6333,
+    2517
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Hwei": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Irelia": {
+  "core": {
+   "MIDDLE": [
+    3153,
+    6672,
+    6333
+   ],
+   "TOP": [
+    3153,
+    3181,
+    3091
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Janna": {
+  "core": {
+   "UTILITY": [
+    6617,
+    3107,
+    6621
+   ]
+  },
+  "skillMax": [
+   "E",
+   "W",
+   "Q"
+  ]
+ },
+ "JarvanIV": {
+  "core": {
+   "JUNGLE": [
+    6698,
+    6696,
+    6333
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Jax": {
+  "skillMax": [
+   "W",
+   "E",
+   "Q"
+  ]
+ },
+ "Jayce": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Jhin": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Jinx": {
+  "core": {
+   "BOTTOM": [
+    2523,
+    3085,
+    3031
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "KSante": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Kaisa": {
+  "core": {
+   "BOTTOM": [
+    6672,
+    3124,
+    3115
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Kalista": {
+  "core": {
+   "BOTTOM": [
+    3087,
+    3124,
+    3302
+   ]
+  },
+  "skillMax": [
+   "E",
+   "Q",
+   "W"
+  ]
+ },
+ "Karma": {
+  "core": {
+   "MIDDLE": [
+    3118,
+    2065,
+    4628
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Karthus": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Kassadin": {
+  "core": {
+   "MIDDLE": [
+    6657,
+    3003,
+    3118
+   ]
+  },
+  "skillMax": [
+   "E",
+   "Q",
+   "W"
+  ]
+ },
+ "Katarina": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Kayle": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Kayn": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Kennen": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Khazix": {
+  "core": {
+   "JUNGLE": [
+    3179,
+    6699,
+    6694
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Kindred": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Leblanc": {
+  "skillMax": [
+   "W",
+   "Q",
+   "E"
+  ]
+ },
+ "LeeSin": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Leona": {
+  "skillMax": [
+   "W",
+   "E",
+   "Q"
+  ]
+ },
+ "Lissandra": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Locke": {
+  "core": {
+   "MIDDLE": [
+    3100,
+    4645,
+    3089
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Lucian": {
+  "core": {
+   "BOTTOM": [
+    3508,
+    6675,
+    3031
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Lulu": {
+  "skillMax": [
+   "E",
+   "W",
+   "Q"
+  ]
+ },
+ "Lux": {
+  "skillMax": [
+   "E",
+   "Q",
+   "W"
+  ]
+ },
+ "Malphite": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "MasterYi": {
+  "core": {
+   "JUNGLE": [
+    6672,
+    6676,
+    3036
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Mel": {
+  "core": {
+   "BOTTOM": [
+    3003,
+    4628,
+    4629
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Milio": {
+  "skillMax": [
+   "E",
+   "W",
+   "Q"
+  ]
+ },
+ "MissFortune": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "MonkeyKing": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Mordekaiser": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Naafiri": {
+  "core": {
+   "JUNGLE": [
+    6699,
+    3071,
+    6333
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Nami": {
+  "skillMax": [
+   "W",
+   "E",
+   "Q"
+  ]
+ },
+ "Nautilus": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Neeko": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Nidalee": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Olaf": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Orianna": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Pantheon": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Poppy": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Pyke": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Qiyana": {
+  "core": {
+   "JUNGLE": [
+    6699,
+    2520,
+    3814
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Rakan": {
+  "skillMax": [
+   "W",
+   "E",
+   "Q"
+  ]
+ },
+ "RekSai": {
+  "core": {
+   "JUNGLE": [
+    3142,
+    3814,
+    6333
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Rell": {
+  "skillMax": [
+   "W",
+   "E",
+   "Q"
+  ]
+ },
+ "Renata": {
+  "skillMax": [
+   "E",
+   "W",
+   "Q"
+  ]
+ },
+ "Renekton": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Rengar": {
+  "core": {
+   "JUNGLE": [
+    3179,
+    6698,
+    3036
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Riven": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Ryze": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Samira": {
+  "core": {
+   "BOTTOM": [
+    6676,
+    3031,
+    3036
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Senna": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Seraphine": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Sett": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Shen": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Sion": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Sivir": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Sona": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Soraka": {
+  "skillMax": [
+   "W",
+   "Q",
+   "E"
+  ]
+ },
+ "Swain": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Sylas": {
+  "core": {
+   "JUNGLE": [
+    3152,
+    4633,
+    3157
+   ]
+  },
+  "skillMax": [
+   "W",
+   "E",
+   "Q"
+  ]
+ },
+ "Syndra": {
+  "core": {
+   "MIDDLE": [
+    6655,
+    4645,
+    3089
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Taliyah": {
+  "core": {
+   "JUNGLE": [
+    2503,
+    4645,
+    3157
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Talon": {
+  "skillMax": [
+   "W",
+   "Q",
+   "E"
+  ]
+ },
+ "Thresh": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Tristana": {
+  "core": {
+   "BOTTOM": [
+    3032,
+    3031,
+    6675
+   ]
+  },
+  "skillMax": [
+   "E",
+   "Q",
+   "W"
+  ]
+ },
+ "Tryndamere": {
+  "core": {
+   "TOP": [
+    3074,
+    3032,
+    3031
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "TwistedFate": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Twitch": {
+  "core": {
+   "BOTTOM": [
+    6676,
+    2512,
+    3031
+   ]
+  },
+  "skillMax": [
+   "E",
+   "Q",
+   "W"
+  ]
+ },
+ "Urgot": {
+  "core": {
+   "TOP": [
+    3071,
+    3053,
+    6665
+   ]
+  },
+  "skillMax": [
+   "W",
+   "Q",
+   "E"
+  ]
+ },
+ "Velkoz": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Viego": {
+  "core": {
+   "JUNGLE": [
+    6672,
+    6676,
+    3036
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Viktor": {
+  "core": {
+   "BOTTOM": [
+    2503,
+    3100,
+    3157
+   ],
+   "MIDDLE": [
+    2503,
+    3100,
+    3089
+   ]
+  },
+  "skillMax": [
+   "E",
+   "Q",
+   "W"
+  ]
+ },
+ "Vladimir": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Volibear": {
+  "skillMax": [
+   "W",
+   "Q",
+   "E"
+  ]
+ },
+ "Xayah": {
+  "core": {
+   "BOTTOM": [
+    3095,
+    6675,
+    3036
+   ]
+  },
+  "skillMax": [
+   "E",
+   "W",
+   "Q"
+  ]
+ },
+ "Xerath": {
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Yasuo": {
+  "core": {
+   "MIDDLE": [
+    6673,
+    3031,
+    6333
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Yone": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Yunara": {
+  "core": {
+   "BOTTOM": [
+    6672,
+    3085,
+    3031
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "W",
+   "E"
+  ]
+ },
+ "Yuumi": {
+  "skillMax": [
+   "E",
+   "Q",
+   "W"
+  ]
+ },
+ "Zaahen": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Zac": {
+  "core": {
+   "JUNGLE": [
+    3152,
+    3068,
+    3065
+   ]
+  },
+  "skillMax": [
+   "E",
+   "W",
+   "Q"
+  ]
+ },
+ "Zed": {
+  "core": {
+   "MIDDLE": [
+    6699,
+    2520,
+    3036
+   ]
+  },
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Zeri": {
+  "core": {
+   "BOTTOM": [
+    3032,
+    3085,
+    3031
+   ]
+  },
+  "skillMax": [
+   "E",
+   "Q",
+   "W"
+  ]
+ },
+ "Zoe": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "Zyra": {
+  "skillMax": [
+   "Q",
+   "E",
+   "W"
+  ]
+ },
+ "_meta": {
+  "matches": 287,
+  "patch": "16.23",
+  "queue": 420
+ }
+}
