@@ -523,6 +523,14 @@ def main():
                 pair = ap["spells"]
                 spells = [pair] + [x for x in spells if sorted(x) != sorted(pair)]
                 sample["spellsGames"] = ap["spellsGames"]
+            if not pages and map_id == 11:
+                # Position observed in real games but without a Riot page: borrow the champion's main page.
+                for r in recs:
+                    page = {"primaryStyleId": r["primaryPerkStyleId"], "subStyleId": r["secondaryPerkStyleId"],
+                            "perkIds": r["perkIds"], "source": "riot", "tag": "standard"}
+                    if r["mapId"] == 11 and valid_page(page, ridx):
+                        pages.append(page)
+                        break
             if pages:
                 dv = defensive_variant(pages[0], ridx)
                 if dv and dv["perkIds"] not in [x["perkIds"] for x in pages]:

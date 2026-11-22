@@ -51,6 +51,7 @@ MIN_POSITION_GAMES = 20      # champion/position sample before match data overri
 MIN_POSITION_SHARE = 0.10    # share of the champion's SR games needed to list a position
 MIN_SKILL_GAMES = 20
 MIN_OPTION_GAMES = 5         # an option (core/page/spells/boots) must appear this often
+MIN_CORE_SHARE = 0.05        # ...and a 3-item core set in at least 5 % of the position's games
 
 # Platform -> regional cluster. Sampled round-robin inside each cluster.
 CLUSTERS = {
@@ -354,10 +355,20 @@ def derive(counts: dict) -> dict:
                 d["benchmarks"] = {"games": st["games"], "csPerMin": round(st["cs"] / m, 2),
                                    "damagePerMin": round(st["damage"] / m, 1), "visionPerMin": round(st["vision"] / m, 2),
                                    "goldPerMin": round(st["gold"] / m, 1), "deaths": round(st["deaths"] / st["games"], 2)}
-            core = _rank(c["core"])
-            if core:
-                d["core"] = [int(x) for x in core[0][0].split("-")]
-                d["coreGames"] = core[0][1]
+            # Cores: pick the most popular *set* of three items, then its most common purchase order
+            # (ordered triples alone fragment the sample).
+            by_set: dict = {}
+            for k, (g, w) in c["core"].items():
+                cell = by_set.setdefault("-".join(sorted(k.split("-"))), [0, 0])
+                cell[0] += g
+                cell[1] += w
+            core_sets = _rank(by_set, max(MIN_OPTION_GAMES, int(c["games"] * MIN_CORE_SHARE)))
+            if core_sets:
+                best_set = set(core_sets[0][0].split("-"))
+                orders = {k: v for k, v in c["core"].items() if set(k.split("-")) == best_set}
+                order = max(orders.items(), key=lambda kv: (kv[1][0], kv[0]))[0]
+                d["core"] = [int(x) for x in order.split("-")]
+                d["coreGames"] = core_sets[0][1]
             pages = _rank(c["runePages"])
             if pages:
                 prim, sub, perks = pages[0][0].split(":")

@@ -49,6 +49,24 @@ class PublishedDataTests(unittest.TestCase):
         self.assertIn("stasis", items["Zhonya's Hourglass"]["flags"])
         self.assertIn("mpen", items["Void Staff"]["flags"])
 
+    def test_no_win_rates_published(self):
+        patch = self.manifest["latest"]
+        for name in ("all.json", "aggregates.json"):
+            path = ROOT / "data" / patch / name
+            if path.exists():
+                text = path.read_text().lower()
+                self.assertNotIn('"wins"', text, name)
+                self.assertNotIn("winrate", text, name)
+
+    def test_sampled_builds_are_labelled(self):
+        for cid, d in self.data["details"].items():
+            for key, b in d["builds"].items():
+                if b.get("sample"):
+                    self.assertGreaterEqual(b["sample"]["games"], aggregate_matches.MIN_POSITION_GAMES, f"{cid} {key}")
+                for page in b["runes"]:
+                    if page["tag"] == "popular":
+                        self.assertIn("runeGames", b["sample"], f"{cid} {key}")
+
     def test_no_win_rates_in_augments(self):
         for fam, augs in self.data["augments"].items():
             for a in augs:
@@ -171,6 +189,18 @@ class AggregationTests(unittest.TestCase):
         self.assertEqual(mid["benchmarks"]["csPerMin"], 7.5)   # 225 CS in 30 min
         self.assertEqual(mid["benchmarks"]["deaths"], 4)
         self.assertNotIn("win", json.dumps(agg).lower(), "no win rates are published")
+
+    def test_core_groups_purchase_orders(self):
+        counts, seen = aggregate_matches.new_counts("16.23.1"), set()
+        for i in range(20):
+            m, t = _fake_match()
+            aggregate_matches.add_match(counts, seen, f"M{i}", m, t, ITEMS, CHAMPS)
+        cores = counts["champions"]["Galio"]["MIDDLE"]["core"]
+        cores["9001-9002-9003"] = [4, 2]   # same set, other order
+        cores["9004-9001-9002"] = [6, 6]   # a different set
+        mid = aggregate_matches.derive(counts)["Galio"]["positions"]["MIDDLE"]
+        self.assertEqual(mid["core"], [9002, 9001, 9003], "most common order of the most popular set")
+        self.assertEqual(mid["coreGames"], 24)
 
     def test_rank_prefers_popular_then_smoothed_winrate(self):
         ranked = aggregate_matches._rank({"a": [100, 50], "b": [60, 45], "c": [20, 20]})
