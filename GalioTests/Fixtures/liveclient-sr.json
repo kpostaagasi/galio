@@ -1,0 +1,706 @@
+{
+ "activePlayer": {
+  "abilities": {
+   "E": {
+    "abilityLevel": 3,
+    "displayName": "E"
+   },
+   "Passive": {
+    "displayName": "Passive"
+   },
+   "Q": {
+    "abilityLevel": 5,
+    "displayName": "Q"
+   },
+   "R": {
+    "abilityLevel": 1,
+    "displayName": "R"
+   },
+   "W": {
+    "abilityLevel": 1,
+    "displayName": "W"
+   }
+  },
+  "championStats": {
+   "abilityPower": 95.0,
+   "armor": 48.0,
+   "attackDamage": 70.0,
+   "currentHealth": 1220.0,
+   "magicResist": 52.0,
+   "maxHealth": 1400.0,
+   "moveSpeed": 385.0
+  },
+  "currentGold": 1640.0,
+  "fullRunes": {},
+  "level": 9,
+  "riotId": "Galio Fan#TR1",
+  "riotIdGameName": "Galio Fan",
+  "riotIdTagLine": "TR1",
+  "summonerName": "Galio Fan#TR1",
+  "teamRelativeColors": true
+ },
+ "allPlayers": [
+  {
+   "championName": "Galio",
+   "isBot": false,
+   "isDead": false,
+   "items": [
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Doran's Ring",
+     "itemID": 1056,
+     "price": 400,
+     "rawDescription": "GeneratedTip_Item_1056_Description",
+     "rawDisplayName": "Item_1056_Name",
+     "slot": 0
+    },
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Mercury's Treads",
+     "itemID": 3111,
+     "price": 1250,
+     "rawDescription": "GeneratedTip_Item_3111_Description",
+     "rawDisplayName": "Item_3111_Name",
+     "slot": 1
+    },
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Amplifying Tome",
+     "itemID": 1052,
+     "price": 400,
+     "rawDescription": "GeneratedTip_Item_1052_Description",
+     "rawDisplayName": "Item_1052_Name",
+     "slot": 2
+    },
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Stealth Ward",
+     "itemID": 3340,
+     "price": 0,
+     "rawDescription": "GeneratedTip_Item_3340_Description",
+     "rawDisplayName": "Item_3340_Name",
+     "slot": 6
+    }
+   ],
+   "level": 9,
+   "position": "MIDDLE",
+   "rawChampionName": "game_character_displayname_Galio",
+   "rawSkinName": "",
+   "respawnTimer": 0.0,
+   "riotId": "Galio Fan#TR1",
+   "riotIdGameName": "Galio Fan",
+   "riotIdTagLine": "TR1",
+   "runes": {
+    "keystone": {
+     "displayName": "",
+     "id": 0
+    },
+    "primaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    },
+    "secondaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    }
+   },
+   "scores": {
+    "assists": 6,
+    "creepScore": 98,
+    "deaths": 1,
+    "kills": 2,
+    "wardScore": 7.5
+   },
+   "skinID": 0,
+   "summonerName": "Galio Fan#TR1",
+   "summonerSpells": {
+    "summonerSpellOne": {
+     "displayName": "Flash"
+    },
+    "summonerSpellTwo": {
+     "displayName": "Ignite"
+    }
+   },
+   "team": "ORDER"
+  },
+  {
+   "championName": "Garen",
+   "isBot": false,
+   "isDead": false,
+   "items": [
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Black Cleaver",
+     "itemID": 3071,
+     "price": 3000,
+     "rawDescription": "GeneratedTip_Item_3071_Description",
+     "rawDisplayName": "Item_3071_Name",
+     "slot": 0
+    }
+   ],
+   "level": 9,
+   "position": "TOP",
+   "rawChampionName": "game_character_displayname_Garen",
+   "rawSkinName": "",
+   "respawnTimer": 0.0,
+   "riotId": "",
+   "riotIdGameName": "",
+   "riotIdTagLine": "",
+   "runes": {
+    "keystone": {
+     "displayName": "",
+     "id": 0
+    },
+    "primaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    },
+    "secondaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    }
+   },
+   "scores": {
+    "assists": 2,
+    "creepScore": 110,
+    "deaths": 2,
+    "kills": 1,
+    "wardScore": 7.5
+   },
+   "skinID": 0,
+   "summonerName": "",
+   "summonerSpells": {
+    "summonerSpellOne": {
+     "displayName": "Flash"
+    },
+    "summonerSpellTwo": {
+     "displayName": "Ignite"
+    }
+   },
+   "team": "ORDER"
+  },
+  {
+   "championName": "Lee Sin",
+   "isBot": false,
+   "isDead": false,
+   "items": [
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Gustwalker Hatchling",
+     "itemID": 1102,
+     "price": 450,
+     "rawDescription": "GeneratedTip_Item_1102_Description",
+     "rawDisplayName": "Item_1102_Name",
+     "slot": 0
+    }
+   ],
+   "level": 8,
+   "position": "JUNGLE",
+   "rawChampionName": "game_character_displayname_LeeSin",
+   "rawSkinName": "",
+   "respawnTimer": 0.0,
+   "riotId": "",
+   "riotIdGameName": "",
+   "riotIdTagLine": "",
+   "runes": {
+    "keystone": {
+     "displayName": "",
+     "id": 0
+    },
+    "primaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    },
+    "secondaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    }
+   },
+   "scores": {
+    "assists": 4,
+    "creepScore": 70,
+    "deaths": 2,
+    "kills": 3,
+    "wardScore": 7.5
+   },
+   "skinID": 0,
+   "summonerName": "",
+   "summonerSpells": {
+    "summonerSpellOne": {
+     "displayName": "Flash"
+    },
+    "summonerSpellTwo": {
+     "displayName": "Ignite"
+    }
+   },
+   "team": "ORDER"
+  },
+  {
+   "championName": "Jinx",
+   "isBot": false,
+   "isDead": false,
+   "items": [
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Yun Tal Wildarrows",
+     "itemID": 3032,
+     "price": 3000,
+     "rawDescription": "GeneratedTip_Item_3032_Description",
+     "rawDisplayName": "Item_3032_Name",
+     "slot": 0
+    }
+   ],
+   "level": 8,
+   "position": "BOTTOM",
+   "rawChampionName": "game_character_displayname_Jinx",
+   "rawSkinName": "",
+   "respawnTimer": 0.0,
+   "riotId": "",
+   "riotIdGameName": "",
+   "riotIdTagLine": "",
+   "runes": {
+    "keystone": {
+     "displayName": "",
+     "id": 0
+    },
+    "primaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    },
+    "secondaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    }
+   },
+   "scores": {
+    "assists": 3,
+    "creepScore": 105,
+    "deaths": 1,
+    "kills": 2,
+    "wardScore": 7.5
+   },
+   "skinID": 0,
+   "summonerName": "",
+   "summonerSpells": {
+    "summonerSpellOne": {
+     "displayName": "Flash"
+    },
+    "summonerSpellTwo": {
+     "displayName": "Ignite"
+    }
+   },
+   "team": "ORDER"
+  },
+  {
+   "championName": "Thresh",
+   "isBot": false,
+   "isDead": false,
+   "items": [
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "World Atlas",
+     "itemID": 3865,
+     "price": 400,
+     "rawDescription": "GeneratedTip_Item_3865_Description",
+     "rawDisplayName": "Item_3865_Name",
+     "slot": 0
+    }
+   ],
+   "level": 6,
+   "position": "UTILITY",
+   "rawChampionName": "game_character_displayname_Thresh",
+   "rawSkinName": "",
+   "respawnTimer": 0.0,
+   "riotId": "",
+   "riotIdGameName": "",
+   "riotIdTagLine": "",
+   "runes": {
+    "keystone": {
+     "displayName": "",
+     "id": 0
+    },
+    "primaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    },
+    "secondaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    }
+   },
+   "scores": {
+    "assists": 8,
+    "creepScore": 12,
+    "deaths": 2,
+    "kills": 0,
+    "wardScore": 7.5
+   },
+   "skinID": 0,
+   "summonerName": "",
+   "summonerSpells": {
+    "summonerSpellOne": {
+     "displayName": "Flash"
+    },
+    "summonerSpellTwo": {
+     "displayName": "Ignite"
+    }
+   },
+   "team": "ORDER"
+  },
+  {
+   "championName": "Malphite",
+   "isBot": false,
+   "isDead": false,
+   "items": [
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Sunfire Aegis",
+     "itemID": 3068,
+     "price": 2800,
+     "rawDescription": "GeneratedTip_Item_3068_Description",
+     "rawDisplayName": "Item_3068_Name",
+     "slot": 0
+    },
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Plated Steelcaps",
+     "itemID": 3047,
+     "price": 1200,
+     "rawDescription": "GeneratedTip_Item_3047_Description",
+     "rawDisplayName": "Item_3047_Name",
+     "slot": 1
+    }
+   ],
+   "level": 9,
+   "position": "TOP",
+   "rawChampionName": "game_character_displayname_Malphite",
+   "rawSkinName": "",
+   "respawnTimer": 0.0,
+   "riotId": "",
+   "riotIdGameName": "",
+   "riotIdTagLine": "",
+   "runes": {
+    "keystone": {
+     "displayName": "",
+     "id": 0
+    },
+    "primaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    },
+    "secondaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    }
+   },
+   "scores": {
+    "assists": 3,
+    "creepScore": 102,
+    "deaths": 2,
+    "kills": 1,
+    "wardScore": 7.5
+   },
+   "skinID": 0,
+   "summonerName": "",
+   "summonerSpells": {
+    "summonerSpellOne": {
+     "displayName": "Flash"
+    },
+    "summonerSpellTwo": {
+     "displayName": "Ignite"
+    }
+   },
+   "team": "CHAOS"
+  },
+  {
+   "championName": "Vi",
+   "isBot": false,
+   "isDead": false,
+   "items": [
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Black Cleaver",
+     "itemID": 3071,
+     "price": 3000,
+     "rawDescription": "GeneratedTip_Item_3071_Description",
+     "rawDisplayName": "Item_3071_Name",
+     "slot": 0
+    }
+   ],
+   "level": 8,
+   "position": "JUNGLE",
+   "rawChampionName": "game_character_displayname_Vi",
+   "rawSkinName": "",
+   "respawnTimer": 0.0,
+   "riotId": "",
+   "riotIdGameName": "",
+   "riotIdTagLine": "",
+   "runes": {
+    "keystone": {
+     "displayName": "",
+     "id": 0
+    },
+    "primaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    },
+    "secondaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    }
+   },
+   "scores": {
+    "assists": 2,
+    "creepScore": 65,
+    "deaths": 3,
+    "kills": 2,
+    "wardScore": 7.5
+   },
+   "skinID": 0,
+   "summonerName": "",
+   "summonerSpells": {
+    "summonerSpellOne": {
+     "displayName": "Flash"
+    },
+    "summonerSpellTwo": {
+     "displayName": "Ignite"
+    }
+   },
+   "team": "CHAOS"
+  },
+  {
+   "championName": "Zed",
+   "isBot": false,
+   "isDead": false,
+   "items": [
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Youmuu's Ghostblade",
+     "itemID": 3142,
+     "price": 2800,
+     "rawDescription": "GeneratedTip_Item_3142_Description",
+     "rawDisplayName": "Item_3142_Name",
+     "slot": 0
+    },
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Profane Hydra",
+     "itemID": 6698,
+     "price": 2850,
+     "rawDescription": "GeneratedTip_Item_6698_Description",
+     "rawDisplayName": "Item_6698_Name",
+     "slot": 1
+    }
+   ],
+   "level": 9,
+   "position": "MIDDLE",
+   "rawChampionName": "game_character_displayname_Zed",
+   "rawSkinName": "",
+   "respawnTimer": 0.0,
+   "riotId": "",
+   "riotIdGameName": "",
+   "riotIdTagLine": "",
+   "runes": {
+    "keystone": {
+     "displayName": "",
+     "id": 0
+    },
+    "primaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    },
+    "secondaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    }
+   },
+   "scores": {
+    "assists": 1,
+    "creepScore": 101,
+    "deaths": 2,
+    "kills": 4,
+    "wardScore": 7.5
+   },
+   "skinID": 0,
+   "summonerName": "",
+   "summonerSpells": {
+    "summonerSpellOne": {
+     "displayName": "Flash"
+    },
+    "summonerSpellTwo": {
+     "displayName": "Ignite"
+    }
+   },
+   "team": "CHAOS"
+  },
+  {
+   "championName": "Caitlyn",
+   "isBot": false,
+   "isDead": false,
+   "items": [
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Infinity Edge",
+     "itemID": 3031,
+     "price": 3500,
+     "rawDescription": "GeneratedTip_Item_3031_Description",
+     "rawDisplayName": "Item_3031_Name",
+     "slot": 0
+    },
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Berserker's Greaves",
+     "itemID": 3006,
+     "price": 1100,
+     "rawDescription": "GeneratedTip_Item_3006_Description",
+     "rawDisplayName": "Item_3006_Name",
+     "slot": 1
+    }
+   ],
+   "level": 8,
+   "position": "BOTTOM",
+   "rawChampionName": "game_character_displayname_Caitlyn",
+   "rawSkinName": "",
+   "respawnTimer": 0.0,
+   "riotId": "",
+   "riotIdGameName": "",
+   "riotIdTagLine": "",
+   "runes": {
+    "keystone": {
+     "displayName": "",
+     "id": 0
+    },
+    "primaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    },
+    "secondaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    }
+   },
+   "scores": {
+    "assists": 2,
+    "creepScore": 118,
+    "deaths": 1,
+    "kills": 1,
+    "wardScore": 7.5
+   },
+   "skinID": 0,
+   "summonerName": "",
+   "summonerSpells": {
+    "summonerSpellOne": {
+     "displayName": "Flash"
+    },
+    "summonerSpellTwo": {
+     "displayName": "Ignite"
+    }
+   },
+   "team": "CHAOS"
+  },
+  {
+   "championName": "Soraka",
+   "isBot": false,
+   "isDead": false,
+   "items": [
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Moonstone Renewer",
+     "itemID": 6617,
+     "price": 2200,
+     "rawDescription": "GeneratedTip_Item_6617_Description",
+     "rawDisplayName": "Item_6617_Name",
+     "slot": 0
+    }
+   ],
+   "level": 7,
+   "position": "UTILITY",
+   "rawChampionName": "game_character_displayname_Soraka",
+   "rawSkinName": "",
+   "respawnTimer": 0.0,
+   "riotId": "",
+   "riotIdGameName": "",
+   "riotIdTagLine": "",
+   "runes": {
+    "keystone": {
+     "displayName": "",
+     "id": 0
+    },
+    "primaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    },
+    "secondaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    }
+   },
+   "scores": {
+    "assists": 5,
+    "creepScore": 15,
+    "deaths": 1,
+    "kills": 0,
+    "wardScore": 7.5
+   },
+   "skinID": 0,
+   "summonerName": "",
+   "summonerSpells": {
+    "summonerSpellOne": {
+     "displayName": "Flash"
+    },
+    "summonerSpellTwo": {
+     "displayName": "Ignite"
+    }
+   },
+   "team": "CHAOS"
+  }
+ ],
+ "events": {
+  "Events": [
+   {
+    "EventID": 0,
+    "EventName": "GameStart",
+    "EventTime": 0.05
+   }
+  ]
+ },
+ "gameData": {
+  "gameMode": "CLASSIC",
+  "gameTime": 1012.4,
+  "mapName": "Map11",
+  "mapNumber": 11,
+  "mapTerrain": "Default"
+ }
+}

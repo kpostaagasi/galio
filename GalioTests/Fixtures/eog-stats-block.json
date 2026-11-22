@@ -1,0 +1,50 @@
+{
+ "gameId": 7300000420,
+ "gameLength": 1835,
+ "gameMode": "CLASSIC",
+ "queueType": "RANKED_SOLO_5x5",
+ "gameEndedInEarlySurrender": false,
+ "localPlayer": {
+  "championId": 3,
+  "championName": "Galio",
+  "items": [
+   3157,
+   6664,
+   3111,
+   4633,
+   8020,
+   0,
+   3364
+  ],
+  "spell1Id": 4,
+  "spell2Id": 12,
+  "summonerName": "",
+  "level": 16,
+  "stats": {
+   "ASSISTS": 14,
+   "CHAMPIONS_KILLED": 5,
+   "NUM_DEATHS": 3,
+   "MINIONS_KILLED": 182,
+   "NEUTRAL_MINIONS_KILLED": 8,
+   "TOTAL_DAMAGE_DEALT_TO_CHAMPIONS": 24850,
+   "GOLD_EARNED": 12940,
+   "VISION_SCORE": 24,
+   "WIN": 1,
+   "LEVEL": 16,
+   "TOTAL_DAMAGE_TAKEN": 31200,
+   "TOTAL_HEAL": 3200
+  }
+ },
+ "teams": [
+  {
+   "isPlayerTeam": true,
+   "isWinningTeam": true,
+   "players": []
+  },
+  {
+   "isPlayerTeam": false,
+   "isWinningTeam": false,
+   "players": []
+  }
+ ]
+}

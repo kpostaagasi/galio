@@ -1,0 +1,31 @@
+{
+ "phase": "InProgress",
+ "gameClient": {
+  "running": true,
+  "serverIp": "",
+  "serverPort": 0,
+  "visible": false
+ },
+ "gameData": {
+  "gameId": 7300001700,
+  "isCustomGame": false,
+  "gameName": "",
+  "queue": {
+   "id": 1700,
+   "gameMode": "CHERRY",
+   "mapId": 30,
+   "type": "NORMAL",
+   "description": "",
+   "isRanked": false,
+   "category": "PvP"
+  },
+  "teamOne": [],
+  "teamTwo": [],
+  "playerChampionSelections": []
+ },
+ "map": {
+  "id": 30,
+  "gameMode": "CHERRY",
+  "name": "Rings of Wrath"
+ }
+}

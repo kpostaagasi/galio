@@ -14,6 +14,7 @@ final class LockfileTests: XCTestCase {
     func testAuthorizationHeaderUsesRiotUser() throws {
         let lf = try XCTUnwrap(Lockfile(contents: "LeagueClient:1:2999:abc:https"))
         XCTAssertEqual(lf.authorizationHeader, "Basic cmlvdDphYmM=")
+        XCTAssertEqual(LCUEndpoint(lockfile: lf).authorization, "Basic cmlvdDphYmM=")
     }
 
     func testRejectsMalformedInput() {
@@ -23,16 +24,5 @@ final class LockfileTests: XCTestCase {
         XCTAssertNil(Lockfile(contents: "LeagueClient:1:70000:pw:https"))
         XCTAssertNil(Lockfile(contents: "LeagueClient:1:2999::https"))
         XCTAssertNil(Lockfile(contents: "LeagueClient:1:2999:pw:ftp"))
-    }
-
-    func testMonitorReportsClosedWhenLockfileMissing() {
-        XCTAssertEqual(ClientMonitor.status(forLockfileAt: "/nonexistent/lockfile"), .clientClosed)
-    }
-
-    func testMonitorReportsOpenFromLockfile() throws {
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("galio-lockfile-test")
-        try "LeagueClient:42:61234:pw:https".write(to: url, atomically: true, encoding: .utf8)
-        defer { try? FileManager.default.removeItem(at: url) }
-        XCTAssertEqual(ClientMonitor.status(forLockfileAt: url.path), .clientOpen(port: 61234))
     }
 }

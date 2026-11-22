@@ -1,0 +1,2 @@
+[8,"OnJsonApiEvent",{"data":"ChampSelect","eventType":"Update","uri":"/lol-gameflow/v1/gameflow-phase"}]
+[8,"OnJsonApiEvent",{"data":null,"eventType":"Delete","uri":"/lol-champ-select/v1/session"}]

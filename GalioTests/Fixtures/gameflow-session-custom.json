@@ -1,0 +1,31 @@
+{
+ "phase": "InProgress",
+ "gameClient": {
+  "running": true,
+  "serverIp": "",
+  "serverPort": 0,
+  "visible": false
+ },
+ "gameData": {
+  "gameId": 7300000000,
+  "isCustomGame": true,
+  "gameName": "",
+  "queue": {
+   "id": 0,
+   "gameMode": "PRACTICETOOL",
+   "mapId": 11,
+   "type": "NORMAL",
+   "description": "",
+   "isRanked": false,
+   "category": "Custom"
+  },
+  "teamOne": [],
+  "teamTwo": [],
+  "playerChampionSelections": []
+ },
+ "map": {
+  "id": 11,
+  "gameMode": "PRACTICETOOL",
+  "name": "Summoner's Rift"
+ }
+}

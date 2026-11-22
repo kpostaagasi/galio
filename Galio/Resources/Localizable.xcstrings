@@ -1,0 +1,1084 @@
+{
+  "sourceLanguage": "tr",
+  "strings": {
+    "%@/%@/%@ · %@ CS": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@/%@/%@ · %@ CS"
+          }
+        }
+      }
+    },
+    "Adil oyun ilkeleri": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fair-play principles"
+          }
+        }
+      }
+    },
+    "Alt koridor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bot lane"
+          }
+        }
+      }
+    },
+    "Antrenman Aracı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practice Tool"
+          }
+        }
+      }
+    },
+    "Arena": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arena"
+          }
+        }
+      }
+    },
+    "Ayarlar…": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings…"
+          }
+        }
+      }
+    },
+    "Ayrıntılı oyun sonu özeti ana pencerede.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The detailed post-game summary is in the main window."
+          }
+        }
+      }
+    },
+    "Açılışta otomatik güncelle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Update automatically at launch"
+          }
+        }
+      }
+    },
+    "Bilinmeyen durum": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unknown state"
+          }
+        }
+      }
+    },
+    "Bilinmeyen mod": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unknown mode"
+          }
+        }
+      }
+    },
+    "Bir sıraya gir — şampiyon seçimi başladığında öneriler burada ve oyun içi katmanda görünecek.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Join a queue — suggestions appear here and in the overlay when champion select starts."
+          }
+        }
+      }
+    },
+    "Bitirdiğin oyunların özetleri burada listelenecek.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Summaries of your finished games will be listed here."
+          }
+        }
+      }
+    },
+    "Canlı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Live"
+          }
+        }
+      }
+    },
+    "Canlı oyun verisi bekleniyor…": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for live game data…"
+          }
+        }
+      }
+    },
+    "Deneme modu: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo mode: %@"
+          }
+        }
+      }
+    },
+    "Dereceli Esnek": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ranked Flex"
+          }
+        }
+      }
+    },
+    "Dereceli Tek/Çift": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ranked Solo/Duo"
+          }
+        }
+      }
+    },
+    "Destek": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Support"
+          }
+        }
+      }
+    },
+    "Dil": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language"
+          }
+        }
+      }
+    },
+    "Dil değişikliği Galio yeniden açılınca uygulanır.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language changes apply after Galio restarts."
+          }
+        }
+      }
+    },
+    "English": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "English"
+          }
+        }
+      }
+    },
+    "Eğitim": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tutorial"
+          }
+        }
+      }
+    },
+    "Galio": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galio"
+          }
+        }
+      }
+    },
+    "Galio isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galio isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc."
+          }
+        }
+      }
+    },
+    "Galio oyuna asla tuş basmaz veya tıklamaz, oyun belleğini okumaz, gizli bilgi ve diğer oyuncuların istatistiklerini göstermez. Güçlendirmelerde kazanma oranı değil yalnızca seviye (S–D) gösterilir. Rün ve eşya seti aktarımı sadece senin tıklamanla, oyun dışında yapılır.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galio never presses keys or clicks in the game, never reads game memory, and never shows hidden information or other players' stats. Augments show tiers (S–D) only, never win rates. Rune and item-set import only happens when you click, outside the live game."
+          }
+        }
+      }
+    },
+    "Galio'yu aç": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Galio"
+          }
+        }
+      }
+    },
+    "Genel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "General"
+          }
+        }
+      }
+    },
+    "Geçmiş": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "History"
+          }
+        }
+      }
+    },
+    "Güncelleme başarısız: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Update failed: %@"
+          }
+        }
+      }
+    },
+    "Hakkında": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About"
+          }
+        }
+      }
+    },
+    "Henüz oyun yok": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No games yet"
+          }
+        }
+      }
+    },
+    "Hep Birimiz Tek Birimiz": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One for All"
+          }
+        }
+      }
+    },
+    "Hızlı Oyun": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quickplay"
+          }
+        }
+      }
+    },
+    "Kapalı Seçim": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blind Pick"
+          }
+        }
+      }
+    },
+    "Katman": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overlay"
+          }
+        }
+      }
+    },
+    "Katman saydamlığı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overlay opacity"
+          }
+        }
+      }
+    },
+    "Katman yalnızca Kenarlıksız veya Pencere modunda oyunun üstünde görünür.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The overlay only appears above the game in Borderless or Windowed mode."
+          }
+        }
+      }
+    },
+    "Katmanı gizle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide overlay"
+          }
+        }
+      }
+    },
+    "Katmanı gizle (⌥⇧G)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide overlay (⌥⇧G)"
+          }
+        }
+      }
+    },
+    "Katmanı göster": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show overlay"
+          }
+        }
+      }
+    },
+    "Katmanı göster/gizle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show/Hide Overlay"
+          }
+        }
+      }
+    },
+    "Kaynak": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Source"
+          }
+        }
+      }
+    },
+    "Kısayol ⌥⇧G ile göster/gizle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show/hide with the ⌥⇧G shortcut"
+          }
+        }
+      }
+    },
+    "League istemcisi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "League client"
+          }
+        }
+      }
+    },
+    "League istemcisi bekleniyor…": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for the League client…"
+          }
+        }
+      }
+    },
+    "League istemcisi kapalı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "League client closed"
+          }
+        }
+      }
+    },
+    "League istemcisine bağlanıldı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected to the League client"
+          }
+        }
+      }
+    },
+    "League of Legends'ı açtığında Galio otomatik bağlanır. Oyun içi katman için oyunu Kenarlıksız ya da Pencere modunda çalıştır.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galio connects automatically when you open League of Legends. For the overlay, run the game in Borderless or Windowed mode."
+          }
+        }
+      }
+    },
+    "Lobi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lobby"
+          }
+        }
+      }
+    },
+    "Maç bulundu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Match found"
+          }
+        }
+      }
+    },
+    "Orman": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jungle"
+          }
+        }
+      }
+    },
+    "Orta koridor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mid lane"
+          }
+        }
+      }
+    },
+    "Oturum açılışında başlat": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Launch at login"
+          }
+        }
+      }
+    },
+    "Oyun akışına göre otomatik göster": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show automatically with the game flow"
+          }
+        }
+      }
+    },
+    "Oyun başlatılamadı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Game failed to launch"
+          }
+        }
+      }
+    },
+    "Oyun hatayla bitti": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Game ended with an error"
+          }
+        }
+      }
+    },
+    "Oyun içi katman": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In-game overlay"
+          }
+        }
+      }
+    },
+    "Oyun sonu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "End of game"
+          }
+        }
+      }
+    },
+    "Oyun yükleniyor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading game"
+          }
+        }
+      }
+    },
+    "Oyunda": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In game"
+          }
+        }
+      }
+    },
+    "Rakip": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enemy"
+          }
+        }
+      }
+    },
+    "Saydamlık": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opacity"
+          }
+        }
+      }
+    },
+    "Seviye %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Level %@"
+          }
+        }
+      }
+    },
+    "Seçilmedi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not picked"
+          }
+        }
+      }
+    },
+    "Seçmeli Normal": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normal Draft"
+          }
+        }
+      }
+    },
+    "Sihirdar Vadisi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Summoner's Rift"
+          }
+        }
+      }
+    },
+    "Sistem": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
+          }
+        }
+      }
+    },
+    "Son kontrol": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last check"
+          }
+        }
+      }
+    },
+    "Sürüm %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@"
+          }
+        }
+      }
+    },
+    "Sıra aranıyor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In queue"
+          }
+        }
+      }
+    },
+    "Takım": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Team"
+          }
+        }
+      }
+    },
+    "Turnuva kaydı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tournament check-in"
+          }
+        }
+      }
+    },
+    "Türkçe": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Türkçe"
+          }
+        }
+      }
+    },
+    "Tıklama geçirgen (fare oyuna gider)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Click-through (mouse goes to the game)"
+          }
+        }
+      }
+    },
+    "Tıklama geçirgenliği": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Click-through"
+          }
+        }
+      }
+    },
+    "Tıklama geçirgenliği (kısayol ⌥⇧G ile gizle/göster)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Click-through (hide/show with ⌥⇧G)"
+          }
+        }
+      }
+    },
+    "Veri": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Data"
+          }
+        }
+      }
+    },
+    "Yama": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Patch"
+          }
+        }
+      }
+    },
+    "Yama %@ · %@ şampiyon · kaynak: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Patch %@ · %@ champions · source: %@"
+          }
+        }
+      }
+    },
+    "Yeniden bağlan": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reconnect"
+          }
+        }
+      }
+    },
+    "Yükleme ekranı — oyun başlayınca yetenek sırası ve eşya önerileri gelecek.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading screen — skill order and item tips appear once the game starts."
+          }
+        }
+      }
+    },
+    "github.com/kpostaagasi/galio": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "github.com/kpostaagasi/galio"
+          }
+        }
+      }
+    },
+    "lockfile yolu (boş = varsayılan)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "lockfile path (empty = default)"
+          }
+        }
+      }
+    },
+    "macOS için League of Legends yardımcısı: şampiyon seçimi önerileri, rün sayfaları, yetenek sırası, eşya ve güçlendirme ipuçları.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A League of Legends companion for macOS: champion select suggestions, rune pages, skill order, item and augment tips."
+          }
+        }
+      }
+    },
+    "Çık": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quit"
+          }
+        }
+      }
+    },
+    "Öneri verisi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recommendation data"
+          }
+        }
+      }
+    },
+    "Özel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom"
+          }
+        }
+      }
+    },
+    "Üst koridor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Top lane"
+          }
+        }
+      }
+    },
+    "İstatistikler bekleniyor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for stats"
+          }
+        }
+      }
+    },
+    "İstemci bağlı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client connected"
+          }
+        }
+      }
+    },
+    "İstemci bağlı. Şampiyon seçimi başlayınca öneriler burada görünecek.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client connected. Suggestions appear here once champion select starts."
+          }
+        }
+      }
+    },
+    "İstemci bekliyor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for client"
+          }
+        }
+      }
+    },
+    "İstemci kapalı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client closed"
+          }
+        }
+      }
+    },
+    "Şampiyon ara": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search champions"
+          }
+        }
+      }
+    },
+    "Şampiyon seçimi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Champion select"
+          }
+        }
+      }
+    },
+    "Şampiyon seçimi okunuyor…": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reading champion select…"
+          }
+        }
+      }
+    },
+    "Şampiyonlar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Champions"
+          }
+        }
+      }
+    },
+    "Şimdi güncelle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Update now"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

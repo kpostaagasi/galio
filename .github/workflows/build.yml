@@ -13,9 +13,14 @@ permissions:
 jobs:
   macos:
     runs-on: macos-15
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+
+      - name: Localization catalog is in sync
+        run: |
+          python3 tools/l10n.py --check
+          git diff --exit-code Galio/Resources/Localizable.xcstrings
 
       - name: Toolchain
         run: |
@@ -26,7 +31,8 @@ jobs:
       - name: Test
         run: |
           set -o pipefail
-          xcodebuild test -project Galio.xcodeproj -scheme Galio -destination 'platform=macOS' -derivedDataPath build | tee test.log | grep -E "Test Suite|Test Case.*(passed|failed)|error:|TEST (SUCCEEDED|FAILED)" || true
+          xcodebuild test -project Galio.xcodeproj -scheme Galio -destination 'platform=macOS' -derivedDataPath build \
+            | tee test.log | grep -E "Test Suite|Test Case.*(passed|failed)|error:|TEST (SUCCEEDED|FAILED)|Executed" || true
           grep -q "TEST SUCCEEDED" test.log
 
       - name: Build release app
@@ -39,21 +45,27 @@ jobs:
           ditto -c -k --keepParent "$APP" Galio.zip
           ls -lh Galio.zip
 
-      - name: Launch smoke test + screenshot
+      - name: Mock-game smoke test + screenshots
         run: |
           APP=build/Build/Products/Release/Galio.app
-          open "$APP"
-          sleep 8
-          pgrep -x Galio || { echo "Galio did not stay running"; exit 1; }
-          screencapture -x screenshot.png || echo "screencapture unavailable"
-          pkill -x Galio || true
+          mkdir -p screenshots
+          for s in champselect champselect-locked ingame aram mayhem arena postgame; do
+            open -n "$APP" --args --mock-game "$s"
+            sleep 9
+            pgrep -x Galio > /dev/null || { echo "Galio did not stay running for $s"; exit 1; }
+            screencapture -x "screenshots/$s.png" || echo "screencapture unavailable for $s"
+            pkill -x Galio || true
+            sleep 2
+          done
+          ls -l screenshots
 
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: Galio-${{ github.sha }}
           path: |
             Galio.zip
-            screenshot.png
+            screenshots/
             test.log
           if-no-files-found: warn
 

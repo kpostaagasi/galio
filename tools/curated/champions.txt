@@ -1,0 +1,179 @@
+# Galio curated champion table (hand-maintained, patch-independent).
+# Format: <DDragonId> <skillMaxOrder> <archetype>[,<POSITION>:<archetype>...] [attr=value ...]
+# Archetypes: marksman onhit lethality bruiser juggernaut tank assassin apassassin
+#             burstmage battlemage artillery enchanter catcher apbruiser tankmage
+# Attr overrides (0-3): engage peel waveclear frontline poke scaling(1 early,2 mid,3 late) sustain burst
+# Missing champions fall back to heuristics from CommunityDragon roles/playstyle.
+Aatrox QEW bruiser engage=1 sustain=3
+Ahri QEW burstmage,UTILITY:burstmage waveclear=2 engage=1
+Akali QEW apassassin
+Akshan QEW lethality
+Alistar QWE catcher engage=3 peel=3 frontline=3
+Ambessa QEW bruiser engage=2
+Amumu EQW tank engage=3 waveclear=2
+Anivia EQW battlemage waveclear=3 peel=2 scaling=3
+Annie QWE burstmage engage=2
+Aphelios QWE marksman scaling=3
+Ashe WQE marksman,UTILITY:artillery engage=2 peel=1 poke=1
+AurelionSol QWE battlemage scaling=3 waveclear=3
+Aurora QEW burstmage
+Azir QWE battlemage scaling=3 waveclear=3 engage=2
+Bard QWE catcher peel=2 engage=1
+Belveth QEW bruiser scaling=3
+Blitzcrank QEW catcher engage=2 peel=1
+Brand WQE battlemage,UTILITY:battlemage waveclear=3 poke=1
+Braum QEW tank peel=3 frontline=2
+Briar WQE bruiser engage=2 sustain=2
+Caitlyn QWE marksman poke=2 waveclear=2
+Camille QEW bruiser engage=2
+Cassiopeia EQW battlemage scaling=3 waveclear=2
+Chogath QEW tankmage frontline=3 scaling=3
+Corki QEW marksman poke=2 waveclear=2
+Darius QEW juggernaut sustain=2
+Diana QWE apbruiser engage=3 waveclear=2
+DrMundo QEW juggernaut frontline=3 sustain=3
+Draven QWE marksman scaling=1
+Ekko QEW apassassin
+Elise QWE apassassin scaling=1
+Evelynn QEW apassassin
+Ezreal QEW lethality poke=3 scaling=2
+Fiddlesticks WQE battlemage engage=3 waveclear=2
+Fiora QEW bruiser scaling=3 sustain=2
+Fizz EWQ apassassin
+Galio QEW tankmage engage=3 peel=2 frontline=2 waveclear=2
+Gangplank QEW bruiser scaling=3 waveclear=3
+Garen EQW juggernaut frontline=2
+Gnar QWE bruiser,TOP:bruiser engage=2 frontline=2
+Gragas QEW tankmage engage=2 peel=2
+Graves QEW lethality
+Gwen QEW apbruiser scaling=3
+Hecarim QWE bruiser engage=3
+Heimerdinger WQE artillery waveclear=3 poke=2
+Hwei QWE artillery,UTILITY:artillery poke=3 waveclear=3
+Illaoi QEW juggernaut sustain=2
+Irelia QEW bruiser
+Ivern EQW enchanter peel=3
+Janna EWQ enchanter peel=3
+JarvanIV QEW bruiser engage=3
+Jax WEQ bruiser scaling=3
+Jayce QWE lethality poke=3 waveclear=2
+Jhin QWE marksman poke=2
+Jinx QWE marksman scaling=3 waveclear=2
+KSante QEW tank engage=2 frontline=3
+Kaisa QEW onhit scaling=3
+Kalista EQW onhit scaling=1
+Karma QEW enchanter,MIDDLE:artillery peel=2 poke=2
+Karthus QEW battlemage waveclear=3 scaling=3
+Kassadin QEW apassassin scaling=3
+Katarina QEW apassassin
+Kayle QEW onhit scaling=3
+Kayn QWE bruiser
+Kennen QWE battlemage engage=3
+Khazix QWE assassin
+Kindred QWE marksman scaling=3
+Kled QWE bruiser engage=2
+KogMaw WQE onhit scaling=3 peel=1
+Leblanc QWE burstmage
+LeeSin QWE bruiser engage=2 scaling=1
+Leona WEQ catcher engage=3 frontline=3
+Lillia QWE battlemage engage=2 scaling=2
+Lissandra QWE burstmage engage=2 peel=2
+Locke QEW apassassin
+Lucian QEW lethality scaling=1
+Lulu EWQ enchanter peel=3
+Lux EQW artillery,UTILITY:artillery poke=2 waveclear=3
+Malphite QEW tank engage=3 frontline=3
+Malzahar EQW battlemage waveclear=3
+Maokai QEW tank engage=3 peel=2 frontline=3
+MasterYi QEW onhit scaling=3
+Mel QEW artillery,UTILITY:artillery poke=2 waveclear=2
+Milio EWQ enchanter peel=3
+MissFortune QEW marksman waveclear=3 poke=1
+MonkeyKing QEW bruiser engage=3
+Mordekaiser QEW apbruiser frontline=2
+Morgana QWE battlemage,UTILITY:catcher peel=2
+Naafiri QEW assassin
+Nami WEQ enchanter peel=2 engage=1
+Nasus QEW juggernaut scaling=3 frontline=2
+Nautilus QEW catcher engage=3 frontline=3
+Neeko QEW burstmage engage=2
+Nidalee QEW apassassin poke=2 scaling=1
+Nilah QEW bruiser scaling=3
+Nocturne QEW assassin engage=2
+Nunu QEW tank engage=3 frontline=2
+Olaf QEW juggernaut scaling=1
+Orianna QWE battlemage waveclear=3 engage=2 peel=1 scaling=3
+Ornn QWE tank engage=3 frontline=3 scaling=3
+Pantheon QEW assassin,UTILITY:catcher scaling=1 engage=1
+Poppy QEW tank peel=2 frontline=2
+Pyke QEW catcher,UTILITY:catcher engage=2 frontline=0
+Qiyana QEW assassin
+Quinn QEW lethality scaling=1
+Rakan WEQ catcher engage=3 peel=2
+Rammus QWE tank engage=2 frontline=3
+RekSai QWE bruiser engage=1
+Rell WEQ catcher engage=3 frontline=3
+Renata EQW enchanter peel=3 engage=1
+Renekton QEW bruiser scaling=1
+Rengar QWE assassin
+Riven QEW bruiser
+Rumble QEW apbruiser waveclear=2
+Ryze QEW battlemage scaling=3 waveclear=2
+Samira QEW marksman
+Sejuani QWE tank engage=3 frontline=3
+Senna QEW marksman,UTILITY:artillery poke=2 scaling=3
+Seraphine QEW artillery,UTILITY:enchanter engage=2 peel=2 waveclear=3
+Sett QWE juggernaut engage=2 frontline=2
+Shaco EQW assassin
+Shen QEW tank peel=2 frontline=3
+Shyvana EQW apbruiser engage=1
+Singed QEW tankmage frontline=2
+Sion QEW tank engage=2 frontline=3 waveclear=2
+Sivir QWE marksman waveclear=3 engage=1
+Skarner QWE tank engage=3 frontline=3
+Smolder QWE marksman scaling=3 waveclear=2
+Sona QWE enchanter peel=2 scaling=3
+Soraka QWE enchanter peel=2 sustain=3
+Swain QEW battlemage frontline=2 sustain=2
+Sylas QWE apbruiser
+Syndra QWE burstmage
+TahmKench QWE tank peel=3 frontline=3
+Taliyah QWE battlemage waveclear=3
+Talon WQE assassin
+Taric QEW catcher peel=3 frontline=2
+Teemo EQW battlemage poke=1
+Thresh QEW catcher engage=2 peel=3
+Tristana EQW marksman scaling=3
+Trundle QWE juggernaut
+Tryndamere EQW onhit scaling=3
+TwistedFate QWE battlemage waveclear=2 engage=1
+Twitch EQW onhit scaling=3
+Udyr QEW bruiser frontline=2
+Urgot QEW juggernaut frontline=2
+Varus QEW lethality poke=2
+Vayne QWE onhit scaling=3
+Veigar QWE burstmage scaling=3 waveclear=2
+Velkoz WQE artillery poke=3 waveclear=3
+Vex QEW burstmage engage=1
+Vi QEW bruiser engage=3
+Viego QEW bruiser
+Viktor EQW battlemage waveclear=3 scaling=3
+Vladimir QEW battlemage sustain=3 scaling=3
+Volibear WQE juggernaut engage=2 frontline=2
+Warwick QEW juggernaut sustain=3
+Xayah QEW marksman
+Xerath QWE artillery,UTILITY:artillery poke=3 waveclear=3
+XinZhao QEW bruiser engage=2
+Yasuo QEW marksman scaling=2
+Yone QWE marksman scaling=2
+Yorick QEW juggernaut
+Yunara QWE onhit scaling=3
+Yuumi EQW enchanter peel=2 scaling=3
+Zaahen QEW bruiser
+Zac QWE tank engage=3 frontline=3
+Zed QEW assassin
+Zeri QEW onhit scaling=3
+Ziggs QEW artillery waveclear=3 poke=2
+Zilean QEW enchanter peel=3
+Zoe QEW burstmage poke=2
+Zyra EQW battlemage,UTILITY:battlemage waveclear=2

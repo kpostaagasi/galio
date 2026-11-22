@@ -1,0 +1,788 @@
+{
+ "name": "mayhem",
+ "description": "ARAM: Mayhem in progress, Lux vs an AP-heavy team",
+ "routes": {
+  "GET /lol-summoner/v1/current-summoner": {
+   "accountId": 2400100,
+   "displayName": "",
+   "gameName": "Galio Fan",
+   "tagLine": "TR1",
+   "puuid": "mock-puuid-local",
+   "summonerId": 1200300,
+   "summonerLevel": 212
+  },
+  "GET /lol-perks/v1/pages": [
+   {
+    "id": 101,
+    "name": "Mid Mage",
+    "current": true,
+    "isDeletable": true,
+    "isEditable": true,
+    "isActive": true,
+    "primaryStyleId": 8100,
+    "subStyleId": 8200,
+    "selectedPerkIds": [
+     8112,
+     8139,
+     8138,
+     8135,
+     8226,
+     8210,
+     5008,
+     5008,
+     5001
+    ],
+    "order": 0,
+    "isValid": true
+   },
+   {
+    "id": 102,
+    "name": "Tank Top",
+    "current": false,
+    "isDeletable": true,
+    "isEditable": true,
+    "isActive": false,
+    "primaryStyleId": 8400,
+    "subStyleId": 8300,
+    "selectedPerkIds": [
+     8437,
+     8446,
+     8429,
+     8451,
+     8304,
+     8347,
+     5008,
+     5001,
+     5011
+    ],
+    "order": 1,
+    "isValid": true
+   },
+   {
+    "id": 50,
+    "name": "Recommended (Riot)",
+    "current": false,
+    "isDeletable": false,
+    "isEditable": false,
+    "isActive": false,
+    "primaryStyleId": 8000,
+    "subStyleId": 8100,
+    "selectedPerkIds": [
+     8010,
+     9111,
+     9104,
+     8014,
+     8139,
+     8135,
+     5005,
+     5008,
+     5001
+    ],
+    "order": 2,
+    "isValid": true
+   }
+  ],
+  "GET /lol-perks/v1/inventory": {
+   "ownedPageCount": 3,
+   "customPageCount": 3
+  },
+  "GET /lol-item-sets/v1/item-sets/1200300/sets": {
+   "accountId": 2400100,
+   "itemSets": [],
+   "timestamp": 1795000000000
+  },
+  "GET /lol-champ-select/v1/pickable-champion-ids": [
+   3,
+   61,
+   99,
+   103,
+   45,
+   55,
+   63,
+   37,
+   267,
+   21,
+   22,
+   86,
+   64,
+   222,
+   412,
+   54,
+   254,
+   238,
+   51,
+   16,
+   157,
+   122,
+   81,
+   89,
+   113,
+   145,
+   111,
+   24,
+   67,
+   82,
+   32,
+   360,
+   875,
+   1,
+   8,
+   13,
+   50,
+   69,
+   90,
+   101,
+   112,
+   115,
+   127,
+   134,
+   136,
+   142,
+   161,
+   163,
+   517,
+   518,
+   711,
+   800,
+   888,
+   893,
+   910,
+   950
+  ],
+  "GET /lol-gameflow/v1/gameflow-phase": "InProgress",
+  "GET /lol-gameflow/v1/session": {
+   "phase": "InProgress",
+   "gameClient": {
+    "running": true,
+    "serverIp": "",
+    "serverPort": 0,
+    "visible": false
+   },
+   "gameData": {
+    "gameId": 7300002400,
+    "isCustomGame": false,
+    "gameName": "",
+    "queue": {
+     "id": 2400,
+     "gameMode": "KIWI",
+     "mapId": 12,
+     "type": "NORMAL",
+     "description": "ARAM: Mayhem",
+     "isRanked": false,
+     "category": "PvP"
+    },
+    "teamOne": [],
+    "teamTwo": [],
+    "playerChampionSelections": []
+   },
+   "map": {
+    "id": 12,
+    "gameMode": "KIWI",
+    "name": "Howling Abyss"
+   }
+  },
+  "GET /liveclientdata/allgamedata": {
+   "activePlayer": {
+    "abilities": {
+     "E": {
+      "abilityLevel": 3,
+      "displayName": "E"
+     },
+     "Passive": {
+      "displayName": "Passive"
+     },
+     "Q": {
+      "abilityLevel": 5,
+      "displayName": "Q"
+     },
+     "R": {
+      "abilityLevel": 1,
+      "displayName": "R"
+     },
+     "W": {
+      "abilityLevel": 2,
+      "displayName": "W"
+     }
+    },
+    "championStats": {
+     "abilityPower": 95.0,
+     "armor": 48.0,
+     "attackDamage": 70.0,
+     "currentHealth": 1220.0,
+     "magicResist": 52.0,
+     "maxHealth": 1400.0,
+     "moveSpeed": 385.0
+    },
+    "currentGold": 860.0,
+    "fullRunes": {},
+    "level": 11,
+    "riotId": "Galio Fan#TR1",
+    "riotIdGameName": "Galio Fan",
+    "riotIdTagLine": "TR1",
+    "summonerName": "Galio Fan#TR1",
+    "teamRelativeColors": true
+   },
+   "allPlayers": [
+    {
+     "championName": "Lux",
+     "isBot": false,
+     "isDead": false,
+     "items": [
+      {
+       "canUse": false,
+       "consumable": false,
+       "count": 1,
+       "displayName": "Luden's Echo",
+       "itemID": 6655,
+       "price": 2750,
+       "rawDescription": "GeneratedTip_Item_6655_Description",
+       "rawDisplayName": "Item_6655_Name",
+       "slot": 0
+      },
+      {
+       "canUse": false,
+       "consumable": false,
+       "count": 1,
+       "displayName": "Sorcerer's Shoes",
+       "itemID": 3020,
+       "price": 1100,
+       "rawDescription": "GeneratedTip_Item_3020_Description",
+       "rawDisplayName": "Item_3020_Name",
+       "slot": 1
+      }
+     ],
+     "level": 11,
+     "position": "",
+     "rawChampionName": "game_character_displayname_Lux",
+     "rawSkinName": "",
+     "respawnTimer": 0.0,
+     "riotId": "Galio Fan#TR1",
+     "riotIdGameName": "Galio Fan",
+     "riotIdTagLine": "TR1",
+     "runes": {
+      "keystone": {
+       "displayName": "",
+       "id": 0
+      },
+      "primaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      },
+      "secondaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      }
+     },
+     "scores": {
+      "assists": 9,
+      "creepScore": 40,
+      "deaths": 2,
+      "kills": 5,
+      "wardScore": 7.5
+     },
+     "skinID": 0,
+     "summonerName": "Galio Fan#TR1",
+     "summonerSpells": {
+      "summonerSpellOne": {
+       "displayName": "Flash"
+      },
+      "summonerSpellTwo": {
+       "displayName": "Ignite"
+      }
+     },
+     "team": "ORDER"
+    },
+    {
+     "championName": "Sejuani",
+     "isBot": false,
+     "isDead": false,
+     "items": [],
+     "level": 11,
+     "position": "",
+     "rawChampionName": "game_character_displayname_Sejuani",
+     "rawSkinName": "",
+     "respawnTimer": 0.0,
+     "riotId": "",
+     "riotIdGameName": "",
+     "riotIdTagLine": "",
+     "runes": {
+      "keystone": {
+       "displayName": "",
+       "id": 0
+      },
+      "primaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      },
+      "secondaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      }
+     },
+     "scores": {
+      "assists": 10,
+      "creepScore": 30,
+      "deaths": 3,
+      "kills": 1,
+      "wardScore": 7.5
+     },
+     "skinID": 0,
+     "summonerName": "",
+     "summonerSpells": {
+      "summonerSpellOne": {
+       "displayName": "Flash"
+      },
+      "summonerSpellTwo": {
+       "displayName": "Ignite"
+      }
+     },
+     "team": "ORDER"
+    },
+    {
+     "championName": "Ezreal",
+     "isBot": false,
+     "isDead": false,
+     "items": [],
+     "level": 11,
+     "position": "",
+     "rawChampionName": "game_character_displayname_Ezreal",
+     "rawSkinName": "",
+     "respawnTimer": 0.0,
+     "riotId": "",
+     "riotIdGameName": "",
+     "riotIdTagLine": "",
+     "runes": {
+      "keystone": {
+       "displayName": "",
+       "id": 0
+      },
+      "primaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      },
+      "secondaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      }
+     },
+     "scores": {
+      "assists": 6,
+      "creepScore": 44,
+      "deaths": 2,
+      "kills": 4,
+      "wardScore": 7.5
+     },
+     "skinID": 0,
+     "summonerName": "",
+     "summonerSpells": {
+      "summonerSpellOne": {
+       "displayName": "Flash"
+      },
+      "summonerSpellTwo": {
+       "displayName": "Ignite"
+      }
+     },
+     "team": "ORDER"
+    },
+    {
+     "championName": "Sona",
+     "isBot": false,
+     "isDead": false,
+     "items": [],
+     "level": 10,
+     "position": "",
+     "rawChampionName": "game_character_displayname_Sona",
+     "rawSkinName": "",
+     "respawnTimer": 0.0,
+     "riotId": "",
+     "riotIdGameName": "",
+     "riotIdTagLine": "",
+     "runes": {
+      "keystone": {
+       "displayName": "",
+       "id": 0
+      },
+      "primaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      },
+      "secondaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      }
+     },
+     "scores": {
+      "assists": 14,
+      "creepScore": 20,
+      "deaths": 3,
+      "kills": 0,
+      "wardScore": 7.5
+     },
+     "skinID": 0,
+     "summonerName": "",
+     "summonerSpells": {
+      "summonerSpellOne": {
+       "displayName": "Flash"
+      },
+      "summonerSpellTwo": {
+       "displayName": "Ignite"
+      }
+     },
+     "team": "ORDER"
+    },
+    {
+     "championName": "Jax",
+     "isBot": false,
+     "isDead": false,
+     "items": [],
+     "level": 11,
+     "position": "",
+     "rawChampionName": "game_character_displayname_Jax",
+     "rawSkinName": "",
+     "respawnTimer": 0.0,
+     "riotId": "",
+     "riotIdGameName": "",
+     "riotIdTagLine": "",
+     "runes": {
+      "keystone": {
+       "displayName": "",
+       "id": 0
+      },
+      "primaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      },
+      "secondaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      }
+     },
+     "scores": {
+      "assists": 3,
+      "creepScore": 38,
+      "deaths": 4,
+      "kills": 6,
+      "wardScore": 7.5
+     },
+     "skinID": 0,
+     "summonerName": "",
+     "summonerSpells": {
+      "summonerSpellOne": {
+       "displayName": "Flash"
+      },
+      "summonerSpellTwo": {
+       "displayName": "Ignite"
+      }
+     },
+     "team": "ORDER"
+    },
+    {
+     "championName": "Mordekaiser",
+     "isBot": false,
+     "isDead": false,
+     "items": [
+      {
+       "canUse": false,
+       "consumable": false,
+       "count": 1,
+       "displayName": "Riftmaker",
+       "itemID": 4633,
+       "price": 3100,
+       "rawDescription": "GeneratedTip_Item_4633_Description",
+       "rawDisplayName": "Item_4633_Name",
+       "slot": 0
+      }
+     ],
+     "level": 12,
+     "position": "",
+     "rawChampionName": "game_character_displayname_Mordekaiser",
+     "rawSkinName": "",
+     "respawnTimer": 0.0,
+     "riotId": "",
+     "riotIdGameName": "",
+     "riotIdTagLine": "",
+     "runes": {
+      "keystone": {
+       "displayName": "",
+       "id": 0
+      },
+      "primaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      },
+      "secondaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      }
+     },
+     "scores": {
+      "assists": 4,
+      "creepScore": 41,
+      "deaths": 3,
+      "kills": 6,
+      "wardScore": 7.5
+     },
+     "skinID": 0,
+     "summonerName": "",
+     "summonerSpells": {
+      "summonerSpellOne": {
+       "displayName": "Flash"
+      },
+      "summonerSpellTwo": {
+       "displayName": "Ignite"
+      }
+     },
+     "team": "CHAOS"
+    },
+    {
+     "championName": "Katarina",
+     "isBot": false,
+     "isDead": false,
+     "items": [
+      {
+       "canUse": false,
+       "consumable": false,
+       "count": 1,
+       "displayName": "Nashor's Tooth",
+       "itemID": 3115,
+       "price": 2900,
+       "rawDescription": "GeneratedTip_Item_3115_Description",
+       "rawDisplayName": "Item_3115_Name",
+       "slot": 0
+      }
+     ],
+     "level": 11,
+     "position": "",
+     "rawChampionName": "game_character_displayname_Katarina",
+     "rawSkinName": "",
+     "respawnTimer": 0.0,
+     "riotId": "",
+     "riotIdGameName": "",
+     "riotIdTagLine": "",
+     "runes": {
+      "keystone": {
+       "displayName": "",
+       "id": 0
+      },
+      "primaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      },
+      "secondaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      }
+     },
+     "scores": {
+      "assists": 2,
+      "creepScore": 35,
+      "deaths": 5,
+      "kills": 7,
+      "wardScore": 7.5
+     },
+     "skinID": 0,
+     "summonerName": "",
+     "summonerSpells": {
+      "summonerSpellOne": {
+       "displayName": "Flash"
+      },
+      "summonerSpellTwo": {
+       "displayName": "Ignite"
+      }
+     },
+     "team": "CHAOS"
+    },
+    {
+     "championName": "Brand",
+     "isBot": false,
+     "isDead": false,
+     "items": [
+      {
+       "canUse": false,
+       "consumable": false,
+       "count": 1,
+       "displayName": "Liandry's Torment",
+       "itemID": 6653,
+       "price": 3000,
+       "rawDescription": "GeneratedTip_Item_6653_Description",
+       "rawDisplayName": "Item_6653_Name",
+       "slot": 0
+      }
+     ],
+     "level": 11,
+     "position": "",
+     "rawChampionName": "game_character_displayname_Brand",
+     "rawSkinName": "",
+     "respawnTimer": 0.0,
+     "riotId": "",
+     "riotIdGameName": "",
+     "riotIdTagLine": "",
+     "runes": {
+      "keystone": {
+       "displayName": "",
+       "id": 0
+      },
+      "primaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      },
+      "secondaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      }
+     },
+     "scores": {
+      "assists": 8,
+      "creepScore": 39,
+      "deaths": 4,
+      "kills": 3,
+      "wardScore": 7.5
+     },
+     "skinID": 0,
+     "summonerName": "",
+     "summonerSpells": {
+      "summonerSpellOne": {
+       "displayName": "Flash"
+      },
+      "summonerSpellTwo": {
+       "displayName": "Ignite"
+      }
+     },
+     "team": "CHAOS"
+    },
+    {
+     "championName": "Amumu",
+     "isBot": false,
+     "isDead": false,
+     "items": [
+      {
+       "canUse": false,
+       "consumable": false,
+       "count": 1,
+       "displayName": "Sunfire Aegis",
+       "itemID": 3068,
+       "price": 2800,
+       "rawDescription": "GeneratedTip_Item_3068_Description",
+       "rawDisplayName": "Item_3068_Name",
+       "slot": 0
+      }
+     ],
+     "level": 10,
+     "position": "",
+     "rawChampionName": "game_character_displayname_Amumu",
+     "rawSkinName": "",
+     "respawnTimer": 0.0,
+     "riotId": "",
+     "riotIdGameName": "",
+     "riotIdTagLine": "",
+     "runes": {
+      "keystone": {
+       "displayName": "",
+       "id": 0
+      },
+      "primaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      },
+      "secondaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      }
+     },
+     "scores": {
+      "assists": 11,
+      "creepScore": 28,
+      "deaths": 4,
+      "kills": 1,
+      "wardScore": 7.5
+     },
+     "skinID": 0,
+     "summonerName": "",
+     "summonerSpells": {
+      "summonerSpellOne": {
+       "displayName": "Flash"
+      },
+      "summonerSpellTwo": {
+       "displayName": "Ignite"
+      }
+     },
+     "team": "CHAOS"
+    },
+    {
+     "championName": "Veigar",
+     "isBot": false,
+     "isDead": false,
+     "items": [
+      {
+       "canUse": false,
+       "consumable": false,
+       "count": 1,
+       "displayName": "Rabadon's Deathcap",
+       "itemID": 3089,
+       "price": 3500,
+       "rawDescription": "GeneratedTip_Item_3089_Description",
+       "rawDisplayName": "Item_3089_Name",
+       "slot": 0
+      }
+     ],
+     "level": 11,
+     "position": "",
+     "rawChampionName": "game_character_displayname_Veigar",
+     "rawSkinName": "",
+     "respawnTimer": 0.0,
+     "riotId": "",
+     "riotIdGameName": "",
+     "riotIdTagLine": "",
+     "runes": {
+      "keystone": {
+       "displayName": "",
+       "id": 0
+      },
+      "primaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      },
+      "secondaryRuneTree": {
+       "displayName": "",
+       "id": 0
+      }
+     },
+     "scores": {
+      "assists": 5,
+      "creepScore": 42,
+      "deaths": 3,
+      "kills": 4,
+      "wardScore": 7.5
+     },
+     "skinID": 0,
+     "summonerName": "",
+     "summonerSpells": {
+      "summonerSpellOne": {
+       "displayName": "Flash"
+      },
+      "summonerSpellTwo": {
+       "displayName": "Ignite"
+      }
+     },
+     "team": "CHAOS"
+    }
+   ],
+   "events": {
+    "Events": [
+     {
+      "EventID": 0,
+      "EventName": "GameStart",
+      "EventTime": 0.05
+     }
+    ]
+   },
+   "gameData": {
+    "gameMode": "KIWI",
+    "gameTime": 420.0,
+    "mapName": "Map12",
+    "mapNumber": 12,
+    "mapTerrain": "Default"
+   }
+  }
+ }
+}

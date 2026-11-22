@@ -1,0 +1,268 @@
+{
+ "activePlayer": {
+  "abilities": {
+   "E": {
+    "abilityLevel": 3,
+    "displayName": "E"
+   },
+   "Passive": {
+    "displayName": "Passive"
+   },
+   "Q": {
+    "abilityLevel": 5,
+    "displayName": "Q"
+   },
+   "R": {
+    "abilityLevel": 1,
+    "displayName": "R"
+   },
+   "W": {
+    "abilityLevel": 1,
+    "displayName": "W"
+   }
+  },
+  "championStats": {
+   "abilityPower": 95.0,
+   "armor": 48.0,
+   "attackDamage": 70.0,
+   "currentHealth": 1220.0,
+   "magicResist": 52.0,
+   "maxHealth": 1400.0,
+   "moveSpeed": 385.0
+  },
+  "currentGold": 400.0,
+  "fullRunes": {},
+  "level": 9,
+  "riotId": "Galio Fan#TR1",
+  "riotIdGameName": "Galio Fan",
+  "riotIdTagLine": "TR1",
+  "summonerName": "Galio Fan#TR1",
+  "teamRelativeColors": true
+ },
+ "allPlayers": [
+  {
+   "championName": "Darius",
+   "isBot": false,
+   "isDead": false,
+   "items": [
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Black Cleaver",
+     "itemID": 3071,
+     "price": 3000,
+     "rawDescription": "GeneratedTip_Item_3071_Description",
+     "rawDisplayName": "Item_3071_Name",
+     "slot": 0
+    }
+   ],
+   "level": 9,
+   "position": "",
+   "rawChampionName": "game_character_displayname_Darius",
+   "rawSkinName": "",
+   "respawnTimer": 0.0,
+   "riotId": "Galio Fan#TR1",
+   "riotIdGameName": "Galio Fan",
+   "riotIdTagLine": "TR1",
+   "runes": {
+    "keystone": {
+     "displayName": "",
+     "id": 0
+    },
+    "primaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    },
+    "secondaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    }
+   },
+   "scores": {
+    "assists": 0,
+    "creepScore": 0,
+    "deaths": 1,
+    "kills": 3,
+    "wardScore": 7.5
+   },
+   "skinID": 0,
+   "summonerName": "Galio Fan#TR1",
+   "summonerSpells": {
+    "summonerSpellOne": {
+     "displayName": "Flash"
+    },
+    "summonerSpellTwo": {
+     "displayName": "Ignite"
+    }
+   },
+   "team": "ORDER"
+  },
+  {
+   "championName": "Nami",
+   "isBot": false,
+   "isDead": false,
+   "items": [],
+   "level": 9,
+   "position": "",
+   "rawChampionName": "game_character_displayname_Nami",
+   "rawSkinName": "",
+   "respawnTimer": 0.0,
+   "riotId": "",
+   "riotIdGameName": "",
+   "riotIdTagLine": "",
+   "runes": {
+    "keystone": {
+     "displayName": "",
+     "id": 0
+    },
+    "primaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    },
+    "secondaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    }
+   },
+   "scores": {
+    "assists": 3,
+    "creepScore": 0,
+    "deaths": 1,
+    "kills": 0,
+    "wardScore": 7.5
+   },
+   "skinID": 0,
+   "summonerName": "",
+   "summonerSpells": {
+    "summonerSpellOne": {
+     "displayName": "Flash"
+    },
+    "summonerSpellTwo": {
+     "displayName": "Ignite"
+    }
+   },
+   "team": "ORDER"
+  },
+  {
+   "championName": "Vayne",
+   "isBot": false,
+   "isDead": false,
+   "items": [
+    {
+     "canUse": false,
+     "consumable": false,
+     "count": 1,
+     "displayName": "Blade of The Ruined King",
+     "itemID": 3153,
+     "price": 3200,
+     "rawDescription": "GeneratedTip_Item_3153_Description",
+     "rawDisplayName": "Item_3153_Name",
+     "slot": 0
+    }
+   ],
+   "level": 9,
+   "position": "",
+   "rawChampionName": "game_character_displayname_Vayne",
+   "rawSkinName": "",
+   "respawnTimer": 0.0,
+   "riotId": "",
+   "riotIdGameName": "",
+   "riotIdTagLine": "",
+   "runes": {
+    "keystone": {
+     "displayName": "",
+     "id": 0
+    },
+    "primaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    },
+    "secondaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    }
+   },
+   "scores": {
+    "assists": 0,
+    "creepScore": 0,
+    "deaths": 2,
+    "kills": 2,
+    "wardScore": 7.5
+   },
+   "skinID": 0,
+   "summonerName": "",
+   "summonerSpells": {
+    "summonerSpellOne": {
+     "displayName": "Flash"
+    },
+    "summonerSpellTwo": {
+     "displayName": "Ignite"
+    }
+   },
+   "team": "CHAOS"
+  },
+  {
+   "championName": "Leona",
+   "isBot": false,
+   "isDead": false,
+   "items": [],
+   "level": 9,
+   "position": "",
+   "rawChampionName": "game_character_displayname_Leona",
+   "rawSkinName": "",
+   "respawnTimer": 0.0,
+   "riotId": "",
+   "riotIdGameName": "",
+   "riotIdTagLine": "",
+   "runes": {
+    "keystone": {
+     "displayName": "",
+     "id": 0
+    },
+    "primaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    },
+    "secondaryRuneTree": {
+     "displayName": "",
+     "id": 0
+    }
+   },
+   "scores": {
+    "assists": 2,
+    "creepScore": 0,
+    "deaths": 2,
+    "kills": 0,
+    "wardScore": 7.5
+   },
+   "skinID": 0,
+   "summonerName": "",
+   "summonerSpells": {
+    "summonerSpellOne": {
+     "displayName": "Flash"
+    },
+    "summonerSpellTwo": {
+     "displayName": "Ignite"
+    }
+   },
+   "team": "CHAOS"
+  }
+ ],
+ "events": {
+  "Events": [
+   {
+    "EventID": 0,
+    "EventName": "GameStart",
+    "EventTime": 0.05
+   }
+  ]
+ },
+ "gameData": {
+  "gameMode": "CHERRY",
+  "gameTime": 610.0,
+  "mapName": "Map30",
+  "mapNumber": 30,
+  "mapTerrain": "Default"
+ }
+}

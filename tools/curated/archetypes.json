@@ -1,0 +1,110 @@
+{
+  "_comment": "Item templates per archetype, by English item name (resolved to IDs per patch). Unknown names are dropped and replaced by stat-scored items. 'situational' entries carry the enemy-profile conditions under which the in-app ItemAdvisor promotes them.",
+  "archetypes": {
+    "marksman": {
+      "class": "ad_crit", "starter": ["Doran's Blade", "Health Potion"], "boots": ["Berserker's Greaves"],
+      "core": ["Yun Tal Wildarrows", "Infinity Edge", "Phantom Dancer", "Lord Dominik's Regards", "Bloodthirster", "Rapid Firecannon"],
+      "situational": [["Mortal Reminder", "antiheal"], ["Lord Dominik's Regards", "vsArmor"], ["Guardian Angel", "vsBurst"], ["Mercurial Scimitar", "vsCC"], ["Maw of Malmortius", "vsAP"], ["Immortal Shieldbow", "vsBurst"], ["Edge of Night", "vsCC"], ["Serpent's Fang", "vsShield"], ["Bloodthirster", "vsPoke"], ["Runaan's Hurricane", "vsSquishy"]]
+    },
+    "onhit": {
+      "class": "ad_onhit", "starter": ["Doran's Blade", "Health Potion"], "boots": ["Berserker's Greaves"],
+      "core": ["Blade of The Ruined King", "Guinsoo's Rageblade", "Kraken Slayer", "Wit's End", "Terminus", "Runaan's Hurricane"],
+      "situational": [["Mortal Reminder", "antiheal"], ["Wit's End", "vsAP"], ["Terminus", "vsArmor"], ["Blade of The Ruined King", "vsTanky"], ["Guardian Angel", "vsBurst"], ["Mercurial Scimitar", "vsCC"], ["Maw of Malmortius", "vsAP"], ["Serpent's Fang", "vsShield"]]
+    },
+    "lethality": {
+      "class": "ad_lethality", "starter": ["Doran's Blade", "Health Potion"], "boots": ["Ionian Boots of Lucidity"],
+      "core": ["Youmuu's Ghostblade", "The Collector", "Serylda's Grudge", "Edge of Night", "Lord Dominik's Regards"],
+      "situational": [["Edge of Night", "vsCC"], ["Serylda's Grudge", "vsArmor"], ["Lord Dominik's Regards", "vsTanky"], ["Maw of Malmortius", "vsAP"], ["Guardian Angel", "vsBurst"], ["Serpent's Fang", "vsShield"], ["Chempunk Chainsword", "antiheal"], ["Mortal Reminder", "antiheal"]]
+    },
+    "assassin": {
+      "class": "ad_assassin", "starter": ["Doran's Blade", "Health Potion"], "boots": ["Ionian Boots of Lucidity"],
+      "core": ["Profane Hydra", "Youmuu's Ghostblade", "Edge of Night", "Serylda's Grudge", "Axiom Arc"],
+      "situational": [["Edge of Night", "vsCC"], ["Serylda's Grudge", "vsArmor"], ["Maw of Malmortius", "vsAP"], ["Guardian Angel", "vsBurst"], ["Serpent's Fang", "vsShield"], ["Chempunk Chainsword", "antiheal"], ["Death's Dance", "vsAD"]]
+    },
+    "bruiser": {
+      "class": "ad_fighter", "starter": ["Doran's Blade", "Health Potion"], "boots": ["Plated Steelcaps"],
+      "core": ["Trinity Force", "Sundered Sky", "Black Cleaver", "Sterak's Gage", "Death's Dance", "Spear of Shojin"],
+      "situational": [["Chempunk Chainsword", "antiheal"], ["Black Cleaver", "vsArmor"], ["Maw of Malmortius", "vsAP"], ["Death's Dance", "vsAD"], ["Sterak's Gage", "vsBurst"], ["Guardian Angel", "vsBurst"], ["Spirit Visage", "vsAP"], ["Randuin's Omen", "vsCrit"], ["Mercury's Treads", "vsCC"], ["Serpent's Fang", "vsShield"]]
+    },
+    "juggernaut": {
+      "class": "ad_fighter", "starter": ["Doran's Blade", "Health Potion"], "boots": ["Plated Steelcaps"],
+      "core": ["Stridebreaker", "Black Cleaver", "Sterak's Gage", "Overlord's Bloodmail", "Dead Man's Plate", "Spirit Visage"],
+      "situational": [["Chempunk Chainsword", "antiheal"], ["Thornmail", "antiheal"], ["Spirit Visage", "vsAP"], ["Force of Nature", "vsAP"], ["Randuin's Omen", "vsCrit"], ["Death's Dance", "vsAD"], ["Mercury's Treads", "vsCC"], ["Black Cleaver", "vsArmor"]]
+    },
+    "tank": {
+      "class": "tank", "starter": ["Doran's Shield", "Health Potion"], "boots": ["Plated Steelcaps"],
+      "core": ["Sunfire Aegis", "Heartsteel", "Unending Despair", "Jak'Sho, The Protean", "Thornmail", "Kaenic Rookern"],
+      "situational": [["Thornmail", "antiheal"], ["Randuin's Omen", "vsCrit"], ["Frozen Heart", "vsAS"], ["Force of Nature", "vsAP"], ["Kaenic Rookern", "vsAP"], ["Spirit Visage", "vsAP"], ["Dead Man's Plate", "vsAD"], ["Mercury's Treads", "vsCC"], ["Warmog's Armor", "vsPoke"], ["Abyssal Mask", "vsAP"]]
+    },
+    "tankmage": {
+      "class": "ap_tank", "starter": ["Doran's Ring", "Health Potion"], "boots": ["Mercury's Treads"],
+      "core": ["Hollow Radiance", "Riftmaker", "Zhonya's Hourglass", "Liandry's Torment", "Abyssal Mask", "Rylai's Crystal Scepter"],
+      "situational": [["Thornmail", "antiheal"], ["Morellonomicon", "antiheal"], ["Zhonya's Hourglass", "vsAD"], ["Kaenic Rookern", "vsAP"], ["Force of Nature", "vsAP"], ["Randuin's Omen", "vsCrit"], ["Frozen Heart", "vsAS"], ["Void Staff", "vsMR"], ["Mercury's Treads", "vsCC"]]
+    },
+    "apbruiser": {
+      "class": "ap_fighter", "starter": ["Doran's Blade", "Health Potion"], "boots": ["Plated Steelcaps"],
+      "core": ["Riftmaker", "Liandry's Torment", "Zhonya's Hourglass", "Rabadon's Deathcap", "Void Staff", "Cosmic Drive"],
+      "situational": [["Morellonomicon", "antiheal"], ["Zhonya's Hourglass", "vsAD"], ["Banshee's Veil", "vsAP"], ["Void Staff", "vsMR"], ["Spirit Visage", "vsAP"], ["Mercury's Treads", "vsCC"], ["Kaenic Rookern", "vsAP"]]
+    },
+    "burstmage": {
+      "class": "ap_mage", "starter": ["Doran's Ring", "Health Potion"], "boots": ["Sorcerer's Shoes"],
+      "core": ["Luden's Echo", "Shadowflame", "Rabadon's Deathcap", "Void Staff", "Zhonya's Hourglass", "Stormsurge"],
+      "situational": [["Morellonomicon", "antiheal"], ["Zhonya's Hourglass", "vsAD"], ["Banshee's Veil", "vsAP"], ["Void Staff", "vsMR"], ["Mercury's Treads", "vsCC"], ["Shadowflame", "vsShield"]]
+    },
+    "battlemage": {
+      "class": "ap_mage", "starter": ["Doran's Ring", "Health Potion"], "boots": ["Sorcerer's Shoes"],
+      "core": ["Liandry's Torment", "Blackfire Torch", "Rylai's Crystal Scepter", "Zhonya's Hourglass", "Rabadon's Deathcap", "Void Staff"],
+      "situational": [["Morellonomicon", "antiheal"], ["Zhonya's Hourglass", "vsAD"], ["Banshee's Veil", "vsAP"], ["Void Staff", "vsMR"], ["Liandry's Torment", "vsTanky"], ["Mercury's Treads", "vsCC"]]
+    },
+    "artillery": {
+      "class": "ap_mage", "starter": ["Doran's Ring", "Health Potion"], "boots": ["Sorcerer's Shoes"],
+      "core": ["Malignance", "Blackfire Torch", "Horizon Focus", "Rabadon's Deathcap", "Void Staff", "Zhonya's Hourglass"],
+      "situational": [["Morellonomicon", "antiheal"], ["Zhonya's Hourglass", "vsAD"], ["Banshee's Veil", "vsAP"], ["Void Staff", "vsMR"], ["Mercury's Treads", "vsCC"]]
+    },
+    "apassassin": {
+      "class": "ap_assassin", "starter": ["Doran's Ring", "Health Potion"], "boots": ["Sorcerer's Shoes"],
+      "core": ["Stormsurge", "Shadowflame", "Lich Bane", "Zhonya's Hourglass", "Rabadon's Deathcap", "Void Staff"],
+      "situational": [["Morellonomicon", "antiheal"], ["Zhonya's Hourglass", "vsAD"], ["Banshee's Veil", "vsAP"], ["Void Staff", "vsMR"], ["Shadowflame", "vsShield"], ["Mercury's Treads", "vsCC"]]
+    },
+    "enchanter": {
+      "class": "support_enchanter", "starter": ["World Atlas", "Health Potion"], "boots": ["Ionian Boots of Lucidity"],
+      "core": ["Moonstone Renewer", "Echoes of Helia", "Ardent Censer", "Redemption", "Mikael's Blessing", "Staff of Flowing Water"],
+      "situational": [["Mikael's Blessing", "vsCC"], ["Redemption", "vsBurst"], ["Locket of the Iron Solari", "vsBurst"], ["Morellonomicon", "antiheal"], ["Ardent Censer", "allyAS"], ["Shurelya's Battlesong", "vsMobile"]]
+    },
+    "catcher": {
+      "class": "support_tank", "starter": ["World Atlas", "Health Potion"], "boots": ["Plated Steelcaps"],
+      "core": ["Locket of the Iron Solari", "Knight's Vow", "Zeke's Convergence", "Redemption", "Thornmail", "Kaenic Rookern"],
+      "situational": [["Thornmail", "antiheal"], ["Locket of the Iron Solari", "vsBurst"], ["Kaenic Rookern", "vsAP"], ["Frozen Heart", "vsAS"], ["Randuin's Omen", "vsCrit"], ["Mercury's Treads", "vsCC"], ["Mikael's Blessing", "vsCC"], ["Abyssal Mask", "vsAP"]]
+    }
+  },
+  "jungleStarter": {
+    "ad": ["Gustwalker Hatchling", "Health Potion"],
+    "ap": ["Scorchclaw Pup", "Health Potion"],
+    "tank": ["Mosstomper Seedling", "Health Potion"]
+  },
+  "championOverrides": {
+    "Ezreal": {"core": ["Trinity Force", "Manamune", "Serylda's Grudge", "Spear of Shojin", "Blade of The Ruined King", "Lord Dominik's Regards"]},
+    "Kaisa": {"core": ["Kraken Slayer", "Nashor's Tooth", "Guinsoo's Rageblade", "Rabadon's Deathcap", "Zhonya's Hourglass", "Lich Bane"]},
+    "Kayle": {"core": ["Nashor's Tooth", "Guinsoo's Rageblade", "Rabadon's Deathcap", "Shadowflame", "Void Staff", "Zhonya's Hourglass"]},
+    "Varus": {"core": ["Youmuu's Ghostblade", "The Collector", "Serylda's Grudge", "Edge of Night", "Lord Dominik's Regards", "Axiom Arc"]},
+    "Jayce": {"core": ["Youmuu's Ghostblade", "Manamune", "Serylda's Grudge", "The Collector", "Edge of Night", "Lord Dominik's Regards"]},
+    "Corki": {"core": ["Trinity Force", "Infinity Edge", "Navori Flickerblade", "Lord Dominik's Regards", "Bloodthirster", "Guardian Angel"]},
+    "Jax": {"core": ["Trinity Force", "Sundered Sky", "Sterak's Gage", "Black Cleaver", "Death's Dance", "Guardian Angel"]},
+    "Gangplank": {"core": ["Trinity Force", "Infinity Edge", "Navori Flickerblade", "The Collector", "Lord Dominik's Regards", "Bloodthirster"]},
+    "Akali": {"core": ["Hextech Gunblade", "Stormsurge", "Shadowflame", "Zhonya's Hourglass", "Rabadon's Deathcap", "Void Staff"]},
+    "Ekko": {"core": ["Hextech Rocketbelt", "Lich Bane", "Shadowflame", "Zhonya's Hourglass", "Rabadon's Deathcap", "Void Staff"]},
+    "Diana": {"core": ["Nashor's Tooth", "Lich Bane", "Shadowflame", "Zhonya's Hourglass", "Rabadon's Deathcap", "Void Staff"]},
+    "Gwen": {"core": ["Nashor's Tooth", "Riftmaker", "Shadowflame", "Zhonya's Hourglass", "Rabadon's Deathcap", "Void Staff"]},
+    "Sylas": {"core": ["Hextech Rocketbelt", "Malignance", "Shadowflame", "Zhonya's Hourglass", "Rabadon's Deathcap", "Void Staff"]},
+    "Ryze": {"core": ["Archangel's Staff", "Rod of Ages", "Cosmic Drive", "Rabadon's Deathcap", "Zhonya's Hourglass", "Void Staff"]},
+    "Kassadin": {"core": ["Rod of Ages", "Archangel's Staff", "Lich Bane", "Rabadon's Deathcap", "Zhonya's Hourglass", "Void Staff"]},
+    "Vladimir": {"core": ["Hextech Rocketbelt", "Cosmic Drive", "Riftmaker", "Rabadon's Deathcap", "Zhonya's Hourglass", "Void Staff"]},
+    "Twitch": {"core": ["Blade of The Ruined King", "Guinsoo's Rageblade", "Runaan's Hurricane", "Infinity Edge", "Lord Dominik's Regards", "Bloodthirster"]},
+    "Senna": {"core": ["Youmuu's Ghostblade", "The Collector", "Serylda's Grudge", "Umbral Glaive", "Lord Dominik's Regards", "Edge of Night"]},
+    "Pyke": {"core": ["Youmuu's Ghostblade", "Umbral Glaive", "Axiom Arc", "Edge of Night", "Serylda's Grudge"]},
+    "Seraphine": {"core": ["Moonstone Renewer", "Echoes of Helia", "Rylai's Crystal Scepter", "Redemption", "Mikael's Blessing", "Ardent Censer"]},
+    "Shyvana": {"core": ["Liandry's Torment", "Riftmaker", "Nashor's Tooth", "Zhonya's Hourglass", "Rabadon's Deathcap", "Void Staff"]},
+    "Teemo": {"core": ["Liandry's Torment", "Nashor's Tooth", "Malignance", "Rabadon's Deathcap", "Zhonya's Hourglass", "Void Staff"]},
+    "TwistedFate": {"core": ["Lich Bane", "Shadowflame", "Rabadon's Deathcap", "Zhonya's Hourglass", "Void Staff", "Stormsurge"]}
+  }
+}

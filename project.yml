@@ -4,29 +4,49 @@ options:
   deploymentTarget:
     macOS: "15.0"
   createIntermediateGroups: true
+  developmentLanguage: tr
 settings:
   base:
     SWIFT_VERSION: "5.0"
-    MARKETING_VERSION: "0.1.0"
-    CURRENT_PROJECT_VERSION: "1"
+    MARKETING_VERSION: "0.2.0"
+    CURRENT_PROJECT_VERSION: "2"
     CODE_SIGN_IDENTITY: "-"
     CODE_SIGN_STYLE: Manual
     DEVELOPMENT_TEAM: ""
     ENABLE_HARDENED_RUNTIME: NO
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
 targets:
   Galio:
     type: application
     platform: macOS
-    sources: [Galio]
+    sources:
+      - path: Galio
+        excludes:
+          - "Resources/BundledData"
+          - "Resources/BundledData/**"
+          - "Resources/Mock"
+          - "Resources/Mock/**"
+      - path: Galio/Resources/BundledData
+        type: folder
+        buildPhase: resources
+      - path: Galio/Resources/Mock
+        type: folder
+        buildPhase: resources
     info:
       path: Galio/Info.plist
       properties:
         CFBundleDisplayName: Galio
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDevelopmentRegion: tr
+        CFBundleLocalizations: [tr, en]
         LSApplicationCategoryType: public.app-category.games
         LSMinimumSystemVersion: "15.0"
         NSHumanReadableCopyright: "Galio is not endorsed by Riot Games."
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+        NSScreenCaptureUsageDescription: "Galio reads the three augment card titles on screen (on-device, never uploaded) to show their tiers."
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.kpostaagasi.galio
@@ -36,7 +56,14 @@ targets:
   GalioTests:
     type: bundle.unit-test
     platform: macOS
-    sources: [GalioTests]
+    sources:
+      - path: GalioTests
+        excludes:
+          - "Fixtures"
+          - "Fixtures/**"
+      - path: GalioTests/Fixtures
+        type: folder
+        buildPhase: resources
     dependencies:
       - target: Galio
     settings:
