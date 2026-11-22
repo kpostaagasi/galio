@@ -38,6 +38,7 @@ import urllib.request
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CACHE = ROOT / "tools" / ".cache"
 CURATED = ROOT / "tools" / "curated"
+AGG_TRUST_GAMES = 40  # champion SR games before observed positions replace Riot's position list
 DD = "https://ddragon.leagueoflegends.com"
 CD = "https://raw.communitydragon.org/latest"
 CDG = CD + "/plugins/rcp-be-lol-game-data/global"
@@ -482,7 +483,14 @@ def main():
             positions = ["MIDDLE"]
 
         agg = aggregates.get(cid, {})
+        agg_pos = agg.get("positions", {})
+        observed = sorted((k for k in agg_pos if k in POSITIONS), key=lambda k: -agg_pos[k]["games"])
+        if observed and agg.get("games", 0) >= AGG_TRUST_GAMES:
+            positions = observed  # enough real games: list only positions it is actually played in
+        elif observed:
+            positions = observed + [x for x in positions if x not in observed]
         skill = agg.get("skillMax") or cur["skill"]
+        start = next((agg_pos[k]["skillStart"] for k in observed if agg_pos[k].get("skillStart")), None)
         builds = {}
         for pos in positions + ["ARAM"]:
             map_id = 12 if pos == "ARAM" else 11
@@ -502,6 +510,19 @@ def main():
                 sp = r.get("summonerSpellIds") or []
                 if len(sp) == 2 and sp not in spells:
                     spells.append(sp)
+            ap = agg_pos.get(pos, {})
+            sample = {"games": ap["games"]} if ap else None
+            if ap.get("runePage"):
+                rp = ap["runePage"]
+                page = {"primaryStyleId": rp["primaryStyleId"], "subStyleId": rp["subStyleId"], "perkIds": rp["perkIds"],
+                        "source": "match-v5", "tag": "popular"}
+                if valid_page(page, ridx):
+                    pages = [page] + [dict(x, tag="alternative") for x in pages if x["perkIds"] != page["perkIds"]]
+                    sample["runeGames"] = rp["games"]
+            if ap.get("spells"):
+                pair = ap["spells"]
+                spells = [pair] + [x for x in spells if sorted(x) != sorted(pair)]
+                sample["spellsGames"] = ap["spellsGames"]
             if pages:
                 dv = defensive_variant(pages[0], ridx)
                 if dv and dv["perkIds"] not in [x["perkIds"] for x in pages]:
@@ -511,8 +532,9 @@ def main():
             maps_needed = [map_id]
             core_names = arche["championOverrides"].get(cid, {}).get("core", tmpl["core"])
             core = resolve_names(core_names, maps_needed, cid, "core")
-            if agg.get("core", {}).get(pos):
-                core = agg["core"][pos] + [c for c in core if c not in agg["core"][pos]]
+            if ap.get("core") and all(i in items and map_id in items[i]["maps"] for i in ap["core"]):
+                core = ap["core"] + [c for c in core if c not in ap["core"]]
+                sample["coreGames"] = ap["coreGames"]
             if pos == "JUNGLE":
                 jkind = "tank" if arch in ("tank", "tankmage") else ("ap" if damage_type(cd) == "magic" else "ad")
                 starter_names = arche["jungleStarter"][jkind]
@@ -520,6 +542,9 @@ def main():
                 starter_names = tmpl["starter"]
             starter = resolve_names(starter_names, maps_needed, cid, "starter") if pos != "ARAM" else []
             boots = resolve_names(tmpl["boots"], maps_needed, cid, "boots")
+            if ap.get("boots") in items and map_id in items[ap["boots"]]["maps"]:
+                boots = [ap["boots"]] + [b for b in boots if b != ap["boots"]]
+                sample["bootsGames"] = ap["bootsGames"]
             situational = []
             for name, cond in tmpl["situational"]:
                 it = resolve_item(name, by_name, maps_needed)
@@ -538,6 +563,10 @@ def main():
                 "spells": spells[:3],
                 "items": {"starter": starter, "boots": boots, "core": core, "situational": situational},
             }
+            if sample:
+                builds[pos]["sample"] = sample
+            if ap.get("benchmarks"):
+                builds[pos]["benchmarks"] = ap["benchmarks"]
         title_tr = champ_tr["data"].get(cid, {}).get("title", dd["title"])
         entry = {
             "id": cid, "key": key, "name": dd["name"], "nameTR": champ_tr["data"].get(cid, {}).get("name", dd["name"]),
@@ -551,8 +580,9 @@ def main():
         index.append(entry)
         details[cid] = {
             "id": cid, "key": key, "patch": patch,
-            "source": "riot-recommended+curated" + ("+match-v5" if agg else ""),
-            "skillOrder": {"max": skill, "first": list(skill), "ultLevels": [1, 6, 11, 16] if cid in ULT_AT_ONE else [6, 11, 16]},
+            "source": "riot-recommended+curated" + ("+match-v5" if agg_pos or agg.get("skillMax") else ""),
+            "skillOrder": {"max": skill, "first": start or list(skill), "ultLevels": [1, 6, 11, 16] if cid in ULT_AT_ONE else [6, 11, 16],
+                           **({"games": agg["skillGames"]} if agg.get("skillMax") else {})},
             "builds": builds,
         }
 

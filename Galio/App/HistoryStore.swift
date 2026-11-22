@@ -27,41 +27,117 @@ struct GameRecord: Codable, Identifiable, Equatable {
     var coreFollowed: Int { plannedCore.prefix(3).filter { items.contains($0) }.count }
 }
 
-/// Post-game evaluation: own performance vs. the plan, plus short learning notes.
+/// Post-game evaluation: own numbers vs. the plan and vs. the champion's sampled averages
+/// (Match-v5 aggregates for the same champion/position). Specific, number-backed notes only.
 enum PostGameReview {
-    static func notes(for r: GameRecord) -> [Reason] {
+    static func notes(for r: GameRecord, benchmark: BuildBenchmarks? = nil,
+                      itemName: (Int) -> String = { "#\($0)" }) -> [Reason] {
         var out: [Reason] = []
-        let laner = r.family == .summonersRift && r.position != Position.utility.rawValue && r.position != Position.jungle.rawValue
-        if laner && r.durationSeconds > 600 {
-            if r.csPerMinute < 6 {
-                out.append(Reason("cs.low", Loc.tr("Dakika başı minyon %@: dalga yönetimine ve son vuruşlara odaklan", String(format: "%.1f", r.csPerMinute)), positive: false))
-            } else if r.csPerMinute >= 8 {
-                out.append(Reason("cs.good", Loc.tr("Dakika başı %@ minyon: çok iyi farm", String(format: "%.1f", r.csPerMinute))))
+        let minutes = r.durationSeconds / 60
+        guard minutes >= 5 else { return out }
+        let sr = r.family == .summonersRift
+        let support = r.position == Position.utility.rawValue
+        let jungle = r.position == Position.jungle.rawValue
+        let sample = benchmark.map { String($0.games) } ?? ""
+        func f1(_ x: Double) -> String { String(format: "%.1f", x) }
+
+        // Farming (laners and junglers on the Rift).
+        if sr && !support && minutes >= 10 {
+            let cs = r.csPerMinute
+            if let b = benchmark {
+                let diff = cs - b.csPerMin
+                if diff <= -1.0 {
+                    out.append(Reason("cs.low", Loc.tr("Dakikada %@ minyon; örneklenen %@ oyunun ortalaması %@ (−%@). Son vuruşlara ve dalga yönetimine odaklan", f1(cs), sample, f1(b.csPerMin), f1(-diff)), positive: false))
+                } else if diff >= 0.8 {
+                    out.append(Reason("cs.good", Loc.tr("Dakikada %@ minyon; örneklenen %@ oyunun ortalaması %@ (+%@)", f1(cs), sample, f1(b.csPerMin), f1(diff))))
+                }
+            } else if !jungle {
+                if cs < 6 {
+                    out.append(Reason("cs.low", Loc.tr("Dakikada %@ minyon, koridor hedefi olan 7'nin altında: son vuruşlara ve dalga yönetimine odaklan", f1(cs)), positive: false))
+                } else if cs >= 8 {
+                    out.append(Reason("cs.good", Loc.tr("Dakikada %@ minyon, koridor hedefi olan 7'nin üstünde", f1(cs))))
+                }
             }
         }
-        if r.deaths >= 8 {
-            out.append(Reason("deaths.high", Loc.tr("%@ ölüm: riskli pozisyonları ve harita görüşünü gözden geçir", String(r.deaths)), positive: false))
-        } else if r.deaths <= 2 && r.durationSeconds > 900 {
-            out.append(Reason("deaths.low", Loc.tr("Az ölümle oynadın, güvenli oyun")))
-        }
-        if r.family == .summonersRift, let vision = r.visionScore, r.durationSeconds > 600 {
-            let perMin = vision / (r.durationSeconds / 60)
-            let target = r.position == Position.utility.rawValue ? 1.5 : 0.7
-            if perMin < target {
-                out.append(Reason("vision.low", Loc.tr("Görüş skoru düşük: daha sık totem ve Kontrol Totemi kullan"), positive: false))
+
+        // Damage to champions vs. the sample.
+        if let b = benchmark, let dmg = r.damageToChampions, b.damagePerMin > 0 {
+            let dpm = Double(dmg) / minutes
+            let ratio = dpm / b.damagePerMin
+            if ratio < 0.75 {
+                out.append(Reason("damage.low", Loc.tr("Şampiyonlara dakikada %@ hasar; ortalama %@. Savaşlara daha erken katıl ya da hasar eşyalarını öne al", String(Int(dpm)), String(Int(b.damagePerMin))), positive: false))
+            } else if ratio > 1.25 {
+                out.append(Reason("damage.good", Loc.tr("Şampiyonlara dakikada %@ hasar; ortalama %@", String(Int(dpm)), String(Int(b.damagePerMin)))))
             }
         }
-        if !r.plannedCore.isEmpty && r.durationSeconds > 1200 {
-            if r.coreFollowed >= 2 {
-                out.append(Reason("plan.followed", Loc.tr("Planlanan temel eşyaların %@/3'ünü tamamladın", String(r.coreFollowed))))
+
+        // Deaths.
+        if let b = benchmark {
+            if Double(r.deaths) >= b.deaths + 3 {
+                out.append(Reason("deaths.high", Loc.tr("%@ ölüm; bu şampiyon ve rolde ortalama %@. Ölümlerin hangi bölgede olduğunu ve o anki görüşü gözden geçir", String(r.deaths), f1(b.deaths)), positive: false))
+            } else if Double(r.deaths) <= max(0, b.deaths - 2) && minutes >= 15 {
+                out.append(Reason("deaths.low", Loc.tr("%@ ölüm; ortalama %@", String(r.deaths), f1(b.deaths))))
+            }
+        } else if r.deaths >= 8 {
+            out.append(Reason("deaths.high", Loc.tr("%@ ölüm (dakikada %@): riskli pozisyonları ve harita görüşünü gözden geçir", String(r.deaths), String(format: "%.2f", Double(r.deaths) / minutes)), positive: false))
+        } else if r.deaths <= 2 && minutes >= 15 {
+            out.append(Reason("deaths.low", Loc.tr("%@ dakikada yalnızca %@ ölüm", String(Int(minutes)), String(r.deaths))))
+        }
+
+        // Vision on the Rift.
+        if sr, let vision = r.visionScore, minutes >= 10 {
+            let perMin = vision / minutes
+            if let b = benchmark, b.visionPerMin > 0 {
+                if perMin < b.visionPerMin * 0.7 {
+                    out.append(Reason("vision.low", Loc.tr("Görüş skoru dakikada %@; ortalama %@. Totemini her yenilendiğinde kullan ve Kontrol Totemi al", String(format: "%.2f", perMin), String(format: "%.2f", b.visionPerMin)), positive: false))
+                }
             } else {
-                out.append(Reason("plan.diverged", Loc.tr("Plandan farklı eşyalar aldın (%@/3); rakibe göre uyarlama yaptıysan sorun değil", String(r.coreFollowed)), positive: false))
+                let target = support ? 1.5 : 0.7
+                if perMin < target {
+                    out.append(Reason("vision.low", Loc.tr("Görüş skoru dakikada %@, hedef %@: daha sık totem ve Kontrol Totemi kullan", String(format: "%.2f", perMin), f1(target)), positive: false))
+                }
             }
         }
-        if r.kda >= 4 {
-            out.append(Reason("kda.good", Loc.tr("KDA %@: etkili bir oyun", String(format: "%.1f", r.kda))))
+
+        // Build vs. plan (the plan is the popular core when sampled, otherwise the curated core).
+        let planned = Array(r.plannedCore.prefix(3))
+        if !planned.isEmpty && minutes >= 20 {
+            let missing = planned.filter { !r.items.contains($0) }.map(itemName)
+            let done = planned.count - missing.count
+            if done >= 2 {
+                if missing.isEmpty {
+                    out.append(Reason("plan.followed", Loc.tr("Planlanan temel eşyaların %@/%@'ünü tamamladın", String(done), String(planned.count))))
+                } else {
+                    out.append(Reason("plan.followed", Loc.tr("Planlanan temel eşyaların %@/%@'ünü tamamladın; eksik: %@", String(done), String(planned.count), missing.joined(separator: ", "))))
+                }
+            } else {
+                out.append(Reason("plan.diverged", Loc.tr("Planlanan temel eşyalardan %@/%@ tamamlandı; eksik: %@. Rakibe göre uyarladıysan sorun değil", String(done), String(planned.count), missing.joined(separator: ", ")), positive: false))
+            }
+        }
+
+        // Gold income vs. the sample.
+        if let b = benchmark, let gold = r.goldEarned, b.goldPerMin > 0 {
+            let gpm = Double(gold) / minutes
+            if gpm < b.goldPerMin * 0.8 {
+                out.append(Reason("gold.low", Loc.tr("Dakikada %@ altın; ortalama %@. Boş anlarda yakındaki dalgaları ve kampları topla", String(Int(gpm)), String(Int(b.goldPerMin))), positive: false))
+            }
         }
         return out
+    }
+
+    /// Sampled averages for the record's champion/position (ARAM uses the ARAM build).
+    @MainActor
+    static func benchmark(for r: GameRecord, store: DataStore) -> BuildBenchmarks? {
+        guard let champion = store.championsById[r.championId] ?? store.champion(key: r.championKey),
+              let detail = store.detail(for: champion) else { return nil }
+        let key: String?
+        switch r.family {
+        case .summonersRift: key = r.position
+        case .aram: key = "ARAM"
+        default: key = nil
+        }
+        guard let key else { return nil }
+        return detail.builds[key]?.benchmarks
     }
 }
 

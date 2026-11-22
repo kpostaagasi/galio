@@ -44,7 +44,24 @@ final class HistoryTests: XCTestCase {
         XCTAssertTrue(codes.contains("plan.diverged"))
         r.creepScore = 260; r.deaths = 1; r.kills = 8; r.assists = 6; r.items = [6664, 4633, 3157]
         let good = Set(PostGameReview.notes(for: r).map(\.code))
-        XCTAssertTrue(good.isSuperset(of: ["cs.good", "deaths.low", "plan.followed", "kda.good"]))
+        XCTAssertTrue(good.isSuperset(of: ["cs.good", "deaths.low", "plan.followed"]))
+    }
+
+    func testReviewNotesAgainstSampleAverages() {
+        let r = GameRecord(id: "2", date: Date(), modeTitle: "Ranked", family: .summonersRift, championKey: 3, championId: "Galio",
+                           position: "MIDDLE", win: false, kills: 2, deaths: 7, assists: 5, creepScore: 180, durationSeconds: 1800,
+                           damageToChampions: 12000, goldEarned: 9000, visionScore: 12, items: [6664, 3157], plannedCore: [6664, 4633, 3157])
+        let b = BuildBenchmarks(games: 240, csPerMin: 7.4, damagePerMin: 780, visionPerMin: 0.9, goldPerMin: 410, deaths: 3.8)
+        let notes = PostGameReview.notes(for: r, benchmark: b) { $0 == 4633 ? "Riftmaker" : "#\($0)" }
+        let byCode = Dictionary(notes.map { ($0.code, $0.text) }, uniquingKeysWith: { a, _ in a })
+        XCTAssertNotNil(byCode["cs.low"], "6.0 CS/min vs a 7.4 sample average")
+        XCTAssertTrue(byCode["cs.low"]?.contains("240") ?? false, "the note names the sample size")
+        XCTAssertNotNil(byCode["damage.low"], "400 vs 780 damage per minute")
+        XCTAssertNotNil(byCode["deaths.high"], "7 deaths vs 3.8 average")
+        XCTAssertNotNil(byCode["vision.low"])
+        XCTAssertNotNil(byCode["gold.low"], "300 vs 410 gold per minute")
+        XCTAssertTrue(byCode["plan.followed"]?.contains("Riftmaker") ?? false, "the missing planned item is named")
+        XCTAssertFalse(notes.contains { $0.text.lowercased().contains("win") || $0.text.contains("kazanma") }, "no win rates")
     }
 
     @MainActor

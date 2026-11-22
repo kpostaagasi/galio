@@ -49,26 +49,52 @@ jobs:
           ditto -c -k --keepParent "$APP" Galio.zip
           ls -lh Galio.zip
 
-      - name: Mock-game smoke test + screenshots
+      - name: Mock-game smoke test + screenshots (1024x768 and 1440x900)
         run: |
           APP=build/Build/Products/Release/Galio.app
-          mkdir -p screenshots
-          for s in champselect champselect-locked ingame aram mayhem arena postgame; do
-            open -n "$APP" --args --mock-game "$s"
-            sleep 9
-            pgrep -x Galio > /dev/null || { echo "Galio did not stay running for $s"; exit 1; }
-            screencapture -x "screenshots/$s.png" || echo "screencapture unavailable for $s"
-            pkill -x Galio || true
-            sleep 2
-          done
-          # Main-window sections: history (filled by the postgame run above) and the champion browser.
-          open -n "$APP" --args --mock-game postgame --show history
-          sleep 8; screencapture -x screenshots/history.png || true; pkill -x Galio || true; sleep 2
-          open -n "$APP" --args --mock-game champselect --show champions --select-champion Galio
-          sleep 10; screencapture -x screenshots/champions.png || true; pkill -x Galio || true; sleep 2
-          open -n "$APP" --args --mock-game champselect --show about
-          sleep 6; screencapture -x screenshots/about.png || true; pkill -x Galio || true
-          ls -l screenshots
+          BID=com.kpostaagasi.galio
+          shoot() {  # $1 = output dir
+            local out="$1"; mkdir -p "$out"
+            defaults delete "$BID" 2>/dev/null || true   # fresh window/overlay frames for this resolution
+            for s in champselect champselect-locked ingame aram mayhem arena postgame; do
+              open -n "$APP" --args --mock-game "$s"
+              sleep 9
+              pgrep -x Galio > /dev/null || { echo "Galio did not stay running for $s"; exit 1; }
+              screencapture -x "$out/$s.png" || echo "screencapture unavailable for $s"
+              pkill -x Galio || true
+              sleep 2
+            done
+            # Expanded overlay variant (the default is the collapsed overlay).
+            defaults write "$BID" overlayExpanded -bool true
+            open -n "$APP" --args --mock-game ingame
+            sleep 9; screencapture -x "$out/ingame-expanded.png" || true; pkill -x Galio || true; sleep 2
+            defaults write "$BID" overlayExpanded -bool false
+            # Main-window sections: history (filled by the postgame run above) and the champion browser.
+            open -n "$APP" --args --mock-game postgame --show history
+            sleep 8; screencapture -x "$out/history.png" || true; pkill -x Galio || true; sleep 2
+            open -n "$APP" --args --mock-game champselect --show champions --select-champion Galio
+            sleep 10; screencapture -x "$out/champions.png" || true; pkill -x Galio || true; sleep 2
+            open -n "$APP" --args --mock-game champselect --show about
+            sleep 6; screencapture -x "$out/about.png" || true; pkill -x Galio || true; sleep 2
+          }
+          system_profiler SPDisplaysDataType | grep -i -E "resolution|display type" || true
+          shoot screenshots/1024x768
+          # Switch the runner's virtual display to 1440x900 when the mode exists.
+          brew install displayplacer > /dev/null 2>&1 || true
+          if command -v displayplacer > /dev/null; then
+            displayplacer list | tee displays.txt | grep -E "Persistent screen id|Resolution:" || true
+            SID=$(grep -m1 "Persistent screen id" displays.txt | awk '{print $4}')
+            MODE=$(grep -E "res:1440x900" displays.txt | head -1 | sed -E 's/^ *mode ([0-9]+):.*/\1/')
+            if [ -n "$SID" ] && [ -n "$MODE" ]; then
+              displayplacer "id:$SID mode:$MODE" || true
+            elif [ -n "$SID" ]; then
+              displayplacer "id:$SID res:1440x900 scaling:off" || true
+            fi
+            sleep 3
+          fi
+          system_profiler SPDisplaysDataType | grep -i "resolution" || true
+          shoot screenshots/1440x900
+          ls -lR screenshots
 
       - uses: actions/upload-artifact@v4
         if: always()
@@ -77,6 +103,7 @@ jobs:
           path: |
             Galio.zip
             screenshots/
+            displays.txt
             test.log
           if-no-files-found: warn
 

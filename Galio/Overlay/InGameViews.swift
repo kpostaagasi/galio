@@ -1,25 +1,36 @@
 import SwiftUI
 
-/// In-game overlay: skill reminder, next item options vs. the visible enemy team, augment tiers.
+/// In-game overlay. Collapsed: next skill, top 3 items with one-line reasons and augment tiers
+/// when the mode has augments. Expanded: enemy team, buildable components, augment search.
 struct InGameOverlay: View {
     @EnvironmentObject private var session: GameSession
     @EnvironmentObject private var store: DataStore
+    @AppStorage(OverlayController.expandedKey) private var expanded = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: expanded ? 8 : 6) {
             if let advice = AdviceBuilder.inGame(session: session, store: store) {
-                InGameHeader(advice: advice)
+                if expanded {
+                    InGameHeader(advice: advice)
+                }
                 if let plan = advice.skill {
-                    SkillReminder(plan: plan, next: advice.nextSkill, champion: advice.champion)
+                    HStack(spacing: 8) {
+                        SkillReminder(plan: plan, next: advice.nextSkill, champion: advice.champion)
+                        if !expanded {
+                            Text(Loc.tr("Sv %@ · %@ altın", String(advice.level), String(Int(advice.gold))))
+                                .font(.caption2.monospacedDigit()).foregroundStyle(.secondary)
+                                .fixedSize()
+                        }
+                    }
                 }
                 if !advice.items.isEmpty {
                     Divider().opacity(0.4)
                     Text("Sıradaki eşya seçenekleri").font(.caption.weight(.semibold))
-                    ForEach(advice.items.prefix(3)) { s in ItemSuggestionRow(suggestion: s, compact: true) }
+                    ForEach(advice.items.prefix(3)) { s in ItemSuggestionRow(suggestion: s, compact: true, showComponent: expanded) }
                 }
                 if advice.mode.hasAugments {
                     Divider().opacity(0.4)
-                    AugmentPanel(ratings: advice.augments, champion: advice.champion, compact: true)
+                    AugmentPanel(ratings: advice.augments, champion: advice.champion, compact: true, showSearch: expanded)
                 }
             } else {
                 Text("Canlı oyun verisi bekleniyor…").font(.caption).foregroundStyle(.secondary)
@@ -72,6 +83,7 @@ struct SkillReminder: View {
 struct ItemSuggestionRow: View {
     let suggestion: ItemSuggestion
     var compact = false
+    var showComponent = true
 
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
@@ -87,7 +99,7 @@ struct ItemSuggestionRow: View {
                     }
                 }
                 ReasonList(reasons: suggestion.reasons, limit: compact ? 1 : 3)
-                if let comp = suggestion.componentNow {
+                if showComponent, let comp = suggestion.componentNow {
                     Text(Loc.tr("Şimdi alınabilecek parça: %@", comp.displayName)).font(.caption2).foregroundStyle(.secondary)
                 }
             }
@@ -102,6 +114,7 @@ struct AugmentPanel: View {
     let ratings: [AugmentRating]
     let champion: ChampionInfo?
     var compact = false
+    var showSearch = true
 
     @State private var query = ""
     @State private var scanned: [AugmentRating] = []
@@ -137,14 +150,17 @@ struct AugmentPanel: View {
                 Text(status).font(.caption2).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
             }
             ForEach(scanned) { r in AugmentRow(rating: r, compact: compact) }
-            TextField("Güçlendirme ara", text: $query)
-                .textFieldStyle(.roundedBorder)
-                .controlSize(.small)
-            ForEach(searchResults) { r in AugmentRow(rating: r, compact: compact) }
+            if showSearch {
+                TextField("Güçlendirme ara", text: $query)
+                    .textFieldStyle(.roundedBorder)
+                    .controlSize(.small)
+                ForEach(searchResults) { r in AugmentRow(rating: r, compact: compact) }
+            }
             if query.isEmpty && scanned.isEmpty {
                 Text("En uyumlu güçlendirmeler").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
                 ForEach(ratings.prefix(compact ? 3 : 8)) { r in AugmentRow(rating: r, compact: compact) }
             }
+
             Text("Yalnızca seviye gösterilir; kazanma oranı gösterilmez.").font(.caption2).foregroundStyle(.tertiary)
         }
         .onAppear(perform: applyMockOffer)

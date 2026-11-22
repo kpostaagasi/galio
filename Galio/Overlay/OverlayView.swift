@@ -6,15 +6,16 @@ struct OverlayView: View {
     @EnvironmentObject private var store: DataStore
     @EnvironmentObject private var overlay: OverlayController
     @AppStorage(OverlayController.clickThroughKey) private var clickThrough = false
+    @AppStorage(OverlayController.expandedKey) private var expanded = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: expanded ? 10 : 7) {
             header
             Divider().opacity(0.4)
             content
         }
-        .padding(12)
-        .frame(width: 340, alignment: .topLeading)
+        .padding(expanded ? 12 : 10)
+        .frame(width: expanded ? OverlayController.expandedWidth : OverlayController.compactWidth, alignment: .topLeading)
         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 14))
         .overlay(RoundedRectangle(cornerRadius: 14).strokeBorder(Color.primary.opacity(0.08)))
         .environment(\.colorScheme, .dark)
@@ -26,10 +27,18 @@ struct OverlayView: View {
                 .foregroundStyle(.tint)
                 .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 0) {
-                Text(session.mode?.title ?? "Galio").font(.headline)
-                Text(session.phase.title).font(.caption).foregroundStyle(.secondary)
+                Text(session.mode?.title ?? "Galio").font(expanded ? .headline : .subheadline.weight(.semibold)).lineLimit(1)
+                Text(session.phase.title).font(.caption2).foregroundStyle(.secondary).lineLimit(1)
             }
-            Spacer()
+            Spacer(minLength: 4)
+            Button {
+                expanded.toggle()
+            } label: {
+                Image(systemName: expanded ? "rectangle.compress.vertical" : "rectangle.expand.vertical")
+            }
+            .buttonStyle(.borderless)
+            .help(expanded ? Text("Sade görünüm") : Text("Ayrıntılı görünüm"))
+            .accessibilityLabel(expanded ? Text("Sade görünüm") : Text("Ayrıntılı görünüm"))
             Button {
                 overlay.setClickThrough(!clickThrough)
             } label: {

@@ -22,6 +22,21 @@ final class OverlayPanel: NSPanel {
 
     // Allows the manual augment search field to receive typing without activating the app.
     override var canBecomeKey: Bool { true }
+
+    /// The SwiftUI content drives the panel size (collapsed/expanded, phase). Keep the top-left
+    /// corner where the user put it when only the size changes, and keep the panel on screen.
+    override func setFrame(_ frameRect: NSRect, display flag: Bool) {
+        var r = frameRect
+        let old = frame
+        if old.width > 0, old.height > 0, r.origin == old.origin, r.size != old.size {
+            r.origin.y = old.maxY - r.height
+        }
+        if let visible = (screen ?? NSScreen.main)?.visibleFrame, r.width <= visible.width, r.height <= visible.height {
+            r.origin.x = min(max(r.origin.x, visible.minX), visible.maxX - r.width)
+            r.origin.y = min(max(r.origin.y, visible.minY), visible.maxY - r.height)
+        }
+        super.setFrame(r, display: flag)
+    }
     override var canBecomeMain: Bool { false }
 }
 
@@ -33,10 +48,14 @@ final class OverlayController: ObservableObject {
     private var panel: OverlayPanel?
     private var hotKey: HotKey?
 
+    static let frameName = "GalioOverlayPanel.v2"
     static let opacityKey = "overlayOpacity"
     static let clickThroughKey = "overlayClickThrough"
     static let autoShowKey = "overlayAutoShow"
     static let hotKeyEnabledKey = "overlayHotKeyEnabled"
+    static let expandedKey = "overlayExpanded"
+    static let compactWidth: CGFloat = 288
+    static let expandedWidth: CGFloat = 350
 
     func setup() {
         guard panel == nil else { return }
@@ -45,6 +64,7 @@ final class OverlayController: ObservableObject {
             Self.clickThroughKey: false,
             Self.autoShowKey: true,
             Self.hotKeyEnabledKey: true,
+            Self.expandedKey: false,
         ])
         let panel = OverlayPanel()
         let root = OverlayView()
@@ -55,11 +75,13 @@ final class OverlayController: ObservableObject {
         let host = NSHostingController(rootView: root)
         host.sizingOptions = [.preferredContentSize]
         panel.contentViewController = host
-        panel.setFrameAutosaveName("GalioOverlayPanel")
-        if !panel.setFrameUsingName("GalioOverlayPanel"), let screen = NSScreen.main {
+        // Position is remembered (frame autosave); the size follows the collapsed/expanded state,
+        // which is remembered too. Default: top-right corner, away from the main window's content.
+        if !panel.setFrameUsingName(Self.frameName), let screen = NSScreen.main {
             let f = screen.visibleFrame
-            panel.setFrameTopLeftPoint(NSPoint(x: f.minX + 40, y: f.maxY - 60))
+            panel.setFrameTopLeftPoint(NSPoint(x: f.maxX - Self.compactWidth - 16, y: f.maxY - 12))
         }
+        panel.setFrameAutosaveName(Self.frameName)
         self.panel = panel
         applySettings()
         updateHotKey()
@@ -103,14 +125,22 @@ final class OverlayController: ObservableObject {
 
     /// Auto show/hide with the game flow when enabled in Settings.
     func phaseChanged(to phase: GameflowPhase) {
-        guard UserDefaults.standard.bool(forKey: Self.autoShowKey), MockLaunch.section == nil else { return }
-        switch phase {
-        case .champSelect, .inProgress, .gameStart:
-            show()
-        case .none, .lobby, .matchmaking:
+        guard MockLaunch.section == nil else { return }
+        if Self.hidesOverlay(phase) {
             hide()
-        default:
-            break
+        } else if Self.wantsOverlay(phase) && UserDefaults.standard.bool(forKey: Self.autoShowKey) {
+            show()
         }
+    }
+
+    /// Phases in which the overlay appears automatically.
+    nonisolated static func wantsOverlay(_ phase: GameflowPhase) -> Bool {
+        [.champSelect, .inProgress, .gameStart, .reconnect].contains(phase)
+    }
+
+    /// Phases in which it is hidden automatically: out of game, post-game (details live in the
+    /// main window) and when the client is closed (phase `.none`).
+    nonisolated static func hidesOverlay(_ phase: GameflowPhase) -> Bool {
+        [.none, .lobby, .matchmaking, .readyCheck, .waitingForStats, .preEndOfGame, .endOfGame, .terminatedInError].contains(phase)
     }
 }

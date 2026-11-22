@@ -75,7 +75,7 @@ final class ClientActionsTests: XCTestCase {
         let (server, client) = try await makeServer()
         defer { server.stop() }
         let galio = TestData.champion("Galio")
-        let build = try XCTUnwrap(TestData.set.details["Galio"]?.builds["MIDDLE"])
+        let build = try XCTUnwrap(TestData.set.details["Galio"]?.build(for: "MIDDLE"))
         let payload = ItemSetPayload.from(build: build, champion: galio, position: "MIDDLE", map: 11, threat: EnemyThreat())
         try await ClientActions(client: client, phase: .champSelect).exportItemSet(payload)
         let req = try XCTUnwrap(server.requests.first { $0.method == "PUT" })

@@ -59,7 +59,7 @@ final class ChampionAdvisorTests: XCTestCase {
 final class RuneAndSpellAdvisorTests: XCTestCase {
     func testRunePagesAreValidAndExplained() throws {
         let galio = TestData.champion("Galio")
-        let build = try XCTUnwrap(TestData.set.details["Galio"]?.builds["MIDDLE"])
+        let build = try XCTUnwrap(TestData.set.details["Galio"]?.build(for: "MIDDLE"))
         let mode = ModeInfo.classify(gameMode: "CLASSIC", queueId: 420, mapId: 11, isCustom: false, isRanked: true)
         let pages = RuneAdvisor.suggest(build: build, champion: galio, enemies: [], mode: mode)
         XCTAssertGreaterThanOrEqual(pages.count, 2)
@@ -73,7 +73,7 @@ final class RuneAndSpellAdvisorTests: XCTestCase {
 
     func testHeavyCrowdControlSwapsDefenseShardToTenacity() throws {
         let lux = TestData.champion("Lux")
-        let build = try XCTUnwrap(TestData.set.details["Lux"]?.builds["MIDDLE"] ?? TestData.set.details["Lux"]?.builds["UTILITY"])
+        let build = try XCTUnwrap(TestData.set.details["Lux"]?.build(for: "MIDDLE") ?? TestData.set.details["Lux"]?.build(for: "UTILITY"))
         let enemies = ["Leona", "Nautilus", "Sejuani", "Amumu", "Malphite"].map(TestData.champion)
         let mode = ModeInfo.classify(gameMode: "CLASSIC", queueId: 420, mapId: 11, isCustom: false, isRanked: true)
         let pages = RuneAdvisor.suggest(build: build, champion: lux, enemies: enemies, mode: mode)
@@ -92,7 +92,7 @@ final class RuneAndSpellAdvisorTests: XCTestCase {
     func testSpellOptionsPerRole() throws {
         let mode = ModeInfo.classify(gameMode: "CLASSIC", queueId: 420, mapId: 11, isCustom: false, isRanked: true)
         let lee = TestData.champion("LeeSin")
-        let jungle = SummonerSpellAdvisor.suggest(build: TestData.set.details["LeeSin"]?.builds["JUNGLE"], champion: lee,
+        let jungle = SummonerSpellAdvisor.suggest(build: TestData.set.details["LeeSin"]?.build(for: "JUNGLE"), champion: lee,
                                                   position: .jungle, enemies: [], mode: mode)
         XCTAssertTrue(jungle.allSatisfy { $0.spells.contains(SummonerSpellAdvisor.smite) })
         let jinx = TestData.champion("Jinx")

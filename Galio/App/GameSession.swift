@@ -153,7 +153,9 @@ final class GameSession: ObservableObject {
                 socket.disconnect()
                 connection = .clientClosed
                 resetGameState()
+                let old = phase
                 phase = .none
+                if old != .none { onPhaseChange?(old, .none) }
             }
             return
         }

@@ -15,7 +15,7 @@ final class ItemAdvisorTests: XCTestCase {
     }
 
     func testAntiHealAndArmorRiseAgainstHealingADTeam() throws {
-        let build = try XCTUnwrap(TestData.set.details["Galio"]?.builds["MIDDLE"])
+        let build = try XCTUnwrap(TestData.set.details["Galio"]?.build(for: "MIDDLE"))
         let enemies = ["Soraka", "Darius", "Zed", "Caitlyn", "Vi"].map(TestData.champion)
         let threat = EnemyThreat(champions: enemies)
         let out = ItemAdvisor.suggest(build: build, owned: [1056, 3111], gold: 1200, threat: threat, items: items, map: 11, limit: 5)
@@ -26,7 +26,7 @@ final class ItemAdvisorTests: XCTestCase {
     }
 
     func testMagicResistAgainstAPTeamAndNoArmorBonus() throws {
-        let build = try XCTUnwrap(TestData.set.details["Garen"]?.builds["TOP"])
+        let build = try XCTUnwrap(TestData.set.details["Garen"]?.build(for: "TOP"))
         let enemies = ["Lux", "Brand", "Veigar", "Katarina", "Amumu"].map(TestData.champion)
         let out = ItemAdvisor.suggest(build: build, owned: [1055], gold: 500, threat: EnemyThreat(champions: enemies), items: items, map: 11)
         XCTAssertTrue(out.prefix(3).contains { $0.reasons.contains { $0.code == "vs.ap" } }, out.map(\.item.name).description)

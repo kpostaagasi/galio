@@ -38,6 +38,9 @@ enum RuneAdvisor {
             var reasons: [Reason] = []
             var rank = Double(i)
             switch page.tag {
+            case "popular":
+                let n = build.sample?.runeGames ?? build.sample?.games ?? 0
+                reasons.append(Reason("rune.popular", Loc.tr("Örneklenen %@ dereceli oyunda en popüler sayfa", String(n))))
             case "standard":
                 reasons.append(Reason("rune.riot", Loc.tr("Riot'un bu rol için istemcide önerdiği sayfa")))
             case "defensive":
@@ -60,6 +63,7 @@ enum RuneAdvisor {
             }
             let title: String
             switch page.tag {
+            case "popular": title = Loc.tr("Popüler")
             case "standard": title = Loc.tr("Standart")
             case "defensive": title = Loc.tr("Dayanıklı")
             default: title = Loc.tr("Alternatif")
@@ -109,8 +113,12 @@ enum SummonerSpellAdvisor {
             guard spells.count == 2, !out.contains(where: { Set($0.spells) == key }) else { return }
             out.append(SpellSuggestion(spells: spells, reasons: reasons))
         }
-        if let riot = build?.spells.first, riot.count == 2 {
-            add(riot, [Reason("spell.riot", Loc.tr("Riot'un bu şampiyon için önerdiği büyüler"))])
+        if let first = build?.spells.first, first.count == 2 {
+            if let n = build?.sample?.spellsGames {
+                add(first, [Reason("spell.popular", Loc.tr("Örneklenen %@ oyunda en popüler büyü çifti", String(n)))])
+            } else {
+                add(first, [Reason("spell.riot", Loc.tr("Riot'un bu şampiyon için önerdiği büyüler"))])
+            }
         }
         let aram = mode.family == .aram || mode.family == .aramMayhem
         if aram {

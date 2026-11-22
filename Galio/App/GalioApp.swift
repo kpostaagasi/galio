@@ -17,8 +17,10 @@ struct GalioApp: App {
                 .environmentObject(overlay)
                 .environmentObject(actions)
                 .environmentObject(history)
-                .frame(minWidth: 860, minHeight: 580)
+                .frame(minWidth: 900, minHeight: 600)
         }
+        .defaultSize(width: 1000, height: 680)
+        .defaultPosition(.topLeading)
         .commands {
             CommandGroup(after: .windowArrangement) {
                 Button("Katmanı göster/gizle") { overlay.toggle() }
@@ -57,7 +59,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 OverlayController.shared.phaseChanged(to: new)
             }
             session.start()
-            if MockLaunch.scenarioName != nil && MockLaunch.section == nil {
+            if let scenario = MockLaunch.scenarioName, MockLaunch.section == nil, scenario != "postgame" {
                 overlay.show()
             }
             let autoRefresh = UserDefaults.standard.object(forKey: "dataAutoRefresh") as? Bool ?? true

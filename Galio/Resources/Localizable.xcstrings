@@ -23,6 +23,17 @@
         }
       }
     },
+    "%@ dakikada yalnızca %@ ölüm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only %2$@ deaths in %1$@ minutes"
+          }
+        }
+      }
+    },
     "%@ eksik": {
       "extractionState": "manual",
       "localizations": {
@@ -89,13 +100,35 @@
         }
       }
     },
-    "%@ ölüm: riskli pozisyonları ve harita görüşünü gözden geçir": {
+    "%@ ölüm (dakikada %@): riskli pozisyonları ve harita görüşünü gözden geçir": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ deaths: review risky positioning and map vision"
+            "value": "%@ deaths (%@ per minute): review risky positions and map vision"
+          }
+        }
+      }
+    },
+    "%@ ölüm; bu şampiyon ve rolde ortalama %@. Ölümlerin hangi bölgede olduğunu ve o anki görüşü gözden geçir": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ deaths; the average for this champion and role is %@. Review where you died and what vision you had"
+          }
+        }
+      }
+    },
+    "%@ ölüm; ortalama %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ deaths; average %@"
           }
         }
       }
@@ -287,6 +320,17 @@
         }
       }
     },
+    "Ayrıntılı görünüm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detailed view"
+          }
+        }
+      }
+    },
     "Ayrıntılı oyun sonu özeti ana pencerede.": {
       "extractionState": "manual",
       "localizations": {
@@ -294,17 +338,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "The detailed post-game summary is in the main window."
-          }
-        }
-      }
-    },
-    "Az ölümle oynadın, güvenli oyun": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Few deaths — safe, solid game"
           }
         }
       }
@@ -507,24 +540,57 @@
         }
       }
     },
-    "Dakika başı %@ minyon: çok iyi farm": {
+    "Dakikada %@ altın; ortalama %@. Boş anlarda yakındaki dalgaları ve kampları topla": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "%@ CS per minute: great farming"
+            "value": "%@ gold per minute; average %@. Collect nearby waves and camps during quiet moments"
           }
         }
       }
     },
-    "Dakika başı minyon %@: dalga yönetimine ve son vuruşlara odaklan": {
+    "Dakikada %@ minyon, koridor hedefi olan 7'nin altında: son vuruşlara ve dalga yönetimine odaklan": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "CS per minute %@: focus on wave management and last hits"
+            "value": "%@ CS per minute, below the lane target of 7: focus on last hits and wave management"
+          }
+        }
+      }
+    },
+    "Dakikada %@ minyon, koridor hedefi olan 7'nin üstünde": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ CS per minute, above the lane target of 7"
+          }
+        }
+      }
+    },
+    "Dakikada %@ minyon; örneklenen %@ oyunun ortalaması %@ (+%@)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ CS per minute; the average of %@ sampled games is %@ (+%@)"
+          }
+        }
+      }
+    },
+    "Dakikada %@ minyon; örneklenen %@ oyunun ortalaması %@ (−%@). Son vuruşlara ve dalga yönetimine odaklan": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ CS per minute; the average of %@ sampled games is %@ (−%@). Focus on last hits and wave management"
           }
         }
       }
@@ -1002,13 +1068,24 @@
         }
       }
     },
-    "Görüş skoru düşük: daha sık totem ve Kontrol Totemi kullan": {
+    "Görüş skoru dakikada %@, hedef %@: daha sık totem ve Kontrol Totemi kullan": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Low vision score: ward more often and buy Control Wards"
+            "value": "Vision score %@ per minute, target %@: place wards and Control Wards more often"
+          }
+        }
+      }
+    },
+    "Görüş skoru dakikada %@; ortalama %@. Totemini her yenilendiğinde kullan ve Kontrol Totemi al": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vision score %@ per minute; average %@. Use your trinket whenever it is ready and buy Control Wards"
           }
         }
       }
@@ -1189,17 +1266,6 @@
         }
       }
     },
-    "KDA %@: etkili bir oyun": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KDA %@: an impactful game"
-          }
-        }
-      }
-    },
     "Kapalı Seçim": {
       "extractionState": "manual",
       "localizations": {
@@ -1262,6 +1328,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Snowball for fast engages"
+          }
+        }
+      }
+    },
+    "Karşılaştırma: bu şampiyon ve rol için örneklenen %@ dereceli oyunun ortalaması (yalnızca kendi istatistiklerin)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compared with the average of %@ sampled ranked games for this champion and role (your own stats only)"
           }
         }
       }
@@ -1750,24 +1827,46 @@
         }
       }
     },
-    "Plandan farklı eşyalar aldın (%@/3); rakibe göre uyarlama yaptıysan sorun değil": {
+    "Planlanan temel eşyalardan %@/%@ tamamlandı; eksik: %@. Rakibe göre uyarladıysan sorun değil": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "You built differently from the plan (%@/3); fine if you adapted to the enemy"
+            "value": "%@/%@ planned core items completed; missing: %@. Fine if you adapted to the enemy team"
           }
         }
       }
     },
-    "Planlanan temel eşyaların %@/3'ünü tamamladın": {
+    "Planlanan temel eşyaların %@/%@'ünü tamamladın": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "You completed %@/3 of the planned core items"
+            "value": "You completed %@/%@ of the planned core items"
+          }
+        }
+      }
+    },
+    "Planlanan temel eşyaların %@/%@'ünü tamamladın; eksik: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You completed %@/%@ of the planned core items; missing: %@"
+          }
+        }
+      }
+    },
+    "Popüler": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Popular"
           }
         }
       }
@@ -2102,6 +2201,17 @@
         }
       }
     },
+    "Sade görünüm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compact view"
+          }
+        }
+      }
+    },
     "Sadece ARAM: Mayhem ve Arena'da \"Kartları tara\"ya bastığında üç güçlendirme kartının adını cihaz üzerinde okumak için. Görüntü kaydedilmez, hiçbir yere gönderilmez. İzin vermezsen elle arama kullanılabilir.": {
       "extractionState": "manual",
       "localizations": {
@@ -2307,6 +2417,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Barrier against assassin burst"
+          }
+        }
+      }
+    },
+    "Sv %@ · %@ altın": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lv %@ · %@ gold"
           }
         }
       }
@@ -2582,6 +2703,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Core items"
+          }
+        }
+      }
+    },
+    "Temel üçlü örneklenen %@ oyunda en popüler; diğerleri kurala dayalı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Core trio most popular in %@ sampled games; the rest is rule-based"
           }
         }
       }
@@ -3037,6 +3169,39 @@
         }
       }
     },
+    "Örneklenen %@ dereceli oyunda en popüler sayfa": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Most popular page in %@ sampled ranked games"
+          }
+        }
+      }
+    },
+    "Örneklenen %@ dereceli oyunda en popüler sıra": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Most popular order in %@ sampled ranked games"
+          }
+        }
+      }
+    },
+    "Örneklenen %@ oyunda en popüler büyü çifti": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Most popular spell pair in %@ sampled games"
+          }
+        }
+      }
+    },
     "Özel": {
       "extractionState": "manual",
       "localizations": {
@@ -3209,6 +3374,28 @@
           "stringUnit": {
             "state": "translated",
             "value": "Champions"
+          }
+        }
+      }
+    },
+    "Şampiyonlara dakikada %@ hasar; ortalama %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ damage to champions per minute; average %@"
+          }
+        }
+      }
+    },
+    "Şampiyonlara dakikada %@ hasar; ortalama %@. Savaşlara daha erken katıl ya da hasar eşyalarını öne al": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ damage to champions per minute; average %@. Join fights earlier or buy damage items sooner"
           }
         }
       }

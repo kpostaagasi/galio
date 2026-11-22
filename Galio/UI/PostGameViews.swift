@@ -54,11 +54,16 @@ struct GameSummaryView: View {
                     }
                 }
             }
-            let notes = PostGameReview.notes(for: record)
+            let benchmark = PostGameReview.benchmark(for: record, store: store)
+            let notes = PostGameReview.notes(for: record, benchmark: benchmark) { store.itemsById[$0]?.displayName ?? "#\($0)" }
             if !notes.isEmpty {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Notlar").font(.headline)
-                    ReasonList(reasons: notes, limit: 6)
+                    ReasonList(reasons: notes, limit: 7)
+                    if let benchmark {
+                        Text(Loc.tr("Karşılaştırma: bu şampiyon ve rol için örneklenen %@ dereceli oyunun ortalaması (yalnızca kendi istatistiklerin)", String(benchmark.games)))
+                            .font(.caption2).foregroundStyle(.tertiary)
+                    }
                 }
             }
         }

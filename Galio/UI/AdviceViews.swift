@@ -6,6 +6,7 @@ struct SuggestionRow: View {
     let suggestion: ChampionSuggestion
     let rank: Int
     var compact = false
+    var reasonLimit: Int? = nil
 
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
@@ -13,7 +14,7 @@ struct SuggestionRow: View {
             ChampionChip(champion: suggestion.champion, size: compact ? 26 : 32, showName: false)
             VStack(alignment: .leading, spacing: 2) {
                 Text(suggestion.champion.displayName).font(compact ? .callout.weight(.semibold) : .headline)
-                ReasonList(reasons: suggestion.reasons, limit: compact ? 2 : 3)
+                ReasonList(reasons: suggestion.reasons, limit: reasonLimit ?? (compact ? 2 : 3))
             }
             Spacer(minLength: 0)
         }
@@ -36,16 +37,17 @@ struct RunePageCard: View {
             HStack(spacing: 6) {
                 RuneIcon(runeId: page.keystoneId, size: compact ? 26 : 34)
                 VStack(alignment: .leading, spacing: 0) {
-                    Text(page.title).font(compact ? .callout.weight(.semibold) : .headline)
-                    Text(runeName(page.keystoneId)).font(.caption).foregroundStyle(.secondary)
+                    Text(page.title).font(compact ? .callout.weight(.semibold) : .headline).lineLimit(1)
+                    Text(runeName(page.keystoneId)).font(.caption).foregroundStyle(.secondary).lineLimit(compact ? 1 : 2)
                 }
-                Spacer()
+                Spacer(minLength: 4)
                 Button {
                     actions.importRunes(page, champion: champion)
                 } label: {
                     Label("Aktar", systemImage: "square.and.arrow.down")
                 }
                 .controlSize(compact ? .small : .regular)
+                .fixedSize()
                 .disabled(!session.connection.isConnected || !session.phase.allowsClientActions || actions.busy)
                 .help("Bu sayfayı tek tıkla League istemcisine aktar")
             }
@@ -76,14 +78,24 @@ struct RunePageCard: View {
 struct SpellOptionRow: View {
     @EnvironmentObject private var session: GameSession
     @EnvironmentObject private var actions: ActionCenter
+    @EnvironmentObject private var store: DataStore
     let option: SpellSuggestion
     let current: [Int]
     var showSetButton = true
+    var compact = false
 
     var body: some View {
         HStack(spacing: 8) {
-            ForEach(option.spells, id: \.self) { SummonerIcon(spellId: $0, size: 24) }
-            ReasonList(reasons: option.reasons, limit: 1)
+            HStack(spacing: 4) {
+                ForEach(option.spells, id: \.self) { SummonerIcon(spellId: $0, size: compact ? 24 : 36) }
+            }
+            VStack(alignment: .leading, spacing: 2) {
+                if !compact {
+                    Text(option.spells.compactMap { store.summonersById[$0]?.displayName }.joined(separator: " + "))
+                        .font(.callout.weight(.semibold))
+                }
+                ReasonList(reasons: option.reasons, limit: 1)
+            }
             Spacer(minLength: 0)
             if showSetButton && session.phase == .champSelect {
                 if Set(current) == Set(option.spells) {
@@ -153,7 +165,7 @@ struct SkillGrid: View {
                 ForEach(1...18, id: \.self) { lvl in
                     Text(String(lvl)).font(.system(size: 9).monospacedDigit())
                         .foregroundStyle(lvl == currentLevel ? Color.accentColor : .secondary)
-                        .frame(width: 18)
+                        .frame(width: 16)
                 }
             }
             ForEach(["Q", "W", "E", "R"], id: \.self) { key in
@@ -162,7 +174,7 @@ struct SkillGrid: View {
                     ForEach(0..<18, id: \.self) { i in
                         RoundedRectangle(cornerRadius: 3)
                             .fill(plan.sequence[i] == key ? Color.accentColor : Color.secondary.opacity(0.12))
-                            .frame(width: 18, height: 14)
+                            .frame(width: 16, height: 14)
                     }
                 }
             }

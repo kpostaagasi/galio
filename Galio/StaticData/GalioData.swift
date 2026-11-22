@@ -75,6 +75,8 @@ struct SkillOrderData: Decodable, Equatable {
     let max: [String]
     let first: [String]
     let ultLevels: [Int]
+    /// Sampled ranked games behind `max` when it comes from Match-v5 aggregates (nil = curated).
+    let games: Int?
 }
 
 struct BuildData: Decodable {
@@ -83,6 +85,27 @@ struct BuildData: Decodable {
     let runes: [RunePageData]
     let spells: [[Int]]
     let items: ItemBuildData
+    /// Match-v5 sample sizes behind this build (nil = rule-based data only).
+    let sample: BuildSample?
+    /// Average own-performance numbers for this champion/position in the sample (no win rates).
+    let benchmarks: BuildBenchmarks?
+}
+
+struct BuildSample: Decodable, Hashable {
+    let games: Int
+    let runeGames: Int?
+    let coreGames: Int?
+    let spellsGames: Int?
+    let bootsGames: Int?
+}
+
+struct BuildBenchmarks: Decodable, Hashable {
+    let games: Int
+    let csPerMin: Double
+    let damagePerMin: Double
+    let visionPerMin: Double
+    let goldPerMin: Double
+    let deaths: Double
 }
 
 struct RunePageData: Decodable, Hashable {
