@@ -57,7 +57,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 OverlayController.shared.phaseChanged(to: new)
             }
             session.start()
-            if MockLaunch.scenarioName != nil {
+            if MockLaunch.scenarioName != nil && MockLaunch.section == nil {
                 overlay.show()
             }
             let autoRefresh = UserDefaults.standard.object(forKey: "dataAutoRefresh") as? Bool ?? true

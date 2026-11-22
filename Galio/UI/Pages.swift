@@ -4,7 +4,7 @@ import SwiftUI
 struct ChampionsView: View {
     @EnvironmentObject private var store: DataStore
     @State private var query = ""
-    @State private var selected: ChampionInfo.ID?
+    @State private var selected: ChampionInfo.ID? = MockLaunch.champion
 
     private var champions: [ChampionInfo] {
         let all = store.data?.champions ?? []

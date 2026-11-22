@@ -26,7 +26,7 @@ enum SidebarItem: String, Hashable, CaseIterable, Identifiable {
 struct ContentView: View {
     @EnvironmentObject private var session: GameSession
     @EnvironmentObject private var store: DataStore
-    @State private var selection: SidebarItem? = .live
+    @State private var selection: SidebarItem? = MockLaunch.section.flatMap { SidebarItem(rawValue: $0) } ?? .live
     @AppStorage("onboardingDone") private var onboardingDone = false
     @State private var showOnboarding = false
 

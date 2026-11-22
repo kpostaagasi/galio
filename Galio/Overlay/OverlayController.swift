@@ -103,7 +103,7 @@ final class OverlayController: ObservableObject {
 
     /// Auto show/hide with the game flow when enabled in Settings.
     func phaseChanged(to phase: GameflowPhase) {
-        guard UserDefaults.standard.bool(forKey: Self.autoShowKey) else { return }
+        guard UserDefaults.standard.bool(forKey: Self.autoShowKey), MockLaunch.section == nil else { return }
         switch phase {
         case .champSelect, .inProgress, .gameStart:
             show()

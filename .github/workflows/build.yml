@@ -61,6 +61,13 @@ jobs:
             pkill -x Galio || true
             sleep 2
           done
+          # Main-window sections: history (filled by the postgame run above) and the champion browser.
+          open -n "$APP" --args --mock-game postgame --show history
+          sleep 8; screencapture -x screenshots/history.png || true; pkill -x Galio || true; sleep 2
+          open -n "$APP" --args --mock-game champselect --show champions --select-champion Galio
+          sleep 10; screencapture -x screenshots/champions.png || true; pkill -x Galio || true; sleep 2
+          open -n "$APP" --args --mock-game champselect --show about
+          sleep 6; screencapture -x screenshots/about.png || true; pkill -x Galio || true
           ls -l screenshots
 
       - uses: actions/upload-artifact@v4

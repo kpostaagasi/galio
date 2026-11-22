@@ -239,9 +239,15 @@ final class OnceFlag {
 
 /// Parses `--mock-game <scenario>` from the launch arguments.
 enum MockLaunch {
-    static var scenarioName: String? {
+    static func value(_ flag: String) -> String? {
         let args = ProcessInfo.processInfo.arguments
-        guard let i = args.firstIndex(of: "--mock-game"), i + 1 < args.count else { return nil }
+        guard let i = args.firstIndex(of: flag), i + 1 < args.count else { return nil }
         return args[i + 1]
     }
+
+    static var scenarioName: String? { value("--mock-game") }
+    /// `--show champions|history|about` opens a sidebar section (used by CI screenshots).
+    static var section: String? { value("--show") }
+    /// `--select-champion Galio` preselects a champion in the browser.
+    static var champion: String? { value("--select-champion") }
 }
