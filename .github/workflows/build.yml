@@ -49,7 +49,7 @@ jobs:
           ditto -c -k --keepParent "$APP" Galio.zip
           ls -lh Galio.zip
 
-      - name: Mock-game smoke test + screenshots (1024x768 and 1440x900)
+      - name: Mock-game smoke test + screenshots (1024x768 and 1600x900)
         run: |
           APP=build/Build/Products/Release/Galio.app
           BID=com.kpostaagasi.galio
@@ -79,21 +79,23 @@ jobs:
           }
           system_profiler SPDisplaysDataType | grep -i -E "resolution|display type" || true
           shoot screenshots/1024x768
-          # Switch the runner's virtual display to 1440x900 when the mode exists.
+          # Second pass on a larger display. The runner's virtual display has no 1440x900 mode; 1600x900
+          # (same height, closest width) is the nearest one it offers.
           brew install displayplacer > /dev/null 2>&1 || true
           if command -v displayplacer > /dev/null; then
             displayplacer list | tee displays.txt | grep -E "Persistent screen id|Resolution:" || true
             SID=$(grep -m1 "Persistent screen id" displays.txt | awk '{print $4}')
-            MODE=$(grep -E "res:1440x900" displays.txt | head -1 | sed -E 's/^ *mode ([0-9]+):.*/\1/')
+            MODE=$(grep -E "res:1440x900 |res:1600x900 " displays.txt | head -1 | sed -E 's/^ *mode ([0-9]+):.*/\1/')
             if [ -n "$SID" ] && [ -n "$MODE" ]; then
               displayplacer "id:$SID mode:$MODE" || true
             elif [ -n "$SID" ]; then
-              displayplacer "id:$SID res:1440x900 scaling:off" || true
+              echo "no 1440x900/1600x900 mode"
             fi
             sleep 3
           fi
           system_profiler SPDisplaysDataType | grep -i "resolution" || true
-          shoot screenshots/1440x900
+          RES=$(system_profiler SPDisplaysDataType | awk '/Resolution/{print $2"x"$4; exit}')
+          shoot "screenshots/${RES:-second}"
           ls -lR screenshots
 
       - uses: actions/upload-artifact@v4

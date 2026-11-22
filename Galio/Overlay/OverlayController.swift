@@ -23,20 +23,6 @@ final class OverlayPanel: NSPanel {
     // Allows the manual augment search field to receive typing without activating the app.
     override var canBecomeKey: Bool { true }
 
-    /// The SwiftUI content drives the panel size (collapsed/expanded, phase). Keep the top-left
-    /// corner where the user put it when only the size changes, and keep the panel on screen.
-    override func setFrame(_ frameRect: NSRect, display flag: Bool) {
-        var r = frameRect
-        let old = frame
-        if old.width > 0, old.height > 0, r.origin == old.origin, r.size != old.size {
-            r.origin.y = old.maxY - r.height
-        }
-        if let visible = (screen ?? NSScreen.main)?.visibleFrame, r.width <= visible.width, r.height <= visible.height {
-            r.origin.x = min(max(r.origin.x, visible.minX), visible.maxX - r.width)
-            r.origin.y = min(max(r.origin.y, visible.minY), visible.maxY - r.height)
-        }
-        super.setFrame(r, display: flag)
-    }
     override var canBecomeMain: Bool { false }
 }
 
@@ -47,6 +33,10 @@ final class OverlayController: ObservableObject {
     @Published private(set) var isVisible = false
     private var panel: OverlayPanel?
     private var hotKey: HotKey?
+    /// Top-left corner the panel sticks to while its SwiftUI content changes height.
+    private var anchor: NSPoint?
+    private var anchorSize: NSSize = .zero
+    private var reanchoring = false
 
     static let frameName = "GalioOverlayPanel.v2"
     static let opacityKey = "overlayOpacity"
@@ -82,9 +72,40 @@ final class OverlayController: ObservableObject {
             panel.setFrameTopLeftPoint(NSPoint(x: f.maxX - Self.compactWidth - 16, y: f.maxY - 12))
         }
         panel.setFrameAutosaveName(Self.frameName)
+        anchor = NSPoint(x: panel.frame.minX, y: panel.frame.maxY)
+        anchorSize = panel.frame.size
+        // AppKit keeps the bottom-left corner when the content resizes the panel; re-pin the top-left
+        // corner instead (and follow it when the user drags the panel).
+        NotificationCenter.default.addObserver(forName: NSWindow.didMoveNotification, object: panel, queue: .main) { [weak self] _ in
+            MainActor.assumeIsolated { self?.panelMoved() }
+        }
+        NotificationCenter.default.addObserver(forName: NSWindow.didResizeNotification, object: panel, queue: .main) { [weak self] _ in
+            MainActor.assumeIsolated { self?.panelResized() }
+        }
         self.panel = panel
         applySettings()
         updateHotKey()
+    }
+
+    private func panelMoved() {
+        // Only a pure move (same size) is the user dragging; size changes are handled in panelResized.
+        guard let panel, !reanchoring, panel.frame.size == anchorSize else { return }
+        anchor = NSPoint(x: panel.frame.minX, y: panel.frame.maxY)
+    }
+
+    private func panelResized() {
+        guard let panel, let anchor, !reanchoring else { return }
+        anchorSize = panel.frame.size
+        var top = anchor
+        if let visible = (panel.screen ?? NSScreen.main)?.visibleFrame {
+            top.x = min(max(top.x, visible.minX), max(visible.minX, visible.maxX - panel.frame.width))
+            top.y = min(top.y, visible.maxY)
+            if top.y - panel.frame.height < visible.minY { top.y = min(visible.maxY, visible.minY + panel.frame.height) }
+        }
+        guard abs(panel.frame.maxY - top.y) > 0.5 || abs(panel.frame.minX - top.x) > 0.5 else { return }
+        reanchoring = true
+        panel.setFrameTopLeftPoint(top)
+        reanchoring = false
     }
 
     func applySettings() {
