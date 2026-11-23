@@ -57,3 +57,7 @@ Galio follows the Riot League Developer Policy (see [docs/SPEC.md](docs/SPEC.md)
 ## Legal
 
 Galio isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+
+## License
+
+Galio's source code is released under the [MIT License](LICENSE). The license covers this repository's code only; League of Legends data, names and assets belong to Riot Games and are used under the Riot Games Developer Policy.
